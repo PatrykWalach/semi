@@ -24,3 +24,5 @@ Tailwindcss:
 
 
 CSS i konwencja "blok element modyfikator"
+
+Visual testing

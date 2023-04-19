@@ -1,2 +1,26 @@
 # Semi
-## [docs](https://docs.google.com/presentation/d/1sothUcBaYQQDeRAvP2PHgafbhSAA6PrjOriy81NmdlU/edit?usp=share_link)
+## 
+Wstęp do najczęściej wykorzystywanych funkcji języka css:
+- selektory
+- pseudo-selektory
+- nadpisywanie stylów
+- style warunkowe (media query)
+- czcionki
+- zmienne
+
+Przykłady wykorzystania powyższych funkcji:
+- obsługa urządzeń o różnych rozdzielczościach
+- zmiana motywów
+- zmiana układu zależnie od języka
+- normalizacja stylów 
+
+Styled-components:
+- czym jest CSS in js
+- dziedziczenie stylów 
+
+Tailwindcss:
+- Jak działa kompilacja jit
+- tworzenie własnych pluginów
+
+
+CSS i konwencja "blok element modyfikator"

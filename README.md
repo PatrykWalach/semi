@@ -7,6 +7,7 @@ Wstęp do najczęściej wykorzystywanych funkcji języka css:
 - style warunkowe (media query)
 - czcionki
 - zmienne
+- animacje
 
 Przykłady wykorzystania powyższych funkcji:
 - obsługa urządzeń o różnych rozdzielczościach

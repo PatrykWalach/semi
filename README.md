@@ -1,8 +1,12 @@
 # Semi
 
-[site](https://semi-beta.vercel.app)
 
-## 
+Links:
+- [site](https://semi-beta.vercel.app)
+- [storybook](https://master--646fb66e81a5f96d644f011a.chromatic.com)
+- [library](https://www.chromatic.com/library?appId=646fb66e81a5f96d644f011a&branch=master)
+
+## Funkcje
 Wstęp do najczęściej wykorzystywanych funkcji języka css:
 - selektory
 - pseudo-selektory

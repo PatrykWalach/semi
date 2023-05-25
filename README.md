@@ -1,8 +1,9 @@
 # Semi
 
 [site](https://semi-beta.vercel.app)
+[storybook](https://semi-storybook.vercel.app)
 
-## 
+## Funkcje
 Wstęp do najczęściej wykorzystywanych funkcji języka css:
 - selektory
 - pseudo-selektory

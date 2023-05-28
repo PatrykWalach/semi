@@ -24,22 +24,3 @@ export const Default: Story = {
   },
 };
 
-
-export const Md: Story = {
-  ...Default,
-  parameters: {
-    viewport: {
-      defaultViewport: "md",
-    },
-  },
-};
-
-
-export const Sm: Story = {
-  ...Default,
-  parameters: {
-    viewport: {
-      defaultViewport: "sm",
-    },
-  },
-};

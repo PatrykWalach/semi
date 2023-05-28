@@ -4,6 +4,7 @@ import "../app/globals.css";
 
 const preview: Preview = {
   parameters: {
+    chromatic: { viewports: [640, 768, 1024, 1280, 1536] },
     viewport: {
       viewports: {
         ...MINIMAL_VIEWPORTS,

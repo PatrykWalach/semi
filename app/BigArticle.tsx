@@ -3,14 +3,14 @@ import { ArticleData } from "./Article";
 
 export function BigArticle({ article }: { article: ArticleData; }) {
   return (
-    <article className="text-gray-900 flex flex-col-reverse items-center sm:px-5 md:flex-row">
+    <article className="text-on-surface flex flex-col-reverse items-center sm:px-5 md:flex-row">
       <div className="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
         <div
           className="flex flex-col items-start justify-center h-full gap-y-3 transform md:pr-10 lg:pr-16
       md:gap-y-5"
         >
           <div
-            className="bg-green-500 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2
+            className="bg-secondary-container flex items-center leading-none rounded-full pt-1.5 pr-3 pb-1.5 pl-2
         uppercase "
           >
             <p className="inline">
@@ -46,7 +46,7 @@ export function BigArticle({ article }: { article: ArticleData; }) {
             <p className="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">
               · {article.releasedAt} ·
             </p>
-            <p className="text-gray-400 text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">
+            <p className="text-on-surface/[.38] text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">
               {article.length}. read
             </p>
           </div>

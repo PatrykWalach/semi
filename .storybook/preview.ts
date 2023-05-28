@@ -4,6 +4,16 @@ import "../app/globals.css";
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      default: "light",
+      values: [
+        {
+          name: "light",
+          value: "#FFFBFE",
+        },
+        { name: "dark", value: "#1C1B1F" },
+      ],
+    },
     viewport: {
       viewports: {
         ...MINIMAL_VIEWPORTS,

@@ -8,6 +8,7 @@ const meta: Meta<typeof Article> = {
   tags: ["autodocs"],
   parameters: {
     backgrounds: { default: "light" },
+
   },
 };
 

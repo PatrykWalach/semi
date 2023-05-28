@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Articles } from "../app/Articles";
 import { ARTICLES } from "../app/Article";
+import { Articles } from "../app/Articles";
  
 const meta: Meta<typeof Articles> = {
   title: "Home/Articles",
@@ -12,6 +12,7 @@ const meta: Meta<typeof Articles> = {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: "fullscreen",
     backgrounds: { default: "light" },
+    chromatic: { viewports: [640, 768, 1280] },
   },
 };
 

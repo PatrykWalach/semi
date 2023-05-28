@@ -9,6 +9,7 @@ const meta: Meta<typeof BigArticle> = {
   tags: ["autodocs"],
   parameters: {
     backgrounds: { default: "light" },
+    chromatic: { viewports: [640, 768, 1280] },
   },
 };
 

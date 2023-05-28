@@ -6,8 +6,8 @@ export function BigArticle({ article }: { article: ArticleData; }) {
     <article className="text-gray-900 flex flex-col-reverse items-center sm:px-5 md:flex-row">
       <div className="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
         <div
-          className="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16
-      md:space-y-5"
+          className="flex flex-col items-start justify-center h-full gap-y-3 transform md:pr-10 lg:pr-16
+      md:gap-y-5"
         >
           <div
             className="bg-green-500 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2

@@ -107,7 +107,7 @@ export const ARTICLES = [
 
 export function Article({ article }: { article: ArticleData; }) {
   return (
-    <article className="text-gray-900 flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
+    <article className="text-gray-900 flex flex-col items-start col-span-12 gap-y-3 sm:col-span-6 xl:col-span-4">
       <img
         src={article.img}
         className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56" />

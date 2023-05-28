@@ -7,7 +7,7 @@ export default async function Home() {
   );
 
   return (
-    <main className="pt-12 pb-14 bg-white">
+    <main className="pt-12 pb-14 bg-surface">
       <div className="divide-y container mx-auto">
         <Articles articles={articles.slice(0, 4)}></Articles>
         <Articles articles={articles.slice(4)}></Articles>

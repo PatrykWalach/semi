@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { ARTICLES } from "../app/Article";
 import { BigArticle } from "../app/BigArticle";
-import { ARTICLES } from "../app/page";
-
+ 
 const meta: Meta<typeof BigArticle> = {
   title: "Home/BigArticle",
   component: BigArticle,

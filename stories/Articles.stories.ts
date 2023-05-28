@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Articles } from "../app/Articles";
-import { ARTICLES } from "../app/page";
-
+import { ARTICLES } from "../app/Article";
+ 
 const meta: Meta<typeof Articles> = {
   title: "Home/Articles",
   component: Articles,

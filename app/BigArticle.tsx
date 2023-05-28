@@ -1,7 +1,7 @@
-import { Article } from "./page";
+import { ArticleData } from "./Article";
 
 
-export function BigArticle({ article }: { article: Article; }) {
+export function BigArticle({ article }: { article: ArticleData; }) {
   return (
     <article className="text-gray-900 flex flex-col-reverse items-center sm:px-5 md:flex-row">
       <div className="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">

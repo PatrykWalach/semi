@@ -1,8 +1,11 @@
+import { Decorator } from "@storybook/react";
 
-export default function withDark(Story) {
+const withDark: Decorator = (Story) => {
   return (
     <div className="dark">
       <Story></Story>
     </div>
   );
-}
+};
+
+export default withDark;

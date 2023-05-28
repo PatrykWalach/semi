@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 
 export interface ArticleData {
   id: number;
@@ -104,13 +104,14 @@ export const ARTICLES = [
   },
 ] as const satisfies readonly ArticleData[];
 
-
-export function Article({ article }: { article: ArticleData; }) {
+export function Article({ article }: { article: ArticleData }) {
   return (
     <article className="text-on-surface flex flex-col items-start col-span-12 gap-y-3 sm:col-span-6 xl:col-span-4">
-      <img
+      <Image
+        alt=""
         src={article.img}
-        className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56" />
+        className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
+      />
       <p
         className="bg-secondary-container flex items-center leading-none text-sm font-medium text-on-secondary-container pt-1.5 pr-3 pb-1.5 pl-3
     rounded-full uppercase "

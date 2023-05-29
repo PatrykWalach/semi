@@ -108,6 +108,8 @@ export function Article({ article }: { article: ArticleData }) {
   return (
     <article className="text-on-surface flex flex-col items-start col-span-12 gap-y-3 sm:col-span-6 xl:col-span-4">
       <Image
+        width={500}
+        height={500}
         alt=""
         src={article.img}
         className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"

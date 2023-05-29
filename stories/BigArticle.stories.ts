@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ARTICLES } from "../app/Article";
 import { BigArticle } from "../app/BigArticle";
-import withDark from "../app/withDark";
 
 const meta: Meta<typeof BigArticle> = {
   title: "Home/BigArticle",
@@ -21,13 +20,3 @@ export const Default: Story = {
   args: { article: ARTICLES[0] },
 };
 
-
-export const Dark: Story = {
-  ...Default,
-  decorators: [withDark],
-  parameters: {
-    backgrounds: {
-      default: "dark",
-    },
-  },
-};

@@ -56,6 +56,8 @@ export function BigArticle({ article }: { article: ArticleData }) {
       <div className="w-full md:w-1/2">
         <div className="block">
           <Image
+            width={500}
+            height={500}
             alt=""
             src={article.img}
             className="object-cover rounded-lg max-h-64 sm:max-h-96 w-full h-full"

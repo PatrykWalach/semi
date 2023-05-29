@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ARTICLES } from "../app/Article";
 import { Articles } from "../app/Articles";
-import withDark from "../app/withDark";
+
  
 const meta: Meta<typeof Articles> = {
   title: "Home/Articles",
@@ -11,7 +11,7 @@ const meta: Meta<typeof Articles> = {
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "fullscreen",
+    grid: "fullscreen",
 
     chromatic: { viewports: [640, 768, 1280] },
   },
@@ -23,15 +23,5 @@ type Story = StoryObj<typeof Articles>;
 export const Default: Story = {
   args: {
     articles: ARTICLES,
-  },
-};
-
-export const Dark: Story = {
-  ...Default,
-  decorators: [withDark],
-  parameters: {
-    backgrounds: {
-      default: "dark",
-    },
   },
 };

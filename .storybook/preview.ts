@@ -1,19 +1,37 @@
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { Preview } from "@storybook/react";
 import "../app/globals.css";
+import withTheme from "../app/withTheme";
 
 const preview: Preview = {
-  parameters: {
-    backgrounds: {
-      default: "light",
-      values: [
-        {
-          name: "light",
-          value: "#FFFBFE",
-        },
-        { name: "dark", value: "#1C1B1F" },
-      ],
+  globalTypes: {
+    theme: {
+      description: "Theme for components",
+      defaultValue: "stacked",
+      toolbar: {
+        title: "Theme",
+        icon: "circlehollow",
+        items: [
+          { value: "stacked", title: "Stacked (default)" },
+          { value: "side-by-side", title: "Side by side" },
+          { value: "light", icon: "circlehollow", title: "Light" },
+          { value: "dark", icon: "circle", title: "Dark" },
+        ],
+        dynamicTitle: true,
+      },
     },
+    backgrounds: {
+      description: "Background",
+      defaultValue: "surface",
+      toolbar: {
+        icon: "photo",
+        items: ["clear", "surface", "inverse-surface"],
+      },
+    },
+  },
+  decorators: [withTheme],
+  parameters: {
+    layout: 'fullscreen',
     viewport: {
       viewports: {
         ...MINIMAL_VIEWPORTS,

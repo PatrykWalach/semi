@@ -13,7 +13,7 @@ const meta: Meta<typeof Header> = {
  
     chromatic: { viewports: [640, 1280] },
     backgrounds: {
-      default: "light-inverse",
+      default: "inverse-surface",
     },
   },
 };

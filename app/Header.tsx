@@ -1,19 +1,7 @@
 "use client";
-import { FormEventHandler, useState } from "react";
+import { useState } from "react";
 
-function Button(props) {
-  return (
-    <button className="bg-purple-400 px-4 rounded-xl py-2" {...props}></button>
-  );
-}
-
-export function Header({
-  onSearch,
-  children,
-}: {
-  onSearch?: FormEventHandler<HTMLFormElement>;
-  children: React.ReactNode;
-}) {
+export function Header({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -37,9 +25,8 @@ export function Header({
             className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-inverse-on-surface"
             aria-controls="navbar-solid-bg"
             aria-expanded={open}
-       
           >
-            <span className="sr-only" >Open main menu</span>
+            <span className="sr-only">Open main menu</span>
             <svg
               className="w-6 h-6"
               aria-hidden="true"

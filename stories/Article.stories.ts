@@ -8,7 +8,7 @@ const meta: Meta<typeof Article> = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {
-    backgrounds: { default: "light" },
+
   },
 };
 

@@ -9,7 +9,7 @@ const meta: Meta<typeof BigArticle> = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {
-    backgrounds: { default: "light" },
+
     chromatic: { viewports: [640, 768, 1280] },
   },
 };

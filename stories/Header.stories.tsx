@@ -25,7 +25,7 @@ export const Default: Story = {
   args: {
     children: (
       <Navigation>
-        <NavigationLink href="#">Home</NavigationLink>
+        <NavigationLink href="#" pathname="#">Home</NavigationLink>
         <NavigationLink href="#">About</NavigationLink>
       </Navigation>
     ),

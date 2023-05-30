@@ -5,9 +5,9 @@ export function Header({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="border-gray-200 bg-inverse-surface text-inverse-on-surface">
-      <div className="container mx-auto">
-        <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="">
+      <div className="">
+        <div className="flex flex-wrap items-center justify-between py-4">
           <a href="#" className="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
@@ -22,7 +22,7 @@ export function Header({ children }: { children: React.ReactNode }) {
             onClick={() => setOpen(!open)}
             data-collapse-toggle="navbar-solid-bg"
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-inverse-on-surface"
+            className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden hover:bg-primary-container focus:outline-none focus:ring-2 focus:ring-on-primary-container text-on-primary-container"
             aria-controls="navbar-solid-bg"
             aria-expanded={open}
           >
@@ -45,8 +45,7 @@ export function Header({ children }: { children: React.ReactNode }) {
             className={`${open ? "" : "hidden"} w-full md:block md:w-auto`}
             id="navbar-solid-bg"
           >
-              {children}
-
+            {children}
           </div>
         </div>
       </div>

@@ -68,6 +68,7 @@ const themes = {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -86,6 +87,8 @@ module.exports = {
     },
   },
   plugins: [
+    require("@tailwindcss/typography"),
+
     plugin(({ addBase }) => {
       addBase({
         ":root": themes.light,

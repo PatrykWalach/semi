@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import { Header } from "@/app/Header";
+import Navigation from "@/app/Navigation";
+import NavigationLink from "@/app/NavigationLink";
+import type { Meta, ReactRenderer, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import { Header } from "../app/Header";
-import { HeaderLink } from "../app/HeaderLink";
+import type { PlayFunction } from "@storybook/types";
 
 const meta: Meta<typeof Header> = {
   title: "Layout/Header",
@@ -13,32 +15,19 @@ const meta: Meta<typeof Header> = {
     grid: "fullscreen",
     chromatic: { viewports: [640, 1280] },
   },
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          display: "contents",
-          background: "mageneta",
-        }}
-      >
-        <Story></Story>
-      </div>
-    ),
-  ],
 };
 
 export default meta;
 type Story = StoryObj<typeof Header>;
 
+
 export const Default: Story = {
   args: {
     children: (
-      <>
-        <HeaderLink href="#" active>
-          Home
-        </HeaderLink>
-        <HeaderLink href="#">About</HeaderLink>
-      </>
+      <Navigation>
+        <NavigationLink href="#">Home</NavigationLink>
+        <NavigationLink href="#">About</NavigationLink>
+      </Navigation>
     ),
   },
 };
@@ -51,15 +40,25 @@ export const Open: Story = {
     },
     chromatic: { viewports: [640] },
   },
-  async play({ canvasElement }) {
+  play: withinGrid(async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    for (const grid of canvas.getAllByTestId("grid")) {
-      await userEvent.click(
-        within(grid).getByRole("button", {
-          name: "Open main menu",
-        })
-      );
-    }
-  },
+    await userEvent.click(
+      canvas.getByRole("button", {
+        name: "Open main menu",
+      })
+    );
+  }),
 };
+
+function withinGrid(
+  play?: PlayFunction<ReactRenderer>
+): PlayFunction<ReactRenderer> {
+  return async (args) => {
+    const canvas = within(args.canvasElement);
+
+    for (const grid of canvas.getAllByTestId("grid")) {
+      await play?.({ ...args, canvasElement: grid });
+    }
+  };
+}

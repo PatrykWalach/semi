@@ -1,7 +1,9 @@
 import { Inter } from "next/font/google";
 import { Header } from "./Header";
-import { HeaderLink } from "./HeaderLink";
+
 import "./globals.css";
+import Navigation from "./Navigation";
+import NavigationLink from "./NavigationLink";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +21,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header>
-          <HeaderLink active href="">
-            Blog
-          </HeaderLink>
-          <HeaderLink href="">About</HeaderLink>
-          <HeaderLink href="">Eula</HeaderLink>
-          <HeaderLink href="">Contact</HeaderLink>
+          <Navigation>
+            <NavigationLink href="/">Home</NavigationLink>
+            <NavigationLink href="/about">About</NavigationLink>
+            <NavigationLink href="/eula">Eula</NavigationLink>
+            <NavigationLink href="/contact">Contact</NavigationLink>
+          </Navigation>
         </Header>
 
         {children}

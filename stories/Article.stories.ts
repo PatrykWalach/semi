@@ -1,5 +1,5 @@
+import { ARTICLES, Article } from "@/app/Article";
 import type { Meta, StoryObj } from "@storybook/react";
-import { ARTICLES, Article } from "../app/Article";
 
 const meta: Meta<typeof Article> = {
   title: "Home/Article",

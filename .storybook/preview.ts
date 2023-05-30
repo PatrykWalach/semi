@@ -31,7 +31,19 @@ const preview: Preview = {
   },
   decorators: [withTheme],
   parameters: {
-    layout: 'fullscreen',
+    backgrounds: {
+      values: {
+        surface: {
+          background: "rgb(var(--surface))",
+          color: "rgb(var(--on-surface))",
+        },
+        "inverse-surface": {
+          background: "rgb(var(--inverse-surface))",
+          color: "rgb(var(--inverse-on-surface))",
+        },
+      },
+    },
+    layout: "fullscreen",
     viewport: {
       viewports: {
         ...MINIMAL_VIEWPORTS,

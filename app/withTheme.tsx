@@ -35,19 +35,20 @@ function Wrapper({
 }) {
   const layout = context.parameters.grid ?? "padded";
 
+ 
+
   const background =
-    context.parameters.backgrounds?.default ??
-    context.globals.backgrounds ??
-    "surface";
+    context.parameters.backgrounds.values[
+      context.parameters.backgrounds?.default ??
+        context.globals.backgrounds ??
+        "surface"
+    ];
 
   return (
     <div
       data-testid="grid"
       style={{
-        ...(background !== "clear" && {
-          background: `rgb(var(--${background}))`,
-          color: `rgb(var(--on-${background}))`,
-        }),
+        ...background,
         ...(context.parameters.layout === "centered" && {
           justifyContent: "center",
           alignItems: "center",

@@ -8,7 +8,7 @@ export function Header({ children }: { children: React.ReactNode }) {
     <nav className="border-gray-200 bg-inverse-surface text-inverse-on-surface">
       <div className="container mx-auto">
         <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
               className="h-8 mr-3"
@@ -45,8 +45,7 @@ export function Header({ children }: { children: React.ReactNode }) {
             className={`${open ? "" : "hidden"} w-full md:block md:w-auto`}
             id="navbar-solid-bg"
           >
-              {children}
-
+            {children}
           </div>
         </div>
       </div>

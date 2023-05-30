@@ -4,7 +4,7 @@ import { ArticleData } from "./Article";
 export function BigArticle({ article }: { article: ArticleData }) {
   return (
     <article className="text-on-surface flex flex-col-reverse items-center sm:px-5 md:flex-row">
-      <div className="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
+      <div className="flex flex-col items-start justify-center w-full h-full py-6 md:w-1/2">
         <div
           className="flex flex-col items-start justify-center h-full gap-y-3 transform md:pr-10 lg:pr-16
       md:gap-y-5"

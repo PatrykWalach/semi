@@ -8,7 +8,7 @@ export function Header({ children }: { children: React.ReactNode }) {
     <nav className="">
       <div className="">
         <div className="flex flex-wrap items-center justify-between py-4">
-          <a href="#" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
               className="h-8 mr-3"

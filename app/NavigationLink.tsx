@@ -18,8 +18,8 @@ export default function NavigationLink({
       <a
         className={`block py-2 px-3 ${
           active
-            ? "md:text-inverse-primary bg-inverse-primary text-inverse-surface md:bg-transparent"
-            : "hover:md:text-inverse-primary hover:bg-surface md:hover:bg-transparent hover:text-on-surface"
+            ? "md:text-primary bg-primary text-surface md:bg-transparent"
+            : "hover:md:text-primary hover:bg-surface-variant md:hover:bg-transparent hover:text-on-surface-variant"
         } rounded md:p-0`}
         aria-current={active ? "page" : undefined}
         {...props}

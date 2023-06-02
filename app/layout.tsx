@@ -20,16 +20,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header>
-          <Navigation>
-            <NavigationLink href="/">Home</NavigationLink>
-            <NavigationLink href="/about">About</NavigationLink>
-            <NavigationLink href="/eula">Eula</NavigationLink>
-            <NavigationLink href="/contact">Contact</NavigationLink>
-          </Navigation>
-        </Header>
+        <div className="bg-surface text-on-surface">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+            <Header>
+              <Navigation>
+                <NavigationLink href="/">Home</NavigationLink>
+                <NavigationLink href="/about">About</NavigationLink>
+                <NavigationLink href="/eula">Eula</NavigationLink>
+                <NavigationLink href="/contact">Contact</NavigationLink>
+              </Navigation>
+            </Header>
 
-        {children}
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

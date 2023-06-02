@@ -12,7 +12,6 @@ const meta: Meta<typeof Header> = {
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    grid: "fullscreen",
     chromatic: { viewports: [640, 1280] },
   },
 };
@@ -25,7 +24,7 @@ export const Default: Story = {
   args: {
     children: (
       <Navigation>
-        <NavigationLink href="#">Home</NavigationLink>
+        <NavigationLink href="#" pathname="#">Home</NavigationLink>
         <NavigationLink href="#">About</NavigationLink>
       </Navigation>
     ),

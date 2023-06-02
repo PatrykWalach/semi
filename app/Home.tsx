@@ -7,11 +7,9 @@ export default function Home({
   articles: readonly ArticleData[];
 }) {
   return (
-    <main className="pt-12 pb-14 bg-surface text-on-surface">
-      <div className="divide-y container mx-auto">
-        <Articles articles={articles.slice(0, 4)}></Articles>
-        <Articles articles={articles.slice(4)}></Articles>
-      </div>
+    <main className="divide-y">
+      <Articles articles={articles.slice(0, 4)}></Articles>
+      <Articles articles={articles.slice(4)}></Articles>
     </main>
   );
 }

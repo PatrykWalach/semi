@@ -18,7 +18,7 @@ const meta: Meta<typeof NavigationLink> = {
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
 
-    chromatic: { viewports: [640, 1280] },
+    chromatic: { viewports: [360, 1280] },
     backgrounds: {
       default: "inverse-surface",
     },

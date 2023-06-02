@@ -11,7 +11,7 @@ const meta: Meta<typeof Articles> = {
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
 
-    chromatic: { viewports: [640, 768, 1280] },
+    chromatic: { viewports: [360, 768, 1280] },
   },
 };
 

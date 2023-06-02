@@ -136,8 +136,7 @@ export const ARTICLES = [
     },
     releasedAt: "23rd, March 2021",
     length: "1hr 20min",
-    content: `<h1>Heading of Article 6</h1>
-    <p>This is the content of Article 6. It may have embedded videos:</p>
+    content: `<p>This is the content of Article 6. It may have embedded videos:</p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/examplevideo" frameborder="0" allowfullscreen></iframe>`,
   },
 ] as const satisfies readonly ArticleData[];

@@ -12,7 +12,7 @@ const meta: Meta<typeof Header> = {
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
-    chromatic: { viewports: [640, 1280] },
+    chromatic: { viewports: [360, 1280] },
   },
 };
 
@@ -37,7 +37,7 @@ export const Open: Story = {
     viewport: {
       defaultViewport: "sm",
     },
-    chromatic: { viewports: [640] },
+    chromatic: { viewports: [360] },
   },
   play: withinGrid(async ({ canvasElement }) => {
     const canvas = within(canvasElement);

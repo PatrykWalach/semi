@@ -1,31 +1,37 @@
 {
-  "name": "app",
-  "version": "0.1.0",
   "private": true,
+  "sideEffects": false,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "remix dev",
+    "build": "remix build",
+    "start": "remix-serve build",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic"
+    "chromatic": "npx chromatic",
+    "typecheck": "tsc"
   },
   "dependencies": {
+    "@remix-run/node": "^2.0.0",
+    "@remix-run/react": "^2.0.0",
+    "@remix-run/serve": "^2.0.0",
     "@types/node": "20.2.3",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "isbot": "^3.6.13",
     "next": "13.4.3",
     "postcss": "8.4.23",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "3.3.2"
   },
   "devDependencies": {
+    "@remix-run/dev": "^2.0.0",
+    "@remix-run/eslint-config": "^2.0.0",
     "@storybook/addon-essentials": "^7.0.17",
     "@storybook/addon-interactions": "^7.0.17",
     "@storybook/addon-links": "^7.0.17",
@@ -36,8 +42,10 @@
     "@tailwindcss/typography": "^0.5.9",
     "chromatic": "^6.17.4",
     "eslint-plugin-storybook": "^0.6.12",
-    "storybook": "^7.0.17"
+    "storybook": "^7.0.17",
+    "typescript": "^5.1.6"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "app@0.1.0"
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

@@ -13,7 +13,7 @@
 /out/
 
 # production
-/build
+**/build
 
 # misc
 .DS_Store
@@ -36,3 +36,5 @@ next-env.d.ts
 
 # storybook
 /storybook-static
+
+.cache

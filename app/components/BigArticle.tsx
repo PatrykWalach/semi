@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArticleData } from "./Article";
+import { Link } from "@remix-run/react";
 
 export function BigArticle({ article }: { article: ArticleData }) {
   return (
@@ -30,20 +31,20 @@ export function BigArticle({ article }: { article: ArticleData }) {
             </p>
             <p className="inline text-xs font-medium">{article.category}</p>
           </div>
-          <a
+          <Link
             className="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"
-            href={`/article/${article.id}`}
+            to={`/article/${article.id}`}
           >
             {article.title}
-          </a>
+          </Link>
           <div className="pt-2 pr-0 pb-0 pl-0">
             <p className="text-sm font-medium inline">author:</p>
-            <a
+            <Link
               className="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1 underline"
-              href={`/user/${article.author.id}`}
+              to={`/user/${article.author.id}`}
             >
               {article.author.name}
-            </a>
+            </Link>
             <p className="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">
               · {article.releasedAt} ·
             </p>

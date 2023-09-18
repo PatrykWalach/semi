@@ -31,14 +31,19 @@ type Story = StoryObj<typeof NavigationLink>;
 export const Default: Story = {
   args: {
     children: "Home",
-    href: "#",
+    href: "/",
   },
- 
 };
 
 export const Active: Story = {
   args: {
     ...Default.args,
-    pathname: "#",
+  },
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: "/",
+      },
+    },
   },
 };

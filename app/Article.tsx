@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export interface ArticleData {
   id: number;
@@ -158,20 +159,20 @@ export function Article({ article }: { article: ArticleData }) {
       >
         {article.category}
       </p>
-      <a
+      <Link
         className="text-lg font-bold sm:text-xl md:text-2xl"
         href={`/article/${article.id}`}
       >
         {article.title}
-      </a>
+      </Link>
       <p className="text-sm">{article.description}</p>
       <div className="pt-2 pr-0 pb-0 pl-0">
-        <a
+        <Link
           className="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline"
           href={`/user/${article.author.id}`}
         >
           {article.author.name}
-        </a>
+        </Link>
         <p className="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">
           · {article.releasedAt} ·
         </p>

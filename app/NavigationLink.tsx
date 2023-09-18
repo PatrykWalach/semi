@@ -1,21 +1,19 @@
 "use client";
 import { usePathname } from "next/navigation";
+import Link from 'next/link'
 
 export default function NavigationLink({
-  pathname,
   ...props
 }: {
   children: React.ReactNode;
   href: string;
-  pathname?: string;
 }) {
-  const route = usePathname();
-  pathname ??= route ?? "/";
+  const pathname = usePathname();
   const active = pathname.startsWith(props.href);
 
   return (
     <li>
-      <a
+      <Link
         className={`block py-2 px-3 ${
           active
             ? "md:text-primary bg-primary text-surface md:bg-transparent"
@@ -23,7 +21,7 @@ export default function NavigationLink({
         } rounded md:p-0`}
         aria-current={active ? "page" : undefined}
         {...props}
-      ></a>
+      ></Link>
     </li>
   );
 }

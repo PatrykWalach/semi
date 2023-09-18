@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from 'next/link'
 
 export function Header({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -8,7 +9,7 @@ export function Header({ children }: { children: React.ReactNode }) {
     <nav className="">
       <div className="">
         <div className="flex flex-wrap items-center justify-between py-4">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
               className="h-8 mr-3"
@@ -17,7 +18,7 @@ export function Header({ children }: { children: React.ReactNode }) {
             <span className="self-center text-2xl font-semibold whitespace-nowrap">
               Top Blog
             </span>
-          </a>
+          </Link>
           <button
             onClick={() => setOpen(!open)}
             data-collapse-toggle="navbar-solid-bg"

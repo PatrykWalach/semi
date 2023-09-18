@@ -19,15 +19,21 @@ const meta: Meta<typeof Header> = {
 export default meta;
 type Story = StoryObj<typeof Header>;
 
-
 export const Default: Story = {
   args: {
     children: (
       <Navigation>
-        <NavigationLink href="#" pathname="#">Home</NavigationLink>
-        <NavigationLink href="#">About</NavigationLink>
+        <NavigationLink href="/">Home</NavigationLink>
+        <NavigationLink href="/about">About</NavigationLink>
       </Navigation>
     ),
+  },
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: "/",
+      },
+    },
   },
 };
 

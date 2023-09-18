@@ -31,6 +31,9 @@ const preview: Preview = {
   },
   decorators: [withTheme],
   parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
     backgrounds: {
       values: {
         surface: {

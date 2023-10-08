@@ -1,7 +1,7 @@
-import { ArticleData } from "./Article";
-import { Articles } from "./Articles";
+import { ArticleData } from "@/components/Article";
+import { Articles } from "@/components/Articles";
 
-export default function Home({
+export default function HomePage({
   articles,
 }: {
   articles: readonly ArticleData[];

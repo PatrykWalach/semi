@@ -1,5 +1,5 @@
-import { ARTICLES, ArticleData } from "./Article";
-import Home from "./Home";
+import { ARTICLES, ArticleData } from "@/components/Article";
+import HomePage from "./HomePage";
 
 function getArticles() {
   return new Promise<ArticleData[]>((resolve) =>
@@ -10,5 +10,5 @@ function getArticles() {
 export default async function Route() {
   const articles = await getArticles();
 
-  return <Home articles={articles}></Home>;
+  return <HomePage articles={articles}></HomePage>;
 }

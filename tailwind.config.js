@@ -1,3 +1,4 @@
+
 const plugin = require("tailwindcss/plugin");
 
 const themes = {
@@ -92,6 +93,7 @@ module.exports = {
     plugin(({ addBase }) => {
       addBase({
         ":root": themes.light,
+        ".light": themes.light,
         // "@media (prefers-color-scheme: dark)": {
         //   ":root": themes.dark,
         // },

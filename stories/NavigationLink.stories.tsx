@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Navigation from "@/app/Navigation";
-import NavigationLink from "@/app/NavigationLink";
+import Navigation from "@/components/Navigation";
+import NavigationLink from "@/components/NavigationLink";
 
 const meta: Meta<typeof NavigationLink> = {
   title: "Layout/NavigationLink",
@@ -32,6 +32,20 @@ export const Default: Story = {
   args: {
     children: "Home",
     href: "/",
+  },
+};
+
+export const Dark: Story = {
+  ...Default,
+  parameters: {
+    theme: "dark",
+  },
+};
+
+export const Rtl: Story = {
+  ...Default,
+  parameters: {
+    dir: "rtl",
   },
 };
 

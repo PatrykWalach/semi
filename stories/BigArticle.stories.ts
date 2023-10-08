@@ -1,5 +1,5 @@
-import { ARTICLES } from "@/app/Article";
-import { BigArticle } from "@/app/BigArticle";
+import { ARTICLES } from "@/components/Article";
+import { BigArticle } from "@/components/BigArticle";
 import type { Meta, StoryObj } from "@storybook/react";
 
 
@@ -18,4 +18,19 @@ type Story = StoryObj<typeof BigArticle>;
 
 export const Default: Story = {
   args: { article: ARTICLES[0] },
+};
+
+
+export const Dark: Story = {
+  ...Default,
+  parameters: {
+    theme: "dark",
+  },
+};
+
+export const Rtl: Story = {
+  ...Default,
+  parameters: {
+    dir: "rtl",
+  },
 };

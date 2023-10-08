@@ -1,22 +1,22 @@
 import Image from "next/image";
+import Link from 'next/link';
 import { ArticleData } from "./Article";
-import Link from 'next/link'
 
 export function BigArticle({ article }: { article: ArticleData }) {
   return (
     <article className="text-on-surface flex flex-col-reverse items-center md:flex-row">
       <div className="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
         <div
-          className="flex flex-col items-start justify-center h-full gap-y-3 transform md:pr-10 lg:pr-16
+          className="flex flex-col items-start justify-center h-full gap-y-3 transform md:pe-10 lg:pe-16
       md:gap-y-5"
         >
           <div
-            className="bg-secondary-container flex items-center leading-none rounded-full pt-1.5 pr-3 pb-1.5 pl-2
+            className="bg-secondary-container flex items-center leading-none rounded-full pt-1.5 pe-3 pb-1.5 ps-2
         uppercase "
           >
             <p className="inline">
               <svg
-                className="w-3.5 h-3.5 mr-1"
+                className="w-3.5 h-3.5 me-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,18 +37,18 @@ export function BigArticle({ article }: { article: ArticleData }) {
           >
             {article.title}
           </Link>
-          <div className="pt-2 pr-0 pb-0 pl-0">
+          <div className="pt-2 pe-0 pb-0 ps-0">
             <p className="text-sm font-medium inline">author:</p>
             <Link
-              className="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1 underline"
+              className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1 underline"
               href={`/user/${article.author.id}`}
             >
               {article.author.name}
             </Link>
-            <p className="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">
+            <p className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1">
               · {article.releasedAt} ·
             </p>
-            <p className="text-on-surface/[.38] text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">
+            <p className="text-on-surface/[.38] text-sm font-medium inline mt-0 me-1 mb-0 ms-1">
               {article.length}. read
             </p>
           </div>

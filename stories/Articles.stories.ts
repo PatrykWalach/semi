@@ -1,5 +1,5 @@
-import { ARTICLES } from "@/app/Article";
-import { Articles } from "@/app/Articles";
+import { ARTICLES } from "@/components/Article";
+import { Articles } from "@/components/Articles";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Articles> = {
@@ -21,5 +21,19 @@ type Story = StoryObj<typeof Articles>;
 export const Default: Story = {
   args: {
     articles: ARTICLES,
+  },
+};
+
+export const Dark: Story = {
+  ...Default,
+  parameters: {
+    theme: "dark",
+  },
+};
+
+export const Rtl: Story = {
+  ...Default,
+  parameters: {
+    dir: "rtl",
   },
 };

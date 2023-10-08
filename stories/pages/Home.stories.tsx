@@ -1,6 +1,6 @@
-import { ARTICLES } from "@/app/Article";
-import Home from "@/app/Home";
-import Layout from "@/app/layout";
+import HomePage from "@/app/HomePage";
+import Layout from "@/app/Root";
+import { ARTICLES } from "@/components/Article";
 import type { Meta, StoryObj } from "@storybook/react";
 // import Home from "@/app/page";
 
@@ -21,6 +21,21 @@ type Story = StoryObj<typeof Layout>;
 
 export const Default: Story = {
   args: {
-    children: <Home articles={ARTICLES}></Home>,
+    children: <HomePage articles={ARTICLES}></HomePage>,
+  },
+};
+
+
+export const Dark: Story = {
+  ...Default,
+  parameters: {
+    theme: "dark",
+  },
+};
+
+export const Rtl: Story = {
+  ...Default,
+  parameters: {
+    dir: "rtl",
   },
 };

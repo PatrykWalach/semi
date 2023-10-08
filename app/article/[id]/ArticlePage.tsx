@@ -1,7 +1,7 @@
-import { ArticleData } from "@/app/Article";
-import { BigArticle } from "@/app/BigArticle";
+import { ArticleData } from "@/components/Article";
+import { BigArticle } from "@/components/BigArticle";
 
-export default function Article({ article }: { article: ArticleData }) {
+export default function ArticlePage({ article }: { article: ArticleData }) {
   return (
     <main className="bg-surface text-on-surface">
       <div className="container mx-auto py-4 grid gap-8">

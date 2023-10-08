@@ -1,6 +1,6 @@
-import { Header } from "@/app/Header";
-import Navigation from "@/app/Navigation";
-import NavigationLink from "@/app/NavigationLink";
+import { Header } from "@/components/Header";
+import Navigation from "@/components/Navigation";
+import NavigationLink from "@/components/NavigationLink";
 import type { Meta, ReactRenderer, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import type { PlayFunction } from "@storybook/types";
@@ -34,6 +34,20 @@ export const Default: Story = {
         pathname: "/",
       },
     },
+  },
+};
+
+export const Dark: Story = {
+  ...Default,
+  parameters: {
+    theme: "dark",
+  },
+};
+
+export const Rtl: Story = {
+  ...Default,
+  parameters: {
+    dir: "rtl",
   },
 };
 

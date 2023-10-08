@@ -1,5 +1,5 @@
-import { ARTICLES, ArticleData } from "@/app/Article";
-import Article from "./Article";
+import { ARTICLES, ArticleData } from "@/components/Article";
+import ArticlePage from "./ArticlePage";
 
 function getArticle(id: number) {
   return new Promise<ArticleData>((resolve, reject) =>
@@ -21,5 +21,5 @@ export default async function Page({
 }) {
   const article = await getArticle(Number(params.id));
 
-  return <Article article={article}></Article>;
+  return <ArticlePage article={article}></ArticlePage>;
 }

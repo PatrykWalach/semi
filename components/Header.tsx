@@ -1,6 +1,6 @@
 "use client";
+import Link from 'next/link';
 import { useState } from "react";
-import Link from 'next/link'
 
 export function Header({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -12,7 +12,7 @@ export function Header({ children }: { children: React.ReactNode }) {
           <Link href="/" className="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8 mr-3"
+              className="h-8 me-3"
               alt="Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap">
@@ -23,7 +23,7 @@ export function Header({ children }: { children: React.ReactNode }) {
             onClick={() => setOpen(!open)}
             data-collapse-toggle="navbar-solid-bg"
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden hover:bg-primary-container focus:outline-none focus:ring-2 focus:ring-on-primary-container text-on-primary-container"
+            className="inline-flex items-center p-2 ms-3 text-sm rounded-lg md:hidden hover:bg-primary-container focus:outline-none focus:ring-2 focus:ring-on-primary-container text-on-primary-container"
             aria-controls="navbar-solid-bg"
             aria-expanded={open}
           >

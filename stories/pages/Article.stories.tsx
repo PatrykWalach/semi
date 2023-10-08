@@ -1,6 +1,6 @@
-import { ARTICLES } from "@/app/Article";
-import Article from "@/app/article/[id]/Article";
-import Layout from "@/app/layout";
+import Layout from "@/app/Root";
+import ArticlePage from "@/app/article/[id]/ArticlePage";
+import { ARTICLES } from "@/components/Article";
 import type { Meta, StoryObj } from "@storybook/react";
 
 // import Home from "@/app/page";
@@ -22,36 +22,50 @@ type Story = StoryObj<typeof Layout>;
 
 export const Image: Story = {
   args: {
-    children: <Article article={ARTICLES[0]}></Article>,
+    children: <ArticlePage article={ARTICLES[0]}></ArticlePage>,
+  },
+};
+
+export const Dark: Story = {
+  ...Image,
+  parameters: {
+    theme: "dark",
+  },
+};
+
+export const Rtl: Story = {
+  ...Image,
+  parameters: {
+    dir: "rtl",
   },
 };
 
 export const BoldItalic: Story = {
   args: {
-    children: <Article article={ARTICLES[1]}></Article>,
+    children: <ArticlePage article={ARTICLES[1]}></ArticlePage>,
   },
 };
 
 export const List: Story = {
   args: {
-    children: <Article article={ARTICLES[2]}></Article>,
+    children: <ArticlePage article={ARTICLES[2]}></ArticlePage>,
   },
 };
 
 export const Blockquote: Story = {
   args: {
-    children: <Article article={ARTICLES[3]}></Article>,
+    children: <ArticlePage article={ARTICLES[3]}></ArticlePage>,
   },
 };
 
 export const Table: Story = {
   args: {
-    children: <Article article={ARTICLES[4]}></Article>,
+    children: <ArticlePage article={ARTICLES[4]}></ArticlePage>,
   },
 };
 
 export const Video: Story = {
   args: {
-    children: <Article article={ARTICLES[5]}></Article>,
+    children: <ArticlePage article={ARTICLES[5]}></ArticlePage>,
   },
 };

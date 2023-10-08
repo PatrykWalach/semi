@@ -1,18 +1,23 @@
 import { Decorator, StoryContext, StrictArgs } from "@storybook/react";
-import isChromatic from "chromatic/isChromatic";
 import { ReactNode } from "react";
 
-const withTheme: Decorator = (Story, context) => {
-  let theme = context.globals.theme;
+export const withDir: Decorator = (Story, context) => {
+  let dir = context.parameters.dir ?? context.globals.dir ?? "ltr";
 
-  if (isChromatic()) {
-    theme = "stacked";
-  }
+  return (
+    <div dir={dir}>
+      <Story></Story>
+    </div>
+  );
+};
+
+const withTheme: Decorator = (Story, context) => {
+  let theme = context.parameters.theme ?? context.globals.theme ?? "light";
 
   return (
     <div className={theme === "side-by-side" ? "grid-cols-2 grid" : "grid"}>
       {theme !== "dark" && (
-        <Wrapper context={context} className="">
+        <Wrapper context={context} className="light">
           <Story></Story>
         </Wrapper>
       )}
@@ -34,8 +39,6 @@ function Wrapper({
   children: ReactNode;
 }) {
   const layout = context.parameters.grid ?? "padded";
-
- 
 
   const background =
     context.parameters.backgrounds.values[

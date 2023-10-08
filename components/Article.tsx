@@ -154,7 +154,7 @@ export function Article({ article }: { article: ArticleData }) {
         className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
       />
       <p
-        className="bg-secondary-container flex items-center leading-none text-sm font-medium text-on-secondary-container pt-1.5 pr-3 pb-1.5 pl-3
+        className="bg-secondary-container flex items-center leading-none text-sm font-medium text-on-secondary-container pt-1.5 pe-3 pb-1.5 ps-3
     rounded-full uppercase "
       >
         {article.category}
@@ -166,17 +166,17 @@ export function Article({ article }: { article: ArticleData }) {
         {article.title}
       </Link>
       <p className="text-sm">{article.description}</p>
-      <div className="pt-2 pr-0 pb-0 pl-0">
+      <div className="pt-2 pe-0 pb-0 ps-0">
         <Link
-          className="inline text-xs font-medium mt-0 mr-1 mb-0 ml-0 underline"
+          className="inline text-xs font-medium mt-0 me-1 mb-0 ms-0 underline"
           href={`/user/${article.author.id}`}
         >
           {article.author.name}
         </Link>
-        <p className="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">
+        <p className="inline text-xs font-medium mt-0 me-1 mb-0 ms-1">
           · {article.releasedAt} ·
         </p>
-        <p className="inline text-xs font-medium text-on-surface/[.38] mt-0 mr-1 mb-0 ml-1">
+        <p className="inline text-xs font-medium text-on-surface/[.38] mt-0 me-1 mb-0 ms-1">
           {article.length}. read
         </p>
       </div>

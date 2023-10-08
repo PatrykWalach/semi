@@ -1,13 +1,13 @@
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { Preview } from "@storybook/react";
 import "../app/globals.css";
-import withTheme from "../app/withTheme";
+import withTheme, { withDir } from "../app/withTheme";
 
 const preview: Preview = {
   globalTypes: {
     theme: {
       description: "Theme for components",
-      defaultValue: "stacked",
+      defaultValue: "light",
       toolbar: {
         title: "Theme",
         icon: "circlehollow",
@@ -29,7 +29,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [withTheme],
+  decorators: [withTheme, withDir],
   parameters: {
     nextjs: {
       appDirectory: true,

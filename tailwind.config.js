@@ -1,5 +1,6 @@
-
 const plugin = require("tailwindcss/plugin");
+
+const { normalize } = require("tailwindcss/lib/util/dataTypes");
 
 const themes = {
   light: {
@@ -89,6 +90,28 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
+
+    plugin(({ matchVariant }) => {
+      matchVariant("has", (value) => `&:has(${normalize(value)})`, {
+        values: {},
+      });
+      matchVariant(
+        "group-has",
+        (value, { modifier }) =>
+          modifier
+            ? `:merge(.group\\/${modifier}):has(${normalize(value)}) &`
+            : `:merge(.group):has(${normalize(value)}) &`,
+        { values: {} }
+      );
+      matchVariant(
+        "peer-has",
+        (value, { modifier }) =>
+          modifier
+            ? `:merge(.peer\\/${modifier}):has(${normalize(value)}) ~ &`
+            : `:merge(.peer):has(${normalize(value)}) ~ &`,
+        { values: {} }
+      );
+    }),
 
     plugin(({ addBase }) => {
       addBase({

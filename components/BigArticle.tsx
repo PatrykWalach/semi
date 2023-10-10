@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleData } from "./Article";
-import { Chip } from "./Chip";
+import { Chip, ChipIcon } from "./Chip";
 
 export function BigArticle({ article }: { article: ArticleData }) {
   return (
@@ -13,7 +13,7 @@ export function BigArticle({ article }: { article: ArticleData }) {
         >
           <Link href={`/search?tag=${article.category}`}>
             <Chip>
-              <span className="inline">
+              <ChipIcon>
                 <svg
                   className="w-3.5 h-3.5 -ms-1"
                   fill="currentColor"
@@ -27,7 +27,7 @@ export function BigArticle({ article }: { article: ArticleData }) {
               0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                   />
                 </svg>
-              </span>
+              </ChipIcon>
               <span className="">{article.category}</span>
             </Chip>
           </Link>

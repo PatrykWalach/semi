@@ -1,6 +1,6 @@
 import { ArticleData } from "@/components/Article";
 import { Articles } from "@/components/Articles";
-import { Chip } from "@/components/Chip";
+import { Chip, ChipIcon } from "@/components/Chip";
 import Input from "@/components/Input";
 import Link from "next/link";
 
@@ -76,30 +76,32 @@ export default function SearchPage(props: {
                 <Chip key={tag}>
                   <span className="">{tag}</span>
                   <input type="hidden" name="tag" value={tag} />
-                  <Link
-                    href={`/search?${URLSearchParamsDelete(
-                      props.searchParams,
-                      "tag",
-                      tag
-                    )}`}
-                    replace
-                    className="-me-1"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-3 h-3"
+                  
+                  <ChipIcon>
+                    <Link
+                      href={`/search?${URLSearchParamsDelete(
+                        props.searchParams,
+                        "tag",
+                        tag
+                      )}`}
+                      replace
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-3 h-3"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </Link>
+                  </ChipIcon>
                 </Chip>
               );
             })}

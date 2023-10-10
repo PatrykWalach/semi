@@ -1,6 +1,7 @@
 import { ArticleData } from "@/components/Article";
 import { Articles } from "@/components/Articles";
 import { Chip, ChipIcon } from "@/components/Chip";
+import Form from "@/components/Form";
 import Input from "@/components/Input";
 import Link from "next/link";
 
@@ -18,6 +19,10 @@ function URLSearchParamsDelete(
 
   return next;
 }
+
+
+
+
 export default function SearchPage(props: {
  
   articles: readonly ArticleData[];
@@ -25,9 +30,11 @@ export default function SearchPage(props: {
 }) {
   const tags = props.searchParams.getAll('tag')
 
+
+
   return (
     <div>
-      <form action="" method="get">
+      <Form action="" method="get">
         <div className="grid gap-1">
           <Input placeholder="Search..." className="" required name="tag">
             <button
@@ -107,7 +114,7 @@ export default function SearchPage(props: {
             })}
           </div>{" "}
         </div>
-      </form>
+      </Form>
 
       <main className="divide-y">
         <Articles articles={props.articles}></Articles>

@@ -24,6 +24,12 @@ export const Default: Story = {
   },
 };
 
+export const NoArticles: Story = {
+  args: {
+    articles: [],
+  },
+};
+
 export const Dark: Story = {
   ...Default,
   parameters: {

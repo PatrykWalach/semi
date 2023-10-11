@@ -2,7 +2,7 @@ import { Chip, ChipIcon } from "@/components/Chip";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Chip> = {
-  title: "Home/Chip",
+  title: "Search/Chip",
   component: Chip,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],

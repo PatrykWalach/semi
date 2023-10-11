@@ -34,7 +34,7 @@ export default function SearchPage(props: {
 
   return (
     <div>
-      <Form action="" method="get">
+      <Form role="search" action="" method="get">
         <div className="grid gap-1">
           <Input placeholder="Search..." className="" required name="tag">
             <button
@@ -77,13 +77,12 @@ export default function SearchPage(props: {
                 d="M6 6h.008v.008H6V6z"
               />
             </svg>
-
             {tags.map((tag) => {
               return (
                 <Chip key={tag}>
                   <span className="">{tag}</span>
                   <input type="hidden" name="tag" value={tag} />
-                  
+        
                   <ChipIcon>
                     <Link
                       href={`/search?${URLSearchParamsDelete(

@@ -1,11 +1,15 @@
+
 import { ComponentPropsWithoutRef } from "react";
 
-export default function Input({ children, ...props }: ComponentPropsWithoutRef<"input">) {
+export const className =
+  "rounded-[1.25rem] bg-inverse-surface px-3 py-2 has-[input:focus]:ring has-[:invalid]:ring has-[:invalid]:ring-error ring-primary-container text-inverse-on-surface flex";
+
+export default function Input({
+  children,
+  ...props
+}: ComponentPropsWithoutRef<"input">) {
   return (
-    <div
-      className="rounded-full bg-inverse-surface px-3 py-2
-  has-[input:focus]:ring ring-primary-container text-inverse-on-surface flex"
-    >
+    <div className={className}>
       <input
         type="text"
         {...props}
@@ -15,4 +19,5 @@ export default function Input({ children, ...props }: ComponentPropsWithoutRef<"
     </div>
   );
 }
+
 

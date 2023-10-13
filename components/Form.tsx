@@ -1,34 +1,57 @@
-'use client'
+"use client";
 
-import { usePathname } from "next/navigation"
-import { useRouter } from "next/navigation"
-import { ComponentPropsWithoutRef } from "react"
+import { fromFormData } from "@/app/URLSearchParams";
+import { usePathname, useRouter } from "next/navigation";
+import { ComponentPropsWithoutRef } from "react";
 
-export default function Form(props: ComponentPropsWithoutRef<'form'> &{
-    replace?:boolean
-}){
-  const router = useRouter()
-  const pathname =usePathname()
+export default function Form({
+  replace,
+  ...props
+}: ComponentPropsWithoutRef<"form"> & {
+  replace?: boolean;
+}) {
+  const router = useRouter();
+  const pathname = usePathname();
 
-  return <form {...props} onSubmit={(e)=>{
-    props.onSubmit?.(e)
-    if(e.defaultPrevented){
-      return
-    }
+  return (
+    <form
+      {...props}
+      onSubmit={(e) => {
+        props.onSubmit?.(e);
+        if (e.defaultPrevented) {
+          return;
+        }
 
-    if(props.action instanceof Function){
-      return
-    }
-   
-    if(typeof props.method ==='string' && props.method.toLocaleLowerCase() !== 'get'){
-        return
-      }
+        const submitter = (e.nativeEvent as SubmitEvent).submitter;
+        const action =
+          submitter?.getAttribute("formaction") || props.action || pathname;
 
-      
+        console.log(submitter);
 
-      e.preventDefault();
-    (props.replace ? router.replace : router.push)(`${props.action || pathname}?${    new URLSearchParams(new FormData(e.currentTarget))}`)
+        if (action instanceof Function) {
+          return;
+        }
 
+        const method =
+          submitter?.getAttribute("formmethod") || props.method || "get";
+        e.preventDefault();
 
-  }}></form>
+        if (method.toLocaleLowerCase() === "get") {
+          console.log("replace");
+
+          (replace ? router.replace : router.push)(
+            `${action}?${fromFormData(new FormData(e.currentTarget))}`
+          );
+          return;
+        }
+
+        fetch(action, {
+          method,
+          body: new FormData(e.currentTarget),
+        })
+          .then(console.log)
+          .catch(console.error);
+      }}
+    ></form>
+  );
 }

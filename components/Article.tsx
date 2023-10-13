@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Chip } from "./Chip";
 
 export interface ArticleData {
   id: number;
@@ -153,12 +154,9 @@ export function Article({ article }: { article: ArticleData }) {
         src={article.img}
         className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
       />
-      <p
-        className="bg-secondary-container flex items-center leading-none text-sm font-medium text-on-secondary-container pt-1.5 pe-3 pb-1.5 ps-3
-    rounded-full uppercase "
-      >
-        {article.category}
-      </p>
+      <Link href={`/search?tag=${article.category}`}>
+        <Chip>{article.category}</Chip>
+      </Link>
       <Link
         className="text-lg font-bold sm:text-xl md:text-2xl"
         href={`/article/${article.id}`}

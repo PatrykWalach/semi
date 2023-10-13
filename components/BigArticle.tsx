@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 import { ArticleData } from "./Article";
+import { Chip, ChipIcon } from "./Chip";
 
 export function BigArticle({ article }: { article: ArticleData }) {
   return (
@@ -10,27 +11,26 @@ export function BigArticle({ article }: { article: ArticleData }) {
           className="flex flex-col items-start justify-center h-full gap-y-3 transform md:pe-10 lg:pe-16
       md:gap-y-5"
         >
-          <div
-            className="bg-secondary-container flex items-center leading-none rounded-full pt-1.5 pe-3 pb-1.5 ps-2
-        uppercase "
-          >
-            <p className="inline">
-              <svg
-                className="w-3.5 h-3.5 me-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0
-            00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755
-            1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1
-            0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                />
-              </svg>
-            </p>
-            <p className="inline text-xs font-medium">{article.category}</p>
-          </div>
+          <Link href={`/search?tag=${article.category}`}>
+            <Chip>
+              <ChipIcon>
+                <svg
+                  className="w-3.5 h-3.5 -ms-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0
+              00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755
+              1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1
+              0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </ChipIcon>
+              <span className="">{article.category}</span>
+            </Chip>
+          </Link>
           <Link
             className="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"
             href={`/article/${article.id}`}

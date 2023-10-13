@@ -8,7 +8,8 @@ function getArticles() {
 }
 
 export default async function Route() {
-  const articles = await getArticles();
+ 
+const articles = await getArticles();
 
   return <HomePage articles={articles}></HomePage>;
 }

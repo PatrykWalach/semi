@@ -14,7 +14,7 @@ export default function RegisterLayout(props: PropsWithChildren<{}>) {
                 height={750}
                 alt=""
                 src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png"
-                className="mix-blend-multiply"
+                className="mix-blend-multiply rtl:-scale-x-100"
               />
             </div>
           </div>
@@ -28,7 +28,7 @@ export default function RegisterLayout(props: PropsWithChildren<{}>) {
           </div>
           <svg
             viewBox="0 0 91 91"
-            className="absolute top-0 left-0 z-0 w-32 h-32 text-tertiary-container
+            className="absolute top-0 start-0 z-0 w-32 h-32 text-tertiary-container
           fill-current"
           >
             <g stroke="none" strokeWidth="1" fillRule="evenodd">
@@ -120,7 +120,7 @@ export default function RegisterLayout(props: PropsWithChildren<{}>) {
           </svg>
           <svg
             viewBox="0 0 91 91"
-            className="absolute bottom-0 right-0 z-0 w-32 h-32 text-primary-container
+            className="absolute bottom-0 end-0 z-0 w-32 h-32 text-primary-container
           fill-current"
           >
             <g stroke="none" strokeWidth="1" fillRule="evenodd">

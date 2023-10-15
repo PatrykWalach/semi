@@ -1,12 +1,12 @@
-import LoginPage from "@/app/login/LoginPage";
+import RegisterPage from "@/app/register/RegisterPage";
 import RegisterLayout from "@/app/register/RegisterLayout";
 import Layout from "@/app/Root";
 import type { Meta, StoryObj } from "@storybook/react";
 // import Home from "@/app/page";
 
 const meta: Meta<typeof Layout> = {
-  title: "Pages/Login",
-  component: LoginPage,
+  title: "Pages/Register",
+  component: RegisterPage,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {

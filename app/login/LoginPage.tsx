@@ -4,9 +4,9 @@ import Input from "@/components/Input";
 
 import { experimental_useFormState as useFormState } from "react-dom";
 import { login } from "../actions";
-import { FieldsetPendingDisabled } from "../write/FieldsetPendingDisabled";
+import { FieldsetPendingDisabled } from "./FieldsetPendingDisabled";
 
-export default function LoginPage(props: { searchParams: [string, string][] }) {
+export default function LoginPage() {
   const [state, action] = useFormState(login, {
     fields: { username: "" },
   });

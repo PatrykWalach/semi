@@ -13,7 +13,7 @@ type LoginState = {
 };
 
 export async function login(
-  prevState: LoginState,
+  _: LoginState,
   formData: FormData
 ): Promise<LoginState> {
   let errors: Record<string, string> = {};

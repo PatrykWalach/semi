@@ -1,8 +1,6 @@
 "use server";
 
-
-
-type LoginState = {
+export type LoginState = {
   errors?: {
     username?: string;
     password?: string;
@@ -16,17 +14,7 @@ export async function login(
   _: LoginState,
   formData: FormData
 ): Promise<LoginState> {
-  let errors: Record<string, string> = {};
-
-  if (Math.random()) {
-    errors.title = "Title required";
-  }
-
-  if (!formData.get("content")) {
-    errors.content = "Content required";
-  }
-  
-  await new Promise((resolve) => setTimeout(resolve, 10_000));
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 5_000));
 
   return {
     errors: {
@@ -34,6 +22,37 @@ export async function login(
     },
     fields: {
       username: String(formData.get("username")),
+    },
+  };
+}
+
+export type RegisterState = {
+  errors?: {
+    username?: string;
+    password?: string;
+    email?: string;
+  };
+  fields: {
+    username: string;
+    email: string;
+  };
+};
+
+export async function register(
+  _: RegisterState,
+  formData: FormData
+): Promise<RegisterState> {
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 5_000));
+
+  return {
+    errors: {
+      password: Math.random() > 0.5 ? "Password too easy" : "",
+      username: Math.random() > 0.5 ? "Username taken" : "",
+      email: Math.random() > 0.5 ? "Email not valid" : "",
+    },
+    fields: {
+      username: String(formData.get("username")),
+      email: String(formData.get("email")),
     },
   };
 }

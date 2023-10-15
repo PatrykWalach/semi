@@ -1,10 +1,12 @@
 "use client";
 
-import Input from "@/components/Input";
-
-import { experimental_useFormState as useFormState } from "react-dom";
+import {
+  experimental_useFormStatus as useFormStatus,
+  experimental_useFormState as useFormState,
+} from "react-dom";
 import { login } from "../actions";
 import { FieldsetPendingDisabled } from "./FieldsetPendingDisabled";
+import { PropsWithChildren } from "react";
 
 export default function LoginPage() {
   const [state, action] = useFormState(login, {
@@ -12,41 +14,77 @@ export default function LoginPage() {
   });
 
   return (
-    <div className="flex flex-1 items-center justify-center">
-      <form
-        action={action}
-        className=""
-      >
-        <FieldsetPendingDisabled className="grid gap-5">
-          <h1 className="text-4xl font-semibold">Login</h1>
-          <label htmlFor="" className="text-xl">
-            Username
-            <Input
-              name="username"
+    <form action={action} className="w-full">
+      <FieldsetPendingDisabled>
+        <p className="w-full text-4xl font-medium text-center leading-snug">
+          Login now
+        </p>
+        <div className="w-full mt-6 me-0 mb-0 ms-0 relative space-y-8">
+          <div className="relative">
+            <input
+              required
               aria-invalid={state.errors?.username ? "true" : "false"}
-              required
-              defaultValue={state.fields.username || ""}
-            ></Input>
+              name="username"
+              defaultValue={state.fields.username}
+              placeholder="John"
+              type="text"
+              className="border peer disabled:border-on-surface/40 aria-[invalid=true]:disabled:border-on-surface/40 disabled:text-on-surface/40  placeholder-on-surface focus:outline-none aria-[invalid=true]:border-error
+                      focus:border-on-surface-variant w-full pt-4 pe-4 pb-4 ps-4 mt-2 me-0 mb-0 ms-0 text-base block bg-surface
+                      border-on-surface rounded-md"
+            />
+            <p
+              className="bg-surface pt-0 peer-aria-[invalid=true]:text-error pe-2 pb-0 ps-2 top-0 -mt-3 me-0 mb-0 ms-2 font-medium peer-disabled:text-on-surface/40  peer-aria-[invalid=true]:peer-disabled:text-on-surface/40 text-on-surface
+                    absolute"
+            >
+              Username
+            </p>
+          </div>
+          <PendingHidden>
             <span className="text-error text-sm">{state.errors?.username}</span>
-          </label>
-          <label htmlFor="" className="text-xl">
-            Password
-            <Input
-              type="password"
-              name="password"
-              aria-invalid={state.errors?.password ? "true" : "false"}
+          </PendingHidden>
+
+          <div className="relative">
+            <input
               required
-            ></Input>
+              aria-invalid={state.errors?.password ? "true" : "false"}
+              name="password"
+              placeholder="Password"
+              type="password"
+              className="border peer disabled:border-on-surface/40 aria-[invalid=true]:disabled:border-on-surface/40 disabled:text-on-surface/40  placeholder-on-surface focus:outline-none aria-[invalid=true]:border-error
+                      focus:border-on-surface-variant w-full pt-4 pe-4 pb-4 ps-4 mt-2 me-0 mb-0 ms-0 text-base block bg-surface
+                      border-on-surface rounded-md"
+            />
+            <p
+              className="bg-surface pt-0 peer-aria-[invalid=true]:text-error pe-2 pb-0 ps-2 top-0 -mt-3 me-0 mb-0 ms-2 font-medium peer-disabled:text-on-surface/40  peer-aria-[invalid=true]:peer-disabled:text-on-surface/40 text-on-surface
+                    absolute"
+            >
+              Password
+            </p>
+          </div>
+          <PendingHidden>
             <span className="text-error text-sm">{state.errors?.password}</span>
-          </label>
-          <button
-            type="submit"
-            className="bg-secondary-container disabled:opacity-50 px-4 py-2 text-on-secondary-container uppercase font-medium rounded-[1.25rem]"
-          >
-            login
-          </button>
-        </FieldsetPendingDisabled>
-      </form>
-    </div>
+          </PendingHidden>
+          <div className="relative">
+            <button
+              type="submit"
+              className="w-full disabled:opacity-50 disabled:hover:bg-primary inline-block pt-4 pe-5 pb-4 ps-5 text-xl font-medium text-center text-on-primary bg-primary
+                      rounded-lg transition duration-200 hover:bg-on-primary-container ease"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </FieldsetPendingDisabled>
+    </form>
   );
+}
+
+export function PendingHidden(props: PropsWithChildren<{}>) {
+  const { pending } = useFormStatus();
+
+  if (pending) {
+    return <></>;
+  }
+
+  return <>{props.children}</>;
 }

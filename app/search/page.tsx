@@ -13,9 +13,7 @@ function getArticles(args: { tags: string[] }) {
         .map((tag) => tag.toLocaleLowerCase().trim())
         .every(
           (tag) =>
-            article.category.some((category) =>
-              category.toLocaleLowerCase().includes(tag)
-            ) ||
+            article.category?.toLocaleLowerCase().includes(tag) ||
             article.content.toLocaleLowerCase().includes(tag) ||
             article.description.toLocaleLowerCase().includes(tag) ||
             article.title.toLocaleLowerCase().includes(tag) ||

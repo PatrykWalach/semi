@@ -85,7 +85,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
 
 function ConditionalLink(props: ComponentPropsWithoutRef<typeof Link>) {
   if (!props.href) {
-    return props.children;
+    return <>{props.children}</>
   }
   return <Link {...props}></Link>;
 }

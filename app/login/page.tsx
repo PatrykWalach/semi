@@ -1,12 +1,14 @@
 import { normalizeSearchParams } from "../URLSearchParams";
-import WritePage from "./WritePage";
+import LoginPage from "./LoginPage";
 
 export default function Page(props: {
   searchParams: Record<string, string | string[]>;
 }) {
   const searchParams = normalizeSearchParams(props.searchParams);
 
-
-
-  return <WritePage searchParams={searchParams}></WritePage>;
+  return (
+   
+      <LoginPage searchParams={searchParams}></LoginPage>
+  
+  );
 }

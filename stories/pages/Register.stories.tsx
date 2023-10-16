@@ -1,10 +1,10 @@
-import RegisterPage from "@/app/register/RegisterPage";
+import { RegisterFieldset as RegisterPage } from "@/app/register/RegisterPage";
 import RegisterLayout from "@/app/register/RegisterLayout";
 import Layout from "@/app/Root";
 import type { Meta, StoryObj } from "@storybook/react";
 // import Home from "@/app/page";
 
-const meta: Meta<typeof Layout> = {
+const meta: Meta<typeof RegisterPage> = {
   title: "Pages/Register",
   component: RegisterPage,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
@@ -18,7 +18,13 @@ const meta: Meta<typeof Layout> = {
     (Story) => (
       <Layout>
         <RegisterLayout>
-          <Story></Story>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <Story></Story>
+          </form>
         </RegisterLayout>
       </Layout>
     ),
@@ -26,9 +32,22 @@ const meta: Meta<typeof Layout> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Layout>;
+type Story = StoryObj<typeof RegisterPage>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: { fields: { username: "User", email: "" } },
+};
+
+export const Disabled: Story = { args: { ...Default.args, disabled: true } };
+
+export const Error: Story = {
+  args: {
+    ...Default.args,
+    errors: {
+      username: "Username taken",
+    },
+  },
+};
 
 export const Dark: Story = {
   ...Default,

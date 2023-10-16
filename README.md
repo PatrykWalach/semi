@@ -37,6 +37,18 @@ Visual testing
 
 
 
+
+
+## Taillwindcss
+
+zalety:
+ - umożliwa szybkie pisanie stylów dzięki domyślnie wbudowanym pluginom
+ - style są nakładane w html co pozwala uniknąc problemów z nazewnictwem klas css, kolokacją i importem plików css, gromadzeniem się nieużywanych stylów.
+
+wady:
+ - brak kontroli co do kolejności generowanych stylów `hover:y` `disabled:x` `disabled:hover:x`
+ - nadpisywanie stylów jest utrudnione
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -1,6 +1,7 @@
 "use client";
-import Link from 'next/link';
+import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export function Header({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -10,7 +11,9 @@ export function Header({ children }: { children: React.ReactNode }) {
       <div className="">
         <div className="flex flex-wrap items-center justify-between py-4">
           <Link href="/" className="flex items-center">
-            <img
+            <Image
+              width={32}
+              height={32}
               src="https://flowbite.com/docs/images/logo.svg"
               className="h-8 me-3"
               alt="Logo"

@@ -4,21 +4,9 @@ import { Chip, ChipIcon } from "@/components/Chip";
 import Form from "@/components/Form";
 import Input from "@/components/Input";
 import Link from "next/link";
+import { URLSearchParamsDelete } from "../URLSearchParams";
 
-function URLSearchParamsDelete(
-  searchParams: URLSearchParams,
-  name: string,
-  value: string
-) {
-  const next = new URLSearchParams();
-  for (const [name1, value1] of searchParams.entries()) {
-    if (name1 !== name || value1 !== value) {
-      next.append(name1, value1);
-    }
-  }
 
-  return next;
-}
 
 
 
@@ -34,7 +22,7 @@ export default function SearchPage(props: {
 
   return (
     <div>
-      <Form role="search" action="" method="get">
+      <Form role="search"  method="get">
         <div className="grid gap-1">
           <Input placeholder="Search..." className="" required name="tag">
             <button

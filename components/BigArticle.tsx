@@ -1,16 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ComponentPropsWithoutRef } from "react";
 import { ArticleData } from "./Article";
 import { Chip, ChipIcon } from "./Chip";
 
-export function BigArticle({ article }: { article: ArticleData }) {
+export type BigArticleData = Omit<ArticleData, "id"> &
+  Partial<Pick<ArticleData, "id">>;
+
+export function BigArticle({ article }: { article: BigArticleData }) {
   return (
-    <article className="text-on-surface flex flex-col-reverse items-center md:flex-row">
-      <div className="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
-        <div
-          className="flex flex-col items-start justify-center h-full gap-y-3 transform md:pe-10 lg:pe-16
+    <article className="text-on-surface grid md:grid-cols-2 md:gap-10 lg:gap-16">
+      <div
+        className="flex row-start-2 md:row-start-1 flex-col py-6 mb-6 md:mb-0 items-start justify-center flex-1 gap-y-3
       md:gap-y-5"
-        >
+      >
+        {article.category && (
           <Link href={`/search?tag=${article.category}`}>
             <Chip>
               <ChipIcon>
@@ -31,30 +35,40 @@ export function BigArticle({ article }: { article: ArticleData }) {
               <span className="">{article.category}</span>
             </Chip>
           </Link>
-          <Link
-            className="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"
-            href={`/article/${article.id}`}
+        )}
+        <div className="max-w-full">
+          <ConditionalLink
+            className=""
+            href={article.id ? `/article/${article.id}` : ""}
           >
-            {article.title}
+            <p className="text-4xl overflow-hidden text-ellipsis font-bold leading-none lg:text-5xl xl:text-6xl">
+              {article.title}
+            </p>
+          </ConditionalLink>
+        </div>
+        <div className="pt-2 pe-0 pb-0 ps-0">
+          <p className="text-sm font-medium inline">author:</p>
+          <Link
+            className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1 underline"
+            href={`/user/${article.author.id}`}
+          >
+            {article.author.name}
           </Link>
-          <div className="pt-2 pe-0 pb-0 ps-0">
-            <p className="text-sm font-medium inline">author:</p>
-            <Link
-              className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1 underline"
-              href={`/user/${article.author.id}`}
-            >
-              {article.author.name}
-            </Link>
-            <p className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1">
-              · {article.releasedAt} ·
-            </p>
-            <p className="text-on-surface/[.38] text-sm font-medium inline mt-0 me-1 mb-0 ms-1">
-              {article.length}. read
-            </p>
-          </div>
+          <p className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1">
+            ·{" "}
+            {new Intl.DateTimeFormat("en", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            }).format(article.releasedAt)}{" "}
+            ·
+          </p>
+          <p className="text-on-surface/[.38] text-sm font-medium inline mt-0 me-1 mb-0 ms-1">
+            {article.length}. read
+          </p>
         </div>
       </div>
-      <div className="w-full md:w-1/2">
+      <div className="">
         <div className="block">
           <Image
             width={500}
@@ -67,4 +81,11 @@ export function BigArticle({ article }: { article: ArticleData }) {
       </div>
     </article>
   );
+}
+
+function ConditionalLink(props: ComponentPropsWithoutRef<typeof Link>) {
+  if (!props.href) {
+    return <>{props.children}</>
+  }
+  return <Link {...props}></Link>;
 }

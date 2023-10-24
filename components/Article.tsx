@@ -3,18 +3,18 @@ import Link from "next/link";
 import { Chip } from "./Chip";
 
 export interface ArticleData {
-  id: number;
+  id: string | number;
   author: { id: number; name: string };
-  category: string;
+  category: string | null;
   title: string;
   description: string;
   content: string;
   img: string;
   length: string;
-  releasedAt: string;
+  releasedAt: Date;
 }
 
-export const ARTICLES = [
+export const ARTICLES: ArticleData[] = [
   {
     id: 1,
     category: "New",
@@ -27,7 +27,7 @@ export const ARTICLES = [
       id: 1,
       name: "Jack Sparrow",
     },
-    releasedAt: "23rd, April 2021",
+    releasedAt: new Date(2021, 4, 23),
     length: "1hr 20min",
     content: `<p>This is the content of Article 1. It can contain multiple paragraphs, images, and links. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique convallis neque id consequat. Vivamus ac diam feugiat, condimentum turpis vel, mollis elit. Integer fringilla arcu quis mi rhoncus, nec sagittis nisi feugiat. Ut non leo ultricies, cursus lectus sed, vulputate arcu. Quisque id dictum mauris. Donec ultrices nunc ut tincidunt aliquam. Donec id erat felis. Nam faucibus dui non augue facilisis dapibus. Duis nec faucibus eros, in interdum massa. In pharetra nunc sed ultrices luctus.</p>
     <img src="https://images.unsplash.com/photo-1626314928277-1d373ddb6428?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mzd8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Sample Image">
@@ -46,7 +46,7 @@ export const ARTICLES = [
       id: 1,
       name: "Jack Sparrow",
     },
-    releasedAt: "23rd, March 2021",
+    releasedAt: new Date(2021, 2, 23),
     length: "1hr 20min",
     content: `<p>This is the content of Article 2. It can contain different formatting styles, such as bold and italic text. Mauris ultrices neque quis arcu maximus, eu feugiat tellus finibus. Maecenas lacinia urna eu lacus tincidunt, eget pellentesque nulla ultricies. Morbi congue magna a purus cursus, in laoreet sapien ultricies. Nulla in tempor lorem. Suspendisse luctus, mauris non interdum scelerisque, turpis diam tincidunt lacus, vel malesuada turpis tortor id nunc. Curabitur vehicula gravida lorem et hendrerit. Aliquam nec risus id est rutrum egestas. Aenean sagittis tincidunt felis, vel feugiat massa finibus in. Sed ac est ante.</p>
     <p><strong>This text is bold.</strong> Pellentesque ac tellus sed est blandit eleifend. In efficitur ante in orci finibus aliquam. Nulla facilisi. Ut in lorem nunc. Donec eu dolor ut sem elementum varius non ut nunc. Nam id neque cursus, lacinia dui vel, ullamcorper dui. Phasellus vitae posuere arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam non ligula in urna interdum ullamcorper. Donec vehicula leo vel sem gravida malesuada. Suspendisse eleifend felis ac sem sollicitudin, eget pulvinar felis porttitor.</p>
@@ -64,7 +64,7 @@ export const ARTICLES = [
       id: 1,
       name: "Jack Sparrow",
     },
-    releasedAt: "23rd, March 2021",
+    releasedAt: new Date(2021, 2, 23),
     length: "1hr 20min",
     content: `<p>This is the content of Article 3. It can include lists. Mauris eu libero lorem. Proin semper ante a leo laoreet, et facilisis turpis feugiat. Curabitur interdum nisl quis nisl iaculis venenatis. Maecenas sem mi, venenatis at turpis sed, finibus congue nunc. Nullam dapibus sollicitudin quam ac malesuada. Sed fermentum, ligula id consectetur bibendum, justo est convallis lectus, id dapibus sem purus ac tellus. Integer nec mi nec nibh feugiat scelerisque. Nulla facilisi. Fusce faucibus lobortis volutpat. Mauris sed tellus eget mi suscipit feugiat sed quis augue. Integer cursus nunc id posuere cursus. Sed feugiat justo eu eleifend vestibulum. Pellentesque porta purus elit, eu dapibus elit venenatis sit amet. Integer fermentum efficitur iaculis.</p>
     <ul>
@@ -86,7 +86,7 @@ export const ARTICLES = [
       id: 1,
       name: "Jack Sparrow",
     },
-    releasedAt: "23rd, March 2021",
+    releasedAt: new Date(2021, 2, 23),
     length: "1hr 20min",
     content: `<p>This is the content of Article 4. It may have blockquotes. Integer blandit euismod lectus ut rhoncus. Nam ut iaculis urna. Nunc laoreet tellus nec sapien dignissim sollicitudin. Suspendisse dignissim nunc in mauris ullamcorper tristique. Sed feugiat, dolor ut posuere hendrerit, nunc elit ultricies massa, et fermentum velit metus ut ex. Ut congue nunc ut sapien iaculis, vel tristique sem tempor. Proin eu mauris eu ipsum congue dictum. Fusce in vestibulum erat, eu aliquet metus. Maecenas semper nisl a mi tempor, eu fringilla erat ullamcorper. Vestibulum bibendum semper arcu a lobortis.</p>
     <blockquote>
@@ -106,7 +106,7 @@ export const ARTICLES = [
       id: 1,
       name: "Jack Sparrow",
     },
-    releasedAt: "23rd, March 2021",
+    releasedAt: new Date(2021, 2, 23),
     length: "1hr 20min",
     content: `<p>This is the content of Article 5. It may contain tables:</p>
     <table>
@@ -136,13 +136,13 @@ export const ARTICLES = [
       id: 1,
       name: "Jack Sparrow",
     },
-    releasedAt: "23rd, March 2021",
+    releasedAt: new Date(2021, 2, 23),
     length: "1hr 20min",
     content: `<h1>Heading of Article 6</h1>
     <p>This is the content of Article 6. It may have embedded videos:</p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/examplevideo" frameborder="0" allowfullscreen></iframe>`,
   },
-] as const satisfies readonly ArticleData[];
+] satisfies ArticleData[];
 
 export function Article({ article }: { article: ArticleData }) {
   return (
@@ -154,9 +154,11 @@ export function Article({ article }: { article: ArticleData }) {
         src={article.img}
         className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
       />
-      <Link href={`/search?tag=${article.category}`}>
-        <Chip>{article.category}</Chip>
-      </Link>
+      {article.category && (
+        <Link href={`/search?tag=${article.category}`}>
+          <Chip>{article.category}</Chip>
+        </Link>
+      )}
       <Link
         className="text-lg font-bold sm:text-xl md:text-2xl"
         href={`/article/${article.id}`}
@@ -172,7 +174,13 @@ export function Article({ article }: { article: ArticleData }) {
           {article.author.name}
         </Link>
         <p className="inline text-xs font-medium mt-0 me-1 mb-0 ms-1">
-          · {article.releasedAt} ·
+          ·{" "}
+          {new Intl.DateTimeFormat("en", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          }).format(article.releasedAt)}{" "}
+          ·
         </p>
         <p className="inline text-xs font-medium text-on-surface/[.38] mt-0 me-1 mb-0 ms-1">
           {article.length}. read

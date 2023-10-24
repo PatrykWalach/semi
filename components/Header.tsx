@@ -1,7 +1,7 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
 
 export function Header({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);

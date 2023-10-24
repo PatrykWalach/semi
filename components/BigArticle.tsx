@@ -11,7 +11,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
   return (
     <article className="text-on-surface grid md:grid-cols-2 md:gap-10 lg:gap-16">
       <div
-        className="flex flex-col py-6 mb-6 md:mb-0 items-start justify-center flex-1 gap-y-3
+        className="flex row-start-2 md:row-start-1 flex-col py-6 mb-6 md:mb-0 items-start justify-center flex-1 gap-y-3
       md:gap-y-5"
       >
         {article.category && (

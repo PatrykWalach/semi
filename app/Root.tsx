@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Root(props: PropsWithChildren<{}>) {
   return (
-    <div className={`bg-surface text-on-surface ${inter.className}`}>
-      <div className="mx-auto min-h-screen flex flex-col max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+    <div className={`bg-surface min-h-screen text-on-surface ${inter.className}`}>
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <Header>
           <Navigation>
             <NavigationLink href="/">Home</NavigationLink>

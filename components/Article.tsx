@@ -144,15 +144,17 @@ export const ARTICLES: ArticleData[] = [
   },
 ] satisfies ArticleData[];
 
+import "./Article.css";
+
 export function Article({ article }: { article: ArticleData }) {
   return (
-    <article className="text-on-surface flex flex-col items-start col-span-12 gap-y-3 sm:col-span-6 xl:col-span-4">
+    <article className="article">
       <Image
         width={500}
         height={500}
         alt=""
         src={article.img}
-        className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
+        className="article__img"
       />
       {article.category && (
         <Link href={`/search?tag=${article.category}`}>
@@ -160,20 +162,20 @@ export function Article({ article }: { article: ArticleData }) {
         </Link>
       )}
       <Link
-        className="text-lg font-bold sm:text-xl md:text-2xl"
+        className="article__title"
         href={`/article/${article.id}`}
       >
         {article.title}
       </Link>
-      <p className="text-sm">{article.description}</p>
-      <div className="pt-2 pe-0 pb-0 ps-0">
+      <p className="article__description">{article.description}</p>
+      <div className="article__footer">
         <Link
-          className="inline text-xs font-medium mt-0 me-1 mb-0 ms-0 underline"
+          className="article__author"
           href={`/user/${article.author.id}`}
         >
           {article.author.name}
         </Link>
-        <p className="inline text-xs font-medium mt-0 me-1 mb-0 ms-1">
+        <p className="article__release-date">
           ·{" "}
           {new Intl.DateTimeFormat("en", {
             day: "numeric",
@@ -182,7 +184,7 @@ export function Article({ article }: { article: ArticleData }) {
           }).format(article.releasedAt)}{" "}
           ·
         </p>
-        <p className="inline text-xs font-medium text-on-surface/[.38] mt-0 me-1 mb-0 ms-1">
+        <p className="article__length">
           {article.length}. read
         </p>
       </div>

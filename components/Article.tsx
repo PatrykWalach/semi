@@ -168,14 +168,14 @@ export function Article({ article }: { article: ArticleData }) {
         {article.title}
       </Link>
       <span className="article__description">{article.description}</span>
-      <div className="article__footer">
+      <div className="article-footer">
         <Link
-          className="article__author"
+          className="acticle-footer__item"
           href={`/user/${article.author.id}`}
         >
           {article.author.name}
         </Link>
-        <span className="article__release-date">
+        <span className="acticle-footer__item">
           ·{" "}
           {new Intl.DateTimeFormat("en", {
             day: "numeric",
@@ -184,7 +184,7 @@ export function Article({ article }: { article: ArticleData }) {
           }).format(article.releasedAt)}{" "}
           ·
         </span>
-        <span className="article__length">
+        <span className="acticle-footer__item acticle-footer__item--accent">
           {article.length}. read
         </span>
       </div>

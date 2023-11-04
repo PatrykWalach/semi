@@ -44,13 +44,13 @@ export function BigArticle({ article }: { article: BigArticleData }) {
             <p className="article-big__title">{article.title}</p>
           </ConditionalLink>
         </div>
-        <div className="article__footer">
-          <span>author:</span>
-          <Link className="article__author" href={`/user/${article.author.id}`}>
+        <div className="article-footer">
+          <span class="article-footer__item">author:</span>
+          <Link className="article-footer__item" href={`/user/${article.author.id}`}>
             {article.author.name}
           </Link>
 
-          <span className="article__release-date">
+          <span className="article-footer__item">
             ·{" "}
             {new Intl.DateTimeFormat("en", {
               day: "numeric",
@@ -59,7 +59,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
             }).format(article.releasedAt)}{" "}
             ·
           </span>
-          <span className="article__length">{article.length}. read</span>
+          <span className="article-footer__item article-footer__item--accent">{article.length}. read</span>
         </div>
       </div>
       <div className="">

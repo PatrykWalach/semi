@@ -57,30 +57,22 @@
   line-height: 1.25rem;
 }
 
-.article__footer {
+.article-footer {
   padding-top: 0.5rem;
 }
 
-.article__author {
-  margin-inline-end: 0.25rem;
+.article-footer__item {
+  margin-inline: 0.25rem;
   text-decoration-line: underline;
-
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
 }
 
-.article__release-date {
-  margin-inline: 0.25rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 500;
+.article-footer__item:first-child {
+  margin-inline-start: 0;
 }
 
-.article__length {
+.article-footer__item--accent {
   color: rgb(var(--on-surface) / 0.38);
-  margin-inline: 0.25rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 500;
 }

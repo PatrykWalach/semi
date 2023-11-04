@@ -170,7 +170,7 @@ export function Article({ article }: { article: ArticleData }) {
       <span className="article__description">{article.description}</span>
       <div className="article-footer">
         <Link
-          className="article-footer__item"
+          className="article-footer__item article-footer__item--link"
           href={`/user/${article.author.id}`}
         >
           {article.author.name}

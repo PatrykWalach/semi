@@ -46,7 +46,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
         </div>
         <div className="article-footer">
           <span className="article-footer__item">author:</span>
-          <Link className="article-footer__item" href={`/user/${article.author.id}`}>
+          <Link className="article-footer__item article-footer__item--link" href={`/user/${article.author.id}`}>
             {article.author.name}
           </Link>
 

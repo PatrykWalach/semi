@@ -45,7 +45,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
           </ConditionalLink>
         </div>
         <div className="article-footer">
-          <span class="article-footer__item">author:</span>
+          <span className="article-footer__item">author:</span>
           <Link className="article-footer__item" href={`/user/${article.author.id}`}>
             {article.author.name}
           </Link>

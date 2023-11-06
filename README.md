@@ -1,13 +1,32 @@
 # Semi
 
+## Spis treści
+
+1. Ogólne wprowadzenie
+   1. Język CSS
+   2. BEM
+   3. Atomowy CSS
+   3. CSS in JS
+2.
+3.
+5.
+6. Narzędzia
+   1. Język JavaScript
+   2. React
+   3. Środowisko Node.js
+7. 
+8. 
 
 Links:
+
 - [site](https://semi-beta.vercel.app)
 - [storybook](https://master--646fb66e81a5f96d644f011a.chromatic.com)
 - [library](https://www.chromatic.com/library?appId=646fb66e81a5f96d644f011a&branch=master)
 
 ## Funkcje
+
 Wstęp do najczęściej wykorzystywanych funkcji języka css:
+
 - selektory
 - pseudo-selektory
 - nadpisywanie stylów
@@ -17,37 +36,37 @@ Wstęp do najczęściej wykorzystywanych funkcji języka css:
 - animacje
 
 Przykłady wykorzystania powyższych funkcji:
+
 - obsługa urządzeń o różnych rozdzielczościach
 - zmiana motywów
 - zmiana układu zależnie od języka
-- normalizacja stylów 
+- normalizacja stylów
 
 Styled-components:
+
 - czym jest CSS in js
-- dziedziczenie stylów 
+- dziedziczenie stylów
 
 Tailwindcss:
+
 - Jak działa kompilacja jit
 - tworzenie własnych pluginów
-
 
 CSS i konwencja "blok element modyfikator"
 
 Visual testing
 
-
-
-
-
 ## Taillwindcss
 
 zalety:
- - umożliwa szybkie pisanie stylów dzięki domyślnie wbudowanym pluginom
- - style są nakładane w html co pozwala uniknąc problemów z nazewnictwem klas css, kolokacją i importem plików css, gromadzeniem się nieużywanych stylów.
+
+- umożliwa szybkie pisanie stylów dzięki domyślnie wbudowanym pluginom
+- style są nakładane w html co pozwala uniknąc problemów z nazewnictwem klas css, kolokacją i importem plików css, gromadzeniem się nieużywanych stylów.
 
 wady:
- - brak kontroli co do kolejności generowanych stylów `hover:y` `disabled:x` `disabled:hover:x`
- - nadpisywanie stylów jest utrudnione
+
+- brak kontroli co do kolejności generowanych stylów `hover:y` `disabled:x` `disabled:hover:x`
+- nadpisywanie stylów jest utrudnione
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

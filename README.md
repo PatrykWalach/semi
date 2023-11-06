@@ -14,6 +14,7 @@
    1. Język JavaScript
    2. React
    3. Środowisko Node.js
+   4. Chromatic
 7. 
 8. 
 

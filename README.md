@@ -6,7 +6,7 @@
    1. Język CSS
    2. BEM
    3. Atomowy CSS
-   3. CSS in JS
+   3. CSS w JS
 2.
 3.
 5.

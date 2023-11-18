@@ -30,6 +30,7 @@ export function Header({ children }: { children: React.ReactNode }) {
             aria-controls="navbar-solid-bg"
             aria-expanded={open}
           >
+            <span className="button__name">Open main menu</span>
             <svg
               className="header__svg"
               aria-hidden="true"

@@ -47,8 +47,8 @@ export function Header({ children }: { children: React.ReactNode }) {
           </button>
           <div
             className={`${
-              open ? "" : "header__container--hidden"
-            } header__container`}
+              open ? "" : "header__container--hidden "
+            }header__container`}
             id="navbar-solid-bg"
           >
             {children}

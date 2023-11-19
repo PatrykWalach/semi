@@ -41,8 +41,9 @@
 }
 
 .register-layout__card {
-  padding: 2.5rem /* 40px */;  margin-top: 5rem/* 80px */;
-
+  padding: 2.5rem /* 40px */;
+  margin-top: 5rem /* 80px */;
+  max-width: 42rem /* 672px */;
 }
 
 @media (min-width: 1024px) {

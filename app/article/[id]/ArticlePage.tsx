@@ -1,6 +1,8 @@
 import { ArticleData } from "@/components/Article";
 import { BigArticle } from "@/components/BigArticle";
 
+import './ArticlePage.css';
+
 export default function ArticlePage({ article }: { article: ArticleData }) {
   return (
     <main className="article-page">

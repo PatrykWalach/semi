@@ -33,20 +33,20 @@
   border-radius: 0.5rem /* 8px */;
   color: rgb(var(--on-primary-container));
 
-  &:hover {
-    background-color: rgb(var(--primary-container));
-  }
+}
+.header__button:hover {
+  background-color: rgb(var(--primary-container));
+}
 
-  &:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
-      var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
-      calc(2px + var(--tw-ring-offset-width)) rgb(var(--on-primary-container));
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-      var(--tw-shadow, 0 0 #0000);
-  }
+.header__button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(2px + var(--tw-ring-offset-width)) rgb(var(--on-primary-container));
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
 }
 
 @media (min-width: 768px) {

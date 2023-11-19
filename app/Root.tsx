@@ -6,10 +6,12 @@ import { PropsWithChildren } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import './Root.css';
+
 export default function Root(props: PropsWithChildren<{}>) {
   return (
-    <div className={`bg-surface min-h-screen text-on-surface ${inter.className}`}>
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+    <div className={`root ${inter.className}`}>
+      <div className="root__container">
         <Header>
           <Navigation>
             <NavigationLink href="/">Home</NavigationLink>

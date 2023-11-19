@@ -1,5 +1,3 @@
-.home-page {
-  gap: 1px;
-  display: flex;
-  flex-direction: column;
+.home-page > * ~ * {
+  border-top-width: 1px;
 }

@@ -9,7 +9,7 @@ export default function HomePage({
   articles: readonly ArticleData[];
 }) {
   return (
-    <main className="home-page">
+    <main className="home-page divide-y">
       {Array.from({ length: Math.ceil(articles.length / 4) }, (_, i) => {
         return (
           <Articles

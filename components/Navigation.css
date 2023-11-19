@@ -1,0 +1,16 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  margin-top: 1rem /* 16px */;
+  border-radius: 0.5rem /* 8px */;
+}
+@media (min-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    gap: 2rem /* 32px */;
+    margin-top: 0px;
+    border-width: 0px;
+    gap: 0.25rem /* 4px */;
+  }
+}

@@ -7,21 +7,15 @@ export default function RegisterLayout(props: PropsWithChildren<{}>) {
   return (
     <div className="register-layout">
       <div className="register-layout__container">
-        <div className="">
-          <div className="">
-            <Image
-              priority
-              width={750}
-              height={750}
-              alt=""
-              src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png"
-              className="register-layout__img"
-            />
-          </div>
-        </div>
-        <div className="">
-          <div className="register-layout__card">{props.children}</div>
-        </div>
+        <Image
+          priority
+          width={750}
+          height={750}
+          alt=""
+          src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png"
+          className="register-layout__img"
+        />
+        <div className="register-layout__card">{props.children}</div>
         <svg
           viewBox="0 0 91 91"
           className="register-layout__swash register-layout__swash--top"

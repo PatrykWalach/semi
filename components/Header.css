@@ -62,14 +62,13 @@
 
 .header__container {
   width: 100%;
+}
 
-  &.header__container--hidden {
-    display: none;
-  }
+.header__container--hidden {
+  display: none;
 }
 
 @media (min-width: 768px) {
-  .header__container.header__container--hidden,
   .header__container {
     display: block;
     width: auto;

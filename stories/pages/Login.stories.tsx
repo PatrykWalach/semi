@@ -22,6 +22,7 @@ const meta: Meta<typeof LoginPage> = {
             onSubmit={(e) => {
               e.preventDefault();
             }}
+            className="w-full"
           >
             <Story></Story>
           </form>

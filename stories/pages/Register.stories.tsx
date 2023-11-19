@@ -1,6 +1,6 @@
-import { RegisterFieldset as RegisterPage } from "@/app/register/RegisterPage";
-import RegisterLayout from "@/app/register/RegisterLayout";
 import Layout from "@/app/Root";
+import RegisterLayout from "@/app/register/RegisterLayout";
+import { RegisterFieldset as RegisterPage } from "@/app/register/RegisterPage";
 import type { Meta, StoryObj } from "@storybook/react";
 // import Home from "@/app/page";
 
@@ -19,6 +19,7 @@ const meta: Meta<typeof RegisterPage> = {
       <Layout>
         <RegisterLayout>
           <form
+            className="w-full"
             onSubmit={(e) => {
               e.preventDefault();
             }}

@@ -5,10 +5,11 @@
 }
 
 .root__container {
-  margin-left: 0 auto;
+  margin: 0 auto;
   max-width: 48rem /* 768px */;
   padding: 0 1rem /* 16px */;
 }
+
 @media (min-width: 640px) {
   .root__container {
     padding: 0 1.5rem /* 24px */;

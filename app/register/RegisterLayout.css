@@ -26,7 +26,15 @@
 
 .register-layout__img {
   mix-blend-mode: multiply;
+  max-width: 28rem;
 }
+
+@media (min-width: 1024px) {
+  .register-layout__img {
+    max-width: 42rem;
+  }
+}
+
 
 [dir="rtl"] .register-layout__img {
   transform: scaleX(-1);

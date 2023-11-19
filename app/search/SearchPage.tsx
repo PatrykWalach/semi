@@ -6,36 +6,33 @@ import Input from "@/components/Input";
 import Link from "next/link";
 import { URLSearchParamsDelete } from "../URLSearchParams";
 
-
-
-
-
+import './SearchPage.css';
 
 export default function SearchPage(props: {
- 
   articles: readonly ArticleData[];
   searchParams: URLSearchParams;
 }) {
-  const tags = props.searchParams.getAll('tag')
-
-
+  const tags = props.searchParams.getAll("tag");
 
   return (
     <div>
-      <Form role="search"  method="get">
-        <div className="grid gap-1">
-          <Input placeholder="Search..." type="search" className="" required name="tag">
-            <button
-              type="submit"
-              className="cursor-default p-1 -m-1 rounded-full"
-            >
+      <Form role="search" method="get">
+        <div className="search">
+          <Input
+            placeholder="Search..."
+            type="search"
+            className=""
+            required
+            name="tag"
+          >
+            <button type="submit" className="search__button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="search__icon"
               >
                 <path
                   strokeLinecap="round"
@@ -45,14 +42,14 @@ export default function SearchPage(props: {
               </svg>
             </button>
           </Input>
-          <div className=" flex flex-wrap gap-2 items-center">
+          <div className="tags">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-5 h-5 last:hidden"
+              className="tags__prefix-icon"
             >
               <path
                 strokeLinecap="round"
@@ -70,7 +67,7 @@ export default function SearchPage(props: {
                 <Chip key={tag}>
                   <span className="">{tag}</span>
                   <input type="hidden" name="tag" value={tag} />
-        
+
                   <ChipIcon>
                     <Link
                       href={`/search?${URLSearchParamsDelete(
@@ -86,7 +83,7 @@ export default function SearchPage(props: {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-3 h-3"
+                        className="tags__icon"
                       >
                         <path
                           strokeLinecap="round"
@@ -103,7 +100,7 @@ export default function SearchPage(props: {
         </div>
       </Form>
 
-      <main className="divide-y">
+      <main className="">
         <Articles articles={props.articles}></Articles>
       </main>
     </div>

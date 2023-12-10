@@ -144,6 +144,7 @@ export const ARTICLES: ArticleData[] = [
   },
 ] satisfies ArticleData[];
 
+
 export function Article({ article }: { article: ArticleData }) {
   return (
     <article className="text-on-surface flex flex-col items-start col-span-12 gap-y-3 sm:col-span-6 xl:col-span-4">
@@ -174,13 +175,13 @@ export function Article({ article }: { article: ArticleData }) {
           {article.author.name}
         </Link>
         <p className="inline text-xs font-medium mt-0 me-1 mb-0 ms-1">
-          ·{" "}
+          &middot;{" "}
           {new Intl.DateTimeFormat("en", {
             day: "numeric",
             month: "short",
             year: "numeric",
           }).format(article.releasedAt)}{" "}
-          ·
+          &middot;
         </p>
         <p className="inline text-xs font-medium text-on-surface/[.38] mt-0 me-1 mb-0 ms-1">
           {article.length}. read

@@ -1,6 +1,6 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Link from 'next/link'
 
 export default function NavigationLink({
   ...props
@@ -9,7 +9,7 @@ export default function NavigationLink({
   href: string;
 }) {
   const pathname = usePathname();
-  const active = pathname.startsWith(props.href);
+  const active = pathname == props.href;
 
   return (
     <li>

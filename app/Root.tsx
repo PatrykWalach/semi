@@ -13,9 +13,9 @@ export default function Root(props: PropsWithChildren<{}>) {
         <Header>
           <Navigation>
             <NavigationLink href="/">Home</NavigationLink>
-            <NavigationLink href="/about">About</NavigationLink>
-            <NavigationLink href="/eula">Eula</NavigationLink>
-            <NavigationLink href="/contact">Contact</NavigationLink>
+            <NavigationLink href="/search">Search</NavigationLink>
+            <NavigationLink href="/login">Login</NavigationLink>
+            <NavigationLink href="/register">Register</NavigationLink>
           </Navigation>
         </Header>
         {props.children}

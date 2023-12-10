@@ -24,7 +24,7 @@ export default function SearchPage(props: {
     <div>
       <Form role="search"  method="get">
         <div className="grid gap-1">
-          <Input placeholder="Search..." className="" required name="tag">
+          <Input placeholder="Search..." type="search" className="" required name="tag">
             <button
               type="submit"
               className="cursor-default p-1 -m-1 rounded-full"

@@ -1,10 +1,12 @@
 import { ArticleData } from "@/components/Article";
 import { BigArticle } from "@/components/BigArticle";
 
+import './ArticlePage.css';
+
 export default function ArticlePage({ article }: { article: ArticleData }) {
   return (
-    <main className="bg-surface text-on-surface">
-      <div className="container mx-auto py-4 grid gap-8">
+    <main className="article-page">
+      <div className="article-page__container">
         <header>
           <BigArticle article={article}></BigArticle>
         </header>
@@ -12,7 +14,7 @@ export default function ArticlePage({ article }: { article: ArticleData }) {
           dangerouslySetInnerHTML={{
             __html: article.content,
           }}
-          className="prose py-4 lg:prose-2xl dark:prose-invert"
+          className="prose article-page__prose lg:prose-2xl dark:prose-invert"
         ></section>{" "}
       </div>
     </main>

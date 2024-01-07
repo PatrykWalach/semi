@@ -1,0 +1,3 @@
+.home-page > * ~ * {
+  border-top-width: 1px;
+}

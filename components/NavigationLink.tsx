@@ -1,6 +1,8 @@
 "use client";
+import Link from 'next/link';
 import { usePathname } from "next/navigation";
-import Link from 'next/link'
+
+import './NavigationLink.css';
 
 export default function NavigationLink({
   ...props
@@ -14,11 +16,11 @@ export default function NavigationLink({
   return (
     <li>
       <Link
-        className={`block py-2 px-3 ${
+        className={`${
           active
-            ? "md:text-primary bg-primary text-surface md:bg-transparent"
-            : "hover:md:text-primary hover:bg-surface-variant md:hover:bg-transparent hover:text-on-surface-variant"
-        } rounded md:p-0`}
+            ? "navigation-link--active"
+            : ""
+        } navigation-link`}
         aria-current={active ? "page" : undefined}
         {...props}
       ></Link>

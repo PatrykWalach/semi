@@ -7,13 +7,13 @@ import { Chip, ChipIcon } from "./Chip";
 export type BigArticleData = Omit<ArticleData, "id"> &
   Partial<Pick<ArticleData, "id">>;
 
+import "./Article.css";
+import "./BigArticle.css";
+
 export function BigArticle({ article }: { article: BigArticleData }) {
   return (
-    <article className="text-on-surface grid md:grid-cols-2 md:gap-10 lg:gap-16">
-      <div
-        className="flex row-start-2 md:row-start-1 flex-col py-6 mb-6 md:mb-0 items-start justify-center flex-1 gap-y-3
-      md:gap-y-5"
-      >
+    <article className="article-big">
+      <div className="article-big__details">
         {article.category && (
           <Link href={`/search?tag=${article.category}`}>
             <Chip>
@@ -36,25 +36,21 @@ export function BigArticle({ article }: { article: BigArticleData }) {
             </Chip>
           </Link>
         )}
-        <div className="max-w-full">
+        <div className="article-big__title-wrapper">
           <ConditionalLink
             className=""
             href={article.id ? `/article/${article.id}` : ""}
           >
-            <p className="text-4xl overflow-hidden text-ellipsis font-bold leading-none lg:text-5xl xl:text-6xl">
-              {article.title}
-            </p>
+            <p className="article-big__title">{article.title}</p>
           </ConditionalLink>
         </div>
-        <div className="pt-2 pe-0 pb-0 ps-0">
-          <p className="text-sm font-medium inline">author:</p>
-          <Link
-            className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1 underline"
-            href={`/user/${article.author.id}`}
-          >
+        <div className="article-footer">
+          <span className="article-footer__item">author:</span>
+          <Link className="article-footer__item article-footer__item--link" href={`/user/${article.author.id}`}>
             {article.author.name}
           </Link>
-          <p className="inline text-sm font-medium mt-0 me-1 mb-0 ms-1">
+
+          <span className="article-footer__item">
             ·{" "}
             {new Intl.DateTimeFormat("en", {
               day: "numeric",
@@ -62,20 +58,18 @@ export function BigArticle({ article }: { article: BigArticleData }) {
               year: "numeric",
             }).format(article.releasedAt)}{" "}
             ·
-          </p>
-          <p className="text-on-surface/[.38] text-sm font-medium inline mt-0 me-1 mb-0 ms-1">
-            {article.length}. read
-          </p>
+          </span>
+          <span className="article-footer__item article-footer__item--accent">{article.length}. read</span>
         </div>
       </div>
       <div className="">
-        <div className="block">
+        <div className="">
           <Image
             width={500}
             height={500}
             alt=""
             src={article.img}
-            className="object-cover rounded-lg max-h-64 sm:max-h-96 w-full h-full"
+            className="article-big__img"
           />
         </div>
       </div>
@@ -85,7 +79,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
 
 function ConditionalLink(props: ComponentPropsWithoutRef<typeof Link>) {
   if (!props.href) {
-    return <>{props.children}</>
+    return <>{props.children}</>;
   }
   return <Link {...props}></Link>;
 }

@@ -21,4 +21,5 @@ const nextConfig = {
 
 module.exports = stylexPlugin({
   rootDir: __dirname,
+  appendTo: "head",
 })(nextConfig);

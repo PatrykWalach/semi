@@ -1,8 +1,7 @@
+const stylexPlugin = require("@stylexjs/nextjs-plugin");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: true,
-  },
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -20,4 +19,6 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = stylexPlugin({
+  rootDir: __dirname,
+})(nextConfig);

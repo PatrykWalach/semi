@@ -36,3 +36,9 @@ next-env.d.ts
 
 # storybook
 /storybook-static
+
+# latex
+doc.*
+!doc.pdf
+!doc.tex
+!doc.bib

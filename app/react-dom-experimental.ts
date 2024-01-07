@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
-  experimental_useFormState,
-  experimental_useFormStatus,
+  useFormState as experimental_useFormState,
+  useFormStatus as experimental_useFormStatus,
 } from "react-dom";
 
 export let useFormState =

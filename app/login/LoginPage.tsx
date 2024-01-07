@@ -2,16 +2,22 @@
 
 import { FormStatus } from "react-dom";
 import { LoginState, login } from "../actions";
-import { } from "../login/LoginPage";
+import {} from "../login/LoginPage";
 import { useFormState, useFormStatus } from "../react-dom-experimental";
 
 export default function LoginPage() {
   const [state, action] = useFormState(login, {
-    fields: { username: "",  },
+    fields: { username: "" },
   });
 
   return (
-    <form action={action} className="w-full">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        action(new FormData(e.currentTarget));
+      }}
+      className="w-full"
+    >
       <Status>
         {({ pending }) => (
           <LoginFieldset {...state} disabled={pending}></LoginFieldset>
@@ -21,16 +27,12 @@ export default function LoginPage() {
   );
 }
 
-function Status(props: {
-  children?: (status: FormStatus) => React.ReactNode;
-}) {
+function Status(props: { children?: (status: FormStatus) => React.ReactNode }) {
   const status = useFormStatus();
   return <>{props.children?.(status)}</>;
 }
 
-export function LoginFieldset(
-  props: LoginState & { disabled?: boolean }
-) {
+export function LoginFieldset(props: LoginState & { disabled?: boolean }) {
   return (
     <fieldset disabled={props.disabled}>
       <p className="w-full text-4xl font-medium text-center leading-snug">

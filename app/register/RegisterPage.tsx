@@ -11,7 +11,13 @@ export default function RegisterPage() {
   });
 
   return (
-    <form action={action} className="w-full">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        action(new FormData(e.currentTarget));
+      }}
+      className="w-full"
+    >
       <Status>
         {({ pending }) => (
           <RegisterFieldset {...state} disabled={pending}></RegisterFieldset>
@@ -21,9 +27,7 @@ export default function RegisterPage() {
   );
 }
 
-function Status(props: {
-  children?: (status: FormStatus) => React.ReactNode;
-}) {
+function Status(props: { children?: (status: FormStatus) => React.ReactNode }) {
   const status = useFormStatus();
   return <>{props.children?.(status)}</>;
 }

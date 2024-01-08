@@ -1,4 +1,6 @@
-# Semi
+# Porównanie praktyk projektowania CSS: tradycyjne podejście z czystym CSS a nowoczesne narzędzia generujące CSS.
+## Comparative study of CSS design practices: traditional approach with pure CSS versus modern CSS generating tools
+
 
 ## Spis treści
 

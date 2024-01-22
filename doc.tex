@@ -19,6 +19,8 @@
 % jesli potrzeb, można oczywiście wstawić inne pakiety i swoje definicje...
 
 \usepackage{amsmath}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 
 
@@ -158,6 +160,27 @@
 \section{Style dynamiczne}
 
 \chapter{Wnioski}
+
+
+\begin{table}[h!]
+  \begin{tabular}{ l | P{0.35\linewidth} | P{0.35\linewidth}}
+     & An empirical study on the use of CSS preprocessors \cite{Mazinanian__Tsantalis__2016} & Discovering RefactoringOpportunities in Cascading Style Sheets \cite{Mazinanian__Tsantalis__2}\\ 
+     \hline
+     Zmienne &X&\\
+     
+      Zagnieżdżanie&X&  \\
+     
+      Domieszki  &X&\\
+     
+      Prefiksy   &X&\\
+     
+     Deduplikacja  &&X\\
+     
+     Kolejność  &&X 
+     
+  \end{tabular}
+  \caption{Kryteria}
+\end{table}
 
 \chapter*{Podsumowanie}
 \addcontentsline{toc}{chapter}{Podsumowanie}

@@ -11,6 +11,18 @@ export const withDir: Decorator = (Story, context) => {
   );
 };
 
+import { createRemixStub } from "@remix-run/testing";
+
+
+export const withRouter:Decorator =(Story, context)=>{
+  const Stub =  createRemixStub([{
+    path:'/',
+    Component: Story,  
+  }])
+
+  return <Stub></Stub>
+}
+
 const withTheme: Decorator = (Story, context) => {
   let theme = context.parameters.theme ?? context.globals.theme ?? "light";
 

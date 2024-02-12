@@ -1,7 +1,5 @@
-import type { StorybookConfig } from "@storybook/nextjs";
-import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
-
  
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -16,25 +14,15 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
   ],
   framework: {
-    name: "@storybook/nextjs",
-    options: {},
+    name: '@storybook/react-vite',
+ options:{}
   },
   docs: {
     autodocs: "tag",
-  },
-  webpackFinal: async (config, options) => {
-    const plugins: any[] = [
-      ...(config.resolve?.plugins || []),
-      new TsconfigPathsPlugin({
-        extensions: config.resolve?.extensions,
-      }),
-    ];
-
-    config.resolve = {
-      ...config.resolve,
-      plugins,
-    };
-    return config;
-  },
+  },viteFinal(config){
+    return config
+  }
 };
+
 export default config;
+ 

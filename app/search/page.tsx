@@ -1,10 +1,14 @@
 import { ARTICLES, ArticleData } from "@/components/Article";
 
-import { ComponentPropsWithoutRef } from "react";
+import { ClientLoaderFunctionArgs, useLoaderData, useSearchParams } from "@remix-run/react";
 import SearchPage from "./SearchPage";
-import { normalizeSearchParams } from "../URLSearchParams";
 
-function getArticles(args: { tags: string[] }) {
+export function loader({request}:ClientLoaderFunctionArgs) {
+  const {searchParams} = new URL(request.url)
+  const args = {
+    tags: searchParams.getAll('tags')
+  }
+
   let articles = [...ARTICLES];
 
   if (args.tags.length) {
@@ -27,15 +31,11 @@ function getArticles(args: { tags: string[] }) {
   );
 }
 
-export default async function Page(props: {
-  searchParams: Record<string, string | string[]>;
-}) {
-  const searchParams = normalizeSearchParams(props.searchParams);
-  const tags = searchParams.getAll("tag");
+export default  function Page() {
+  const [searchParams] = useSearchParams()
 
-  const articles = await getArticles({
-    tags,
-  });
+
+  const articles = useLoaderData<typeof loader>()
 
   return (
     <SearchPage articles={articles} searchParams={searchParams}></SearchPage>

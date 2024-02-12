@@ -1,5 +1,5 @@
+import Layout from "@/app/.Root";
 import HomePage from "@/app/HomePage";
-import Layout from "@/app/Root";
 import { ARTICLES } from "@/components/Article";
 import type { Meta, StoryObj } from "@storybook/react";
 // import Home from "@/app/page";

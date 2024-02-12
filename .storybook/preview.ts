@@ -1,7 +1,8 @@
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { Preview } from "@storybook/react";
 import "../app/globals.css";
-import withTheme, { withDir } from "../app/withTheme";
+
+import withTheme, { withDir, withRouter } from "../app/withTheme";
 
 const preview: Preview = {
   globalTypes: {
@@ -29,7 +30,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [withTheme, withDir],
+  decorators: [withRouter, withTheme, withDir],
   parameters: {
     nextjs: {
       appDirectory: true,

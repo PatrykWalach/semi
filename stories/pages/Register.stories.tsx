@@ -1,6 +1,6 @@
-import { RegisterFieldset as RegisterPage } from "@/app/register/RegisterPage";
+import Layout from "@/app/.Root";
 import RegisterLayout from "@/app/register/RegisterLayout";
-import Layout from "@/app/Root";
+import { RegisterFieldset as RegisterPage } from "@/app/register/RegisterPage";
 import type { Meta, StoryObj } from "@storybook/react";
 // import Home from "@/app/page";
 

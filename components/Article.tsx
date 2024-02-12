@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+const Image = "img"
+import { Link } from "@remix-run/react";
 import { Chip } from "./Chip";
 
 export interface ArticleData {
@@ -157,13 +157,13 @@ export function Article({ article }: { article: ArticleData }) {
         className="article__img"
       />
       {article.category && (
-        <Link href={`/search?tag=${article.category}`}>
+        <Link to={`/search?tag=${article.category}`}>
           <Chip>{article.category}</Chip>
         </Link>
       )}
       <Link
         className="article__title"
-        href={`/article/${article.id}`}
+        to={`/article/${article.id}`}
       >
         {article.title}
       </Link>
@@ -171,7 +171,7 @@ export function Article({ article }: { article: ArticleData }) {
       <div className="article-footer">
         <Link
           className="article-footer__item article-footer__item--link"
-          href={`/user/${article.author.id}`}
+          to={`/user/${article.author.id}`}
         >
           {article.author.name}
         </Link>
@@ -181,7 +181,7 @@ export function Article({ article }: { article: ArticleData }) {
             day: "numeric",
             month: "short",
             year: "numeric",
-          }).format(article.releasedAt)}{" "}
+          }).format(new Date(article.releasedAt))}{" "}
           ·
         </span>
         <span className="article-footer__item article-footer__item--accent">

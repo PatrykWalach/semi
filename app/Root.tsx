@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import NavigationLink from "@/components/NavigationLink";
 import * as stylex from "@stylexjs/stylex";
 import { PropsWithChildren } from "react";
-
+// import { Inter } from "next/font/google";
 import { colors } from "./tokens.stylex";
 
 const styles = stylex.create({
@@ -23,9 +23,15 @@ const styles = stylex.create({
   },
 });
 
+
+
 export default function Root(props: PropsWithChildren<{}>) {
   return (
     <div {...stylex.props(styles.root)}>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
       <div {...stylex.props(styles.container)}>
         <Header>
           <Navigation>

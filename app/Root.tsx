@@ -11,6 +11,7 @@ const styles = stylex.create({
     backgroundColor: colors.surface,
     minHeight: "100vh",
     color: colors.onSurface,
+    'fontFamily': "'Inter', sans-serif"
   },
   container: {
     margin: "0 auto",

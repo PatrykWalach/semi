@@ -12,7 +12,7 @@
     "chromatic": "npx chromatic"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.4.1",
+    "@stylexjs/stylex": "^0.5.1",
     "@types/node": "18.18.0",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
@@ -35,8 +35,8 @@
     "@storybook/nextjs": "^7.5.2",
     "@storybook/react": "^7.5.2",
     "@storybook/testing-library": "^0.2.2",
-    "@stylexjs/eslint-plugin": "^0.4.1",
-    "@stylexjs/nextjs-plugin": "^0.4.1",
+    "@stylexjs/eslint-plugin": "^0.5.1",
+    "@stylexjs/nextjs-plugin": "^0.5.1",
     "@tailwindcss/typography": "^0.5.9",
     "chromatic": "^6.17.4",
     "eslint-plugin-storybook": "^0.6.15",

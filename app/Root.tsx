@@ -15,11 +15,11 @@ const styles = stylex.create({
   },
   container: {
     margin: "0 auto",
-    maxWidth: { default: "48rem ", "@media (min-width: 1280px)": "64rem " },
+    maxWidth: { default: "48rem", "@media (min-width: 1280px)": "64rem" },
     padding: {
-      default: "0 1rem ",
-      "@media (min-width: 640px)": "0 1.5rem ",
-      "@media (min-width: 1280px)": 0,
+      default: "0 1rem",
+      "@media (min-width: 640px)": "0 1.5rem",
+      "@media (min-width: 1280px)": '0',
     },
   },
 });

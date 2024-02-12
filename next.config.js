@@ -1,4 +1,5 @@
-const stylexPlugin = require("@stylexjs/nextjs-plugin");
+const path = require('path');
+const stylexPlugin = require('@stylexjs/nextjs-plugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,6 +21,8 @@ const nextConfig = {
 };
 
 module.exports = stylexPlugin({
+  aliases: {
+    '@/*': [path.join(__dirname, '*')],
+  },
   rootDir: __dirname,
-  appendTo: "head",
 })(nextConfig);

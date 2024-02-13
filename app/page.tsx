@@ -1,11 +1,11 @@
 import { ARTICLES, ArticleData } from "@/components/Article";
 import HomePage from "./HomePage";
-import { useLoaderData } from "@remix-run/react";
+import { json, useLoaderData } from "@remix-run/react";
 
-export function loader() {
-  return new Promise<ArticleData[]>((resolve) =>
+export async function loader() {
+  return json(await new Promise<ArticleData[]>((resolve) =>
     setTimeout(resolve, Math.random() * 1000, ARTICLES)
-  );
+  ));
 }
 
 

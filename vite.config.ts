@@ -9,13 +9,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [
     !isStorybook&&remix({
-      async routes(defineRoutes){
+       async routes(defineRoutes){
         return defineRoutes(route=>{
           route("/", "page.tsx", {index:true})
-          route("login", "login/page.tsx", {index:true})
-          route("register", "register/page.tsx", {index:true})
-          route("search", "search/page.tsx", {index:true})
-          route("article/:id", "article/[id]/page.tsx", {index:true})
+          route("login", "login/page.tsx")
+          route("register", "register/page.tsx")
+          route("search", "search/page.tsx")
+          route("article/:id", "article/[id]/page.tsx")
         })
       }
     }),

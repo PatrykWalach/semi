@@ -1,9 +1,9 @@
 import { ARTICLES, ArticleData } from "@/components/Article";
 
-import { ClientLoaderFunctionArgs, useLoaderData, useSearchParams } from "@remix-run/react";
+import { ClientLoaderFunctionArgs, json, useLoaderData, useSearchParams } from "@remix-run/react";
 import SearchPage from "./SearchPage";
 
-export function loader({request}:ClientLoaderFunctionArgs) {
+export async function loader({request}:ClientLoaderFunctionArgs) {
   const {searchParams} = new URL(request.url)
   const args = {
     tags: searchParams.getAll('tags')
@@ -26,9 +26,9 @@ export function loader({request}:ClientLoaderFunctionArgs) {
     );
   }
 
-  return new Promise<ArticleData[]>((resolve) =>
+  return json(await new Promise<ArticleData[]>((resolve) =>
     setTimeout(resolve, Math.random() * 1000, articles)
-  );
+  ));
 }
 
 export default  function Page() {

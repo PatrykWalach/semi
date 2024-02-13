@@ -1,8 +1,7 @@
-import { Inter } from "next/font/google";
 
 
+import { Links, Meta, MetaFunction, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse, useRouteError } from "@remix-run/react";
 import Root from "./.Root";
-import { Meta, Links, Outlet, ScrollRestoration, Scripts, MetaFunction } from "@remix-run/react";
 
 import "./globals.css";
 
@@ -36,3 +35,4 @@ export default function Layout() {
     </html>
   );
 }
+

@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef } from "react";
 
-import "./Input.css";
+import * as stylex from "@stylexjs/stylex";
+const styles = stylex.create({});
 
 export default function Input({
   children,

@@ -1,7 +1,8 @@
 "use client";
 
+import * as stylex from "@stylexjs/stylex";
 import { ComponentPropsWithoutRef } from "react";
-import "./Input.css";
+const styles = stylex.create({});
 
 export function Textarea({
   children,

@@ -3,7 +3,8 @@ const Image = "img"
 import { Link } from "@remix-run/react";
 import { useState } from "react";
 
-import "./Header.css";
+import * as stylex from "@stylexjs/stylex";
+const styles = stylex.create({});
 
 export function Header({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);

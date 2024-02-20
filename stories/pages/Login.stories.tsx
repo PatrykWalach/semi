@@ -1,6 +1,6 @@
+import Layout from "@/app/.Root";
 import { LoginFieldset as LoginPage } from "@/app/login/LoginPage";
 import RegisterLayout from "@/app/register/RegisterLayout";
-import Layout from "@/app/Root";
 import type { Meta, StoryObj } from "@storybook/react";
 // import Home from "@/app/page";
 

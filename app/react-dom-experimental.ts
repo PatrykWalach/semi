@@ -1,13 +1,8 @@
+import { useNavigation } from "@remix-run/react";
 import { useState } from "react";
-import {
-  experimental_useFormState,
-  experimental_useFormStatus,
-} from "react-dom";
+import { } from "react-dom";
 
-export let useFormState =
-  typeof experimental_useFormState === "function"
-    ? experimental_useFormState
-    : <State, Payload>(
+export let useFormState = <State, Payload>(
         action: (state: State, payload: Payload) => Promise<State>,
         initialState: State,
         permalink?: string
@@ -22,7 +17,8 @@ export let useFormState =
         ];
       };
 
-export let useFormStatus: typeof experimental_useFormStatus =
-  typeof experimental_useFormStatus === "function"
-    ? experimental_useFormStatus
-    : () => ({ pending: false, data: null, method: null, action: null });
+export function useFormStatus(){
+  const {state} = useNavigation()
+  const pending = state === 'submitting'
+  return {pending}
+}  

@@ -2,9 +2,9 @@ name: Deploy storybook
 
 on:
   push:
-    branches: ["master", "vanilla-css"]
+    branches: ["master", "vanilla-css", "style-x"]
   pull_request:
-    branches: ["master", "vanilla-css"]
+    branches: ["master", "vanilla-css", "style-x"]
 
 jobs:
   deploy:

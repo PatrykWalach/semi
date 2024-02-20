@@ -1,29 +1,35 @@
 "use client";
 
-import { FormStatus } from "react-dom";
-import { RegisterState, register } from "../actions";
+import { Form, useActionData } from "@remix-run/react";
+import { RegisterState } from "../actions";
 import { } from "../login/LoginPage";
-import { useFormState, useFormStatus } from "../react-dom-experimental";
+import { useFormStatus } from "../react-dom-experimental";
+import { action } from "./page";
 
 export default function RegisterPage() {
-  const [state, action] = useFormState(register, {
-    fields: { username: "", email: "" },
-  });
+ 
+
+  const state = useActionData<typeof action>() ?? {
+    fields:{username:'',email: "" }
+  }
 
   return (
-    <form action={action} className="w-full">
+    <Form
+    method='post'
+      className="w-full"
+    >
       <Status>
         {({ pending }) => (
           <RegisterFieldset {...state} disabled={pending}></RegisterFieldset>
         )}
       </Status>
-    </form>
+    </Form>
   );
 }
 
-function Status(props: {
-  children?: (status: FormStatus) => React.ReactNode;
-}) {
+function Status(props: { children?: (status: {
+  pending: boolean;
+}) => React.ReactNode }) {
   const status = useFormStatus();
   return <>{props.children?.(status)}</>;
 }

@@ -1,9 +1,8 @@
 import { ArticleData } from "@/components/Article";
 import { Articles } from "@/components/Articles";
 import { Chip, ChipIcon } from "@/components/Chip";
-import Form from "@/components/Form";
 import Input from "@/components/Input";
-import Link from "next/link";
+import { Form, Link } from "@remix-run/react";
 import { URLSearchParamsDelete } from "../URLSearchParams";
 
 import './SearchPage.css';
@@ -70,7 +69,7 @@ export default function SearchPage(props: {
 
                   <ChipIcon>
                     <Link
-                      href={`/search?${URLSearchParamsDelete(
+                      to={`/search?${URLSearchParamsDelete(
                         props.searchParams,
                         "tag",
                         tag

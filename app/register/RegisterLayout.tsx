@@ -1,4 +1,4 @@
-import Image from "next/image";
+const Image = "img"
 import { PropsWithChildren } from "react";
 
 export default function RegisterLayout(props: PropsWithChildren<{}>) {

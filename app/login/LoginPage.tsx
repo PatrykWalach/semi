@@ -1,36 +1,40 @@
 "use client";
 
-import { FormStatus } from "react-dom";
-import { LoginState, login } from "../actions";
+import { Form, useActionData } from "@remix-run/react";
+import { } from "react-dom";
+import { LoginState } from "../actions";
 import { } from "../login/LoginPage";
-import { useFormState, useFormStatus } from "../react-dom-experimental";
+import { useFormStatus } from "../react-dom-experimental";
+import { action } from "./page";
 
 export default function LoginPage() {
-  const [state, action] = useFormState(login, {
-    fields: { username: "",  },
-  });
+  const state = useActionData<typeof action>() ?? {
+    fields:{username:''}
+  }
 
   return (
-    <form action={action} className="w-full">
+    <Form
+    method="post"
+ 
+      className="w-full"
+    >
       <Status>
         {({ pending }) => (
           <LoginFieldset {...state} disabled={pending}></LoginFieldset>
         )}
       </Status>
-    </form>
+    </Form>
   );
 }
 
-function Status(props: {
-  children?: (status: FormStatus) => React.ReactNode;
-}) {
+function Status(props: { children?: (status: {
+  pending: boolean;
+}) => React.ReactNode }) {
   const status = useFormStatus();
   return <>{props.children?.(status)}</>;
 }
 
-export function LoginFieldset(
-  props: LoginState & { disabled?: boolean }
-) {
+export function LoginFieldset(props: LoginState & { disabled?: boolean }) {
   return (
     <fieldset disabled={props.disabled}>
       <p className="w-full text-4xl font-medium text-center leading-snug">

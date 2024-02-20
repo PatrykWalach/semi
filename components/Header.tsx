@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
+const Image = "img"
+import { Link } from "@remix-run/react";
 import { useState } from "react";
 
 import "./Header.css";
@@ -12,7 +12,7 @@ export function Header({ children }: { children: React.ReactNode }) {
     <nav className="">
       <div className="">
         <div className="header">
-          <Link href="/" className="header__link">
+          <Link to="/" className="header__link">
             <Image
               width={32}
               height={32}

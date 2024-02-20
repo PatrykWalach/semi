@@ -1,15 +1,18 @@
 import { ARTICLES, ArticleData } from "@/components/Article";
 import HomePage from "./HomePage";
+import { json, useLoaderData } from "@remix-run/react";
 
-function getArticles() {
-  return new Promise<ArticleData[]>((resolve) =>
+export async function loader() {
+  return json(await new Promise<ArticleData[]>((resolve) =>
     setTimeout(resolve, Math.random() * 1000, ARTICLES)
-  );
+  ));
 }
 
-export default async function Route() {
+
+
+export default  function Route() {
  
-const articles = await getArticles();
+  const articles = useLoaderData<typeof loader>();
 
   return <HomePage articles={articles}></HomePage>;
 }

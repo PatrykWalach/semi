@@ -31,7 +31,7 @@ type Story = StoryObj<typeof NavigationLink>;
 export const Default: Story = {
   args: {
     children: "Home",
-    href: "/",
+    to: "/",
   },
 };
 
@@ -49,14 +49,14 @@ export const Rtl: Story = {
   },
 };
 
-export const Active: Story = {
+export const Inactive: Story = {
   args: {
     ...Default.args,
   },
   parameters: {
     nextjs: {
       navigation: {
-        pathname: "/",
+        pathname: "/foo",
       },
     },
   },

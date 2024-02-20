@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+const Image = "img"
+import { Link } from "@remix-run/react";
 import { ComponentPropsWithoutRef } from "react";
 import { ArticleData } from "./Article";
 import { Chip, ChipIcon } from "./Chip";
@@ -15,7 +15,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
     <article className="article-big">
       <div className="article-big__details">
         {article.category && (
-          <Link href={`/search?tag=${article.category}`}>
+          <Link to={`/search?tag=${article.category}`}>
             <Chip>
               <ChipIcon>
                 <svg
@@ -39,14 +39,14 @@ export function BigArticle({ article }: { article: BigArticleData }) {
         <div className="article-big__title-wrapper">
           <ConditionalLink
             className=""
-            href={article.id ? `/article/${article.id}` : ""}
+            to={article.id ? `/article/${article.id}` : ""}
           >
             <p className="article-big__title">{article.title}</p>
           </ConditionalLink>
         </div>
         <div className="article-footer">
           <span className="article-footer__item">author:</span>
-          <Link className="article-footer__item article-footer__item--link" href={`/user/${article.author.id}`}>
+          <Link className="article-footer__item article-footer__item--link" to={`/user/${article.author.id}`}>
             {article.author.name}
           </Link>
 
@@ -56,7 +56,7 @@ export function BigArticle({ article }: { article: BigArticleData }) {
               day: "numeric",
               month: "short",
               year: "numeric",
-            }).format(article.releasedAt)}{" "}
+            }).format(new Date(article.releasedAt))}{" "}
             ·
           </span>
           <span className="article-footer__item article-footer__item--accent">{article.length}. read</span>

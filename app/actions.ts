@@ -11,7 +11,7 @@ export type LoginState = {
 };
 
 export async function login(
-  _: LoginState,
+ 
   formData: FormData
 ): Promise<LoginState> {
   await new Promise((resolve) => setTimeout(resolve, Math.random() * 5_000));
@@ -39,7 +39,7 @@ export type RegisterState = {
 };
 
 export async function register(
-  _: RegisterState,
+
   formData: FormData
 ): Promise<RegisterState> {
   await new Promise((resolve) => setTimeout(resolve, Math.random() * 5_000));

@@ -1,25 +1,28 @@
 import { ARTICLES, ArticleData } from "@/components/Article";
+import {
+  ClientLoaderFunctionArgs,
+  json,
+  useLoaderData,
+} from "@remix-run/react";
 import ArticlePage from "./ArticlePage";
 
-function getArticle(id: number) {
-  return new Promise<ArticleData>((resolve, reject) =>
-    setTimeout(() => {
-      const article = ARTICLES.find((article) => id === article.id);
-      if (!article) {
-        return reject();
-      }
+export async function loader({ params }: ClientLoaderFunctionArgs) {
+  const article = ARTICLES.find((article) => Number(params.id) === article.id);
+  if (!article) {
+    throw new Response(null, { status: 404 });
+  }
 
-      return resolve(article);
-    }, Math.random() * 1000)
+  return json(
+    await new Promise<ArticleData>((resolve) =>
+      setTimeout(() => {
+        return resolve(article);
+      }, Math.random() * 1000)
+    )
   );
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Record<string, string>;
-}) {
-  const article = await getArticle(Number(params.id));
+export default function Page() {
+  const article = useLoaderData<typeof loader>();
 
   return <ArticlePage article={article}></ArticlePage>;
 }

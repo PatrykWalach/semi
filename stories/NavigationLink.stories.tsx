@@ -22,11 +22,6 @@ const meta: Meta<typeof NavigationLink> = {
     backgrounds: {
       default: "inverse-surface",
     },
-    nextjs: {
-      navigation: {
-        pathname: "/foo",
-      },
-    },
   },
 };
 
@@ -54,14 +49,14 @@ export const Rtl: Story = {
   },
 };
 
-export const Active: Story = {
+export const Inactive: Story = {
   args: {
     ...Default.args,
   },
   parameters: {
     nextjs: {
       navigation: {
-        pathname: "/",
+        pathname: "/foo",
       },
     },
   },

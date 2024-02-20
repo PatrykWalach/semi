@@ -22,6 +22,11 @@ const meta: Meta<typeof NavigationLink> = {
     backgrounds: {
       default: "inverse-surface",
     },
+    nextjs: {
+      navigation: {
+        pathname: "/foo",
+      },
+    },
   },
 };
 
@@ -31,7 +36,7 @@ type Story = StoryObj<typeof NavigationLink>;
 export const Default: Story = {
   args: {
     children: "Home",
-    href: "/",
+    to: "/",
   },
 };
 

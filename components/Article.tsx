@@ -174,6 +174,7 @@ const styles = stylex.create({
     maxHeight: "14rem",
   },
   title: {
+    fontWeight: 700,
     fontSize: {
       default: "1.125rem",
       "@media (min-width: 640px)": "1.25rem",
@@ -198,7 +199,7 @@ const styles = stylex.create({
     },
   },
   footerItemAccent: { color: "rgb(var(--on-surface) / 0.38)" },
-  footerItemLink: { textDecorationLine: "underline" },
+  underline: { textDecorationLine: "underline" },
 });
 
 export function Article({ article }: { article: ArticleData }) {
@@ -224,7 +225,7 @@ export function Article({ article }: { article: ArticleData }) {
       </span>
       <div {...stylex.props(styles["footer"])}>
         <Link
-          {...stylex.props(styles["footerItem"], styles["footerItemLink"])}
+          {...stylex.props(styles["footerItem"], styles["underline"])}
           to={`/user/${article.author.id}`}
         >
           {article.author.name}

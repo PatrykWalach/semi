@@ -11,7 +11,7 @@ import * as stylex from "@stylexjs/stylex";
 import { colors } from "../app/tokens.stylex";
 
 const styles = stylex.create({
-  "root": {
+  root: {
     color: colors.onSurface,
     display: "grid",
     gridTemplateColumns: {
@@ -26,7 +26,7 @@ const styles = stylex.create({
     },
   },
   author: { marginInline: "0.25rem" },
-  "details": {
+  details: {
     display: "flex",
     flexDirection: "column",
     paddingTop: "1.5rem ",
@@ -38,22 +38,22 @@ const styles = stylex.create({
     marginBottom: { default: "1.5rem", "@media (min-width: 768px)": 0 },
     rowGap: { default: "0.75rem", "@media (min-width: 768px)": "1.25rem " },
   },
-  "header": { maxWidth: "100%" },
-  "headerTitle": {
+  header: { maxWidth: "100%" },
+  headerTitle: {
     fontSize: {
       default: "2.25rem ",
       "@media (min-width: 1024px)": "3rem",
       "@media (min-width: 1280px)": "3.75rem",
     },
     lineHeight: {
-      default: "2.5rem ",
+      default: 1, //"2.5rem ",
       "@media (min-width: 1024px)": 1,
     },
     overflow: "hidden",
     textOverflow: "ellipsis",
     fontWeight: 700,
   },
-  "img": {
+  img: {
     objectFit: "cover",
     borderRadius: "0.5rem",
     maxHeight: { default: "16rem", "@media (min-width: 640px)": "24rem" },
@@ -72,7 +72,7 @@ const styles = stylex.create({
     },
   },
   footerItemAccent: { color: "rgb(var(--on-surface) / 0.38)" },
-  footerItemLink: { textDecorationLine: "underline" },
+  underline: { textDecorationLine: "underline" },
 });
 
 export function BigArticle({ article }: { article: BigArticleData }) {
@@ -106,15 +106,13 @@ export function BigArticle({ article }: { article: BigArticleData }) {
             className=""
             to={article.id ? `/article/${article.id}` : ""}
           >
-            <p {...stylex.props(styles["headerTitle"])}>
-              {article.title}
-            </p>
+            <p {...stylex.props(styles["headerTitle"])}>{article.title}</p>
           </ConditionalLink>
         </div>
         <div {...stylex.props(styles["footer"])}>
           <span {...stylex.props(styles["footerItem"])}>author:</span>
           <Link
-            {...stylex.props(styles["footerItem"], styles["footerItemLink"])}
+            {...stylex.props(styles["footerItem"], styles["underline"])}
             to={`/user/${article.author.id}`}
           >
             {article.author.name}

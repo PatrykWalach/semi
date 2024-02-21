@@ -1,7 +1,15 @@
 import { ArticleData } from "@/components/Article";
 import { Articles } from "@/components/Articles";
+import * as stylex from "@stylexjs/stylex";
+ 
 
-import "./HomePage.css";
+const styles = stylex.create({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "1px",
+  },
+});
 
 export default function HomePage({
   articles,
@@ -9,7 +17,7 @@ export default function HomePage({
   articles: readonly ArticleData[];
 }) {
   return (
-    <main className="home-page divide-y">
+    <main {...stylex.props(styles.root)}>
       {Array.from({ length: Math.ceil(articles.length / 4) }, (_, i) => {
         return (
           <Articles

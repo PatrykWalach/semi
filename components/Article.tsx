@@ -1,4 +1,4 @@
-const Image = "img"
+const Image = "img";
 import { Link } from "@remix-run/react";
 import { Chip } from "./Chip";
 
@@ -144,38 +144,93 @@ export const ARTICLES: ArticleData[] = [
   },
 ] satisfies ArticleData[];
 
-import "./Article.css";
+import * as stylex from "@stylexjs/stylex";
+import { colors } from "../app/tokens.stylex";
+
+const styles = stylex.create({
+  root: {
+    color: colors.onSurface,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gridColumn: {
+      default: "span 12",
+      "@media (min-width: 640px)": "span 6",
+      "@media (min-width: 1280px)": "span 4",
+    },
+    rowGap: "0.75rem",
+  },
+
+  img: {
+    objectFit: "cover",
+    width: "100%",
+    marginBottom: "0.5rem",
+    overflow: "hidden",
+    borderRadius: "0.5rem",
+    "--tw-shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+    "--tw-shadow-colored": "0 1px 2px 0 var(--tw-shadow-color)",
+    boxShadow:
+      "var(--tw-ring-offset-shadow, 0 0 #0000),\n    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)",
+    maxHeight: "14rem",
+  },
+  title: {
+    fontWeight: 700,
+    fontSize: {
+      default: "1.125rem",
+      "@media (min-width: 640px)": "1.25rem",
+      "@media (min-width: 768px)": "1.5rem",
+    },
+    lineHeight: {
+      default: "1.75rem",
+      "@media (min-width: 640px)": "1.75rem",
+      "@media (min-width: 768px)": "2rem",
+    },
+  },
+  description: { fontSize: "0.875rem", lineHeight: "1.25rem" },
+  footer: { paddingTop: "0.5rem" },
+  footerItem: {
+    marginInline: "0.25rem",
+    fontSize: "0.75rem",
+    lineHeight: "1rem",
+    fontWeight: 500,
+    marginInlineStart: {
+      default: null,
+      ":first-child": 0,
+    },
+  },
+  footerItemAccent: { color: "rgb(var(--on-surface) / 0.38)" },
+  underline: { textDecorationLine: "underline" },
+});
 
 export function Article({ article }: { article: ArticleData }) {
   return (
-    <article className="article">
+    <article {...stylex.props(styles["root"])}>
       <Image
         width={500}
         height={500}
         alt=""
         src={article.img}
-        className="article__img"
+        {...stylex.props(styles["img"])}
       />
       {article.category && (
         <Link to={`/search?tag=${article.category}`}>
           <Chip>{article.category}</Chip>
         </Link>
       )}
-      <Link
-        className="article__title"
-        to={`/article/${article.id}`}
-      >
+      <Link {...stylex.props(styles["title"])} to={`/article/${article.id}`}>
         {article.title}
       </Link>
-      <span className="article__description">{article.description}</span>
-      <div className="article-footer">
+      <span {...stylex.props(styles["description"])}>
+        {article.description}
+      </span>
+      <div {...stylex.props(styles["footer"])}>
         <Link
-          className="article-footer__item article-footer__item--link"
+          {...stylex.props(styles["footerItem"], styles["underline"])}
           to={`/user/${article.author.id}`}
         >
           {article.author.name}
         </Link>
-        <span className="article-footer__item">
+        <span {...stylex.props(styles["footerItem"])}>
           ·{" "}
           {new Intl.DateTimeFormat("en", {
             day: "numeric",
@@ -184,7 +239,9 @@ export function Article({ article }: { article: ArticleData }) {
           }).format(new Date(article.releasedAt))}{" "}
           ·
         </span>
-        <span className="article-footer__item article-footer__item--accent">
+        <span
+          {...stylex.props(styles["footerItem"], styles["footerItemAccent"])}
+        >
           {article.length}. read
         </span>
       </div>

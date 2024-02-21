@@ -3,9 +3,34 @@ import { Articles } from "@/components/Articles";
 import { Chip, ChipIcon } from "@/components/Chip";
 import Input from "@/components/Input";
 import { Form, Link } from "@remix-run/react";
+import * as stylex from "@stylexjs/stylex";
 import { URLSearchParamsDelete } from "../URLSearchParams";
 
-import './SearchPage.css';
+const styles = stylex.create({
+  search: { display: "grid", gap: "0.25rem " },
+  searchButton: {
+    cursor: "default",
+    padding: "0.25rem ",
+    margin: "-0.25rem ",
+    borderRadius: "9999px",
+  },
+  searchIcon: { width: "1.5rem ", height: "1.5rem " },
+  tags: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "0.5rem ",
+    alignItems: "center",
+  },
+  tagsIcon: {
+    width: "1.25rem ",
+    height: "1.25rem ",
+    display: {
+      default: null,
+      ":last-child": "none",
+    },
+  },
+  tagRemoveIcon: { width: "0.75rem ", height: "0.75rem " },
+});
 
 export default function SearchPage(props: {
   articles: readonly ArticleData[];
@@ -16,7 +41,7 @@ export default function SearchPage(props: {
   return (
     <div>
       <Form role="search" method="get">
-        <div className="search">
+        <div {...stylex.props(styles.search)}>
           <Input
             placeholder="Search..."
             type="search"
@@ -24,14 +49,14 @@ export default function SearchPage(props: {
             required
             name="tag"
           >
-            <button type="submit" className="search__button">
+            <button type="submit" {...stylex.props(styles.searchButton)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="search__icon"
+                {...stylex.props(styles.searchIcon)}
               >
                 <path
                   strokeLinecap="round"
@@ -41,14 +66,14 @@ export default function SearchPage(props: {
               </svg>
             </button>
           </Input>
-          <div className="tags">
+          <div {...stylex.props(styles.tags)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="tags__prefix-icon"
+              {...stylex.props(styles["tagsIcon"])}
             >
               <path
                 strokeLinecap="round"
@@ -82,7 +107,7 @@ export default function SearchPage(props: {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="tags__icon"
+                        {...stylex.props(styles["tagRemoveIcon"])}
                       >
                         <path
                           strokeLinecap="round"

@@ -1,7 +1,6 @@
 % !TeX root = doc.tex
 \documentclass[a4paper,12pt]{book} % nie: report!
-
-
+\usepackage{url}
 \usepackage[T1,plmath]{polski}\usepackage{polski} % lepiej to zamiast babel!
 \usepackage[utf8]{inputenc} % w razie kłopotów spróbować: \usepackage[utf8x]{inputenc}
 \usepackage{fancyhdr} % nagłówki i stopki
@@ -11,15 +10,19 @@
 \usepackage{amsmath} % to do dodatkowych symboli, przydatne
 \usepackage[pdftex,
             left=1in,right=1in,
-            top=1in,bottom=1in]{geometry} % marginsy
+            top=1in,bottom=1in]{geometry} % marginesy
 \usepackage{amssymb} % to też do dodatkowych symboli, też przydatne
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage[font=small,labelfont=bf]{caption}
-% jesli potrzeb, można oczywiście wstawić inne pakiety i swoje definicje...
+% jeśli potrzeb, można oczywiście wstawić inne pakiety i swoje definicje...
+
 
 \usepackage{amsmath}
 \usepackage{array}
+\usepackage{listings}
+\usepackage{color} 
+
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 
@@ -42,7 +45,36 @@
 % interlinia
 \linespread{1.25}
 
-
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+ 
+%Customize a bit the look
+\lstset{ %
+backgroundcolor=\color{white}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\ttfamily\footnotesize, % the size of the fonts that are used for the code
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+breaklines=true, % sets automatic line breaking
+captionpos=b, % sets the caption-position to bottom
+commentstyle=\color{mygreen}, % comment style
+extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+frame=single, % adds a frame around the code
+keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+keywordstyle=\color{blue}, % keyword style
+% language=Octave, % the language of the code
+morekeywords={*,...}, % if you want to add more keywords to the set
+numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+numbersep=5pt, % how far the line-numbers are from the code
+numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+showstringspaces=false, % underline spaces within strings only
+showtabs=false, % show tabs within strings adding particular underscores
+stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+stringstyle=\color{mymauve}, % string literal style
+tabsize=2, % sets default tabsize to 2 spaces,
+title=\lstname, % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
 
 
 
@@ -52,39 +84,39 @@
   ~
 
   \begin{tabular}{c@{\hspace{21mm}}|@{\hspace{5mm}}l}
-    \vspace{-20mm} &                                                                   \\
-    \multicolumn{2}{l}{\hspace{-12.5mm} \includegraphics[width=8cm]{UMCS_podstaw_12G_PL_P431.jpg}}     \\
-    \multicolumn{2}{@{\hspace{20mm}}l}{\vspace{-4mm}}                                  \\
+    \vspace{-20mm} &                                                                               \\
+    \multicolumn{2}{l}{\hspace{-12.5mm} \includegraphics[width=8cm]{UMCS_podstaw_12G_PL_P431.jpg}} \\
+    \multicolumn{2}{@{\hspace{20mm}}l}{\vspace{-4mm}}                                              \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf UNIWERSYTET MARII
-    CURIE-SKŁODOWSKIEJ}                                                                \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                  \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf W LUBLINIE}                          \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                  \\
+    CURIE-SKŁODOWSKIEJ}                                                                            \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                              \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf W LUBLINIE}                                      \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                              \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf Wydział Matematyki, Fizyki i
-    Informatyki}                                                                       \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                  \\
-                   & {\sf Kierunek: \textbf{informatyka} }                             \\
+    Informatyki}                                                                                   \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                              \\
+                   & {\sf Kierunek: \textbf{informatyka} }                                         \\
     %& {\sf Specjalność: \textbf{informatyczna}} \\ % wpisujemy tylko jeśli jest!!!
-                   &                                                                   \\\\\\
-                   & {\sf \large \bfseries Patryk Wałach}                              \\
-                   & {\sf nr albumu: 296597}                                           \\
-                   &                                                                   \\\\\\
-                   & \Large \sf \bfseries Porównanie praktyk projektowania CSS:    \\
-                   & \Large \sf \bfseries tradycyjne podejście z czystym CSS        \\
-                   & \Large \sf \bfseries a nowoczesne narzędzia generujące CSS                         \\\\[-10pt]
-                   & {\large \sf Comparative study of CSS design practices:}         \\
-                   & {\large \sf traditional approach with pure CSS}                \\
+                   &                                                                               \\\\\\
+                   & {\sf \large \bfseries Patryk Wałach}                                          \\
+                   & {\sf nr albumu: 296597}                                                       \\
+                   &                                                                               \\\\\\
+                   & \Large \sf \bfseries Porównanie praktyk projektowania CSS:                    \\
+                   & \Large \sf \bfseries tradycyjne podejście z czystym CSS                       \\
+                   & \Large \sf \bfseries a nowoczesne narzędzia generujące CSS                    \\\\[-10pt]
+                   & {\large \sf Comparative study of CSS design practices:}                       \\
+                   & {\large \sf traditional approach with pure CSS}                               \\
                    & {\large \sf versus modern CSS generating tools}                               \\
-                   &                                                                   \\
-                   &                                                                   \\
-                   &                                                                   \\
-                   & {\sf Praca magisterska}                                           \\
-                   & \vspace{-7mm}                                                     \\
-                   & {\sf napisana w Katedrze Oprogramowania Systemów Informatycznych} \\
-                   & {\sf Instytutu Informatyki UMCS}                                  \\
-                   & \vspace{-7mm}                                                     \\
-                   & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}           \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{15mm}}                                  \\
+                   &                                                                               \\
+                   &                                                                               \\
+                   &                                                                               \\
+                   & {\sf Praca magisterska}                                                       \\
+                   & \vspace{-7mm}                                                                 \\
+                   & {\sf napisana w Katedrze Oprogramowania Systemów Informatycznych}             \\
+                   & {\sf Instytutu Informatyki UMCS}                                              \\
+                   & \vspace{-7mm}                                                                 \\
+                   & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}                       \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{15mm}}                                              \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\textbf{\textsf{Lublin 2024}}}
   \end{tabular}
 \end{titlepage}
@@ -120,19 +152,442 @@
 % napisać na sam koniec
 
 \chapter{Ogólne wprowadzenie}
-\section{Kaskadowe arkusze stylów (ang. \emph{Cascading Style Sheets}, w skrócie CSS)}
-\section{Konwencja \emph{Blok Element Modyfikator} (w skrócie BEM)}
-\section{Statyczny CSS}
-\subsection{Wszechstronny CSS (ang. \emph{utility-first CSS})}
-\section{Programowy CSS}
+\section{Kaskadowe arkusze stylów}
+Kaskadowe arkusze stylów (ang. \emph{Cascading Style Sheets}, w skrócie CSS) jest to deklaratywny język programowania służący do kontrolowania prezentacji dokumentów HTML, XML, SVG itp.
 
+Historia CSS sięga lat 90. XX wieku, kiedy to został stworzony jako odpowiedź na potrzebę oddzielenia struktury dokumentu od jego stylizacji. Wcześniej, wszystkie style były zdefiniowane bezpośrednio w kodzie HTML, co sprawiało, że utrzymanie i zarządzanie stronami internetowymi było trudne i niewydajne.
+
+Za pomocą CSS można kontrolować różne aspekty prezentacji, takie jak kolory, czcionki, marginesy, odstępy między elementami, rozmiar i położenie elementów na stronie, animacje itp.
+
+
+Dla przykładu, poniższy kod zmienia kolor paragrafu na czerwony:
+\begin{lstlisting}
+p {
+  color: red;
+}
+\end{lstlisting}
+
+Język CSS jest stale rozwijany, co oznacza, że pojawiają się nowe funkcje i możliwości, które pozwalają projektantom jeszcze lepiej kontrolować wygląd swoich stron internetowych. Istnieją również różne wersje CSS, z których najnowsza, CSS3, wprowadza wiele nowych funkcji, takich jak efekty przejścia, animacje, gradienty czy elastyczne rozkładanie elementów.
+
+\section{Metodologia \emph{Blok Element Modyfikator}}
+\emph{Blok Element Modyfikator} (w skrócie BEM) jest to metodologia ułatwiająca tworzenie komponentów wielokrotnego użytku.
+
+Historia BEM sięga 2009 roku, kiedy została wprowadzona przez zespół deweloperów w Mail.Ru, jednej z największych rosyjskich firm internetowych. Jej celem było rozwiązanie problemów związanych z rosnącą złożonością stron internetowych i aplikacji oraz utrzymaniem spójności i czytelności kodu CSS.
+
+
+Zgodnie z metodologia BEM nazwa każdej z klas CSS musi składać się z trzech elementów:
+\begin{itemize}
+  \item Blok (ang. \emph{Block}) - niezależny komponent, który stanowi podstawową część struktury interfejsu. Blok może zawierać inne bloki lub elementy. Każdy blok ma unikalną nazwę, która jest używana w klasach CSS do identyfikacji jego stylów, np. \lstinline{.header}, \lstinline{.container}, \lstinline{.menu}, \lstinline{.checkbox}, \lstinline{.input}.
+
+  \item Element (ang. \emph{Element}) - część składowa bloku, która ma znaczenie tylko w kontekście tego bloku. Elementy są zależne od bloku, w którym się znajdują, i nie mogą istnieć samodzielnie poza nim. Nazwy elementów są prefiksowane nazwą bloku, do którego należą, i oddzielone dwiema podłogami, np. \lstinline{.menu__item}, \lstinline{.list__item}, \lstinline{.checkbox__caption}, \lstinline{.header__title}.
+
+  \item Modyfikator (ang. \emph{Modifier}) - odpowiada za zmianę wyglądu lub zachowania bloku lub elementu. Dzięki modyfikatorom możliwe jest dostosowywanie wyglądu i funkcjonalności istniejących bloków i elementów bez konieczności tworzenia nowych. Nazwy modyfikatorów są prefiksowane nazwą bloku lub elementu, do którego się odnoszą, i oddzielone dwoma myślnikami, np. \lstinline{.btn--disabled}, \lstinline{.link--highlighted}, \lstinline{.checkbox--checked}, \lstinline{.nav--fixed}, \lstinline{.nav__link--size-big}, \lstinline{.nav__link--color-yellow}.
+\end{itemize}
+
+
+
+
+
+\section{Semantyczny CSS}
+Semantyczny CSS jest to metodologia, której jednym z największych priorytetów jest "separacja obowiązków" \cite{Wathan2017}.
+
+Idea ta zakłada, że HTML powinien zawierać tylko informacje dotyczące treści, a wszystkie decyzje dotyczące stylizacji powinny być podejmowane w kodzie CSS.
+
+Dla przykładu:
+\begin{lstlisting}[language=HTML]
+  <p class="text-center">
+    Hello world!
+  </p>
+\end{lstlisting}
+
+Kod zawiera jedną klasę \lstinline{.text-center}. Centrowanie tekstu to decyzja stylistyczna, więc ten kod łamie zasadę "separacji obowiązków", ponieważ pozwoliliśmy, aby informacje dotyczące stylizacji przeniknęły do naszego HTML-a.
+
+Zamiast tego, zalecane podejście polega na nadawaniu elementom nazw klas na podstawie ich zawartości i wykorzystaniu tych klas jako punktów zaczepienia w kodzie CSS do stylizacji kodu:
+\begin{lstlisting}[language=HTML]
+  <style>
+  .greeting {
+      text-align: center;
+  }
+  </style>
+  
+  <p class="greeting">
+      Hello world!
+  </p>
+\end{lstlisting}
+
+\section{Wszechstronny CSS}
+Wszechstronny CSS (ang. \emph{utility-first CSS}) to podejście odwrotne do Semantycznego CSS. Skupia się na tworzeniu małych, pojedynczych klas CSS, z których każda odpowiada za jedną, konkretną właściwość stylu. Zamiast tworzyć specjalne klasy dla konkretnych elementów interfejsu użytkownika, jak nagłówki, przyciski itp. Używa się klas, które definiują pojedyncze właściwości CSS, takie jak kolor, margines czy wypełnienie.
+
+\section{Statyczny CSS}
+Statyczny CSS to metodologia w której kod CSS nie zmienia się w trakcie działania aplikacji. Kod CSS jest pisany bez żadnych dodatkowych narzędzi lub generowany na etapie kompilacji po przeanalizowaniu kodu. Pisząc kod w ten sposób, możemy skorzystać z wachlarza narzędzi, analizujących i modyfikujących kod CSS w celu znalezienia błędów, zminimalizowania lub polyfillowania kodu (zastąpienia kodu niewspieranego przez niektóre przeglądarki równoważnym działającym kodem) \cite{Lawson2011-fr}.
+\section{Programowy CSS}
+Programowy CSS to z kolei metodologia w której style CSS są tworzone w trakcie działania aplikacji. Przewagą tego rozwiązania nad statycznym CSS przez wiele lat była możliwość generowania stylów dynamicznych. Zastosowanie tej metodologii nie wymaga szerokiej znajomości języka CSS, style zwykle definiowane są przy użyciu bibliotek, które zapewniają wysoko poziomowy interfejs. Wykorzystując tego typu biblioteki, w językach z silnym typowaniem, możemy automatycznie korzystać z autouzupełniania kodu i raportowania błędów w edytorze bez dodatkowych narzędzi, wymaganych do zrozumienia składni języka CSS.
 
 
 \chapter{Najczęściej wykorzystywane funkcjonalności języka CSS}
+Podstawowa składnia języka CSS składa się z reguł, których składnie, możemy zaobserwować na rysunku \ref{rysunek};
+
+Cała struktura na rysunku \ref{rysunek} nazywana jest zestawem reguł. (Termin zestaw reguł jest często nazywany po prostu regułą).
+
+\begin{figure}[h]
+  \includegraphics[width=1\linewidth]{rysunek.png}
+  \caption{Przykład reguły CSS, zmieniający kolor paragrafu na czerwony}
+  \label{rysunek}
+\end{figure}
+
+
+
 \section{Selektory}
+\subsection{Selektor elementów}
+Selektor elementów wybiera elementy HTML na podstawie nazwy elementu.
+Dla przykładu listing \ref{selektor_elementu}.
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do wszystkich paragrafów na stronie}
+    ,label={selektor_elementu}
+  ]
+  p {
+    color: red;
+  }\end{lstlisting}
+
+\subsection{Selektor uniwersalny}
+Selektor uniwersalny wybiera wszystkie elementy HTML na stronie.
+Dla przykładu listing \ref{selektor_uniwersalny}.
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do wszystkich elementów na stronie}
+,label={selektor_uniwersalny}
+  ]
+  * {
+    color: red;
+  }\end{lstlisting}
+
+
+\subsection{Selektor id}
+Selektor id wybiera elementy HTML na podstawie atrybutu \lstinline{id} elementu.
+Id elementu jest unikalne na stronie, dlatego selektor id służy do wyboru jednego unikalnego elementu.
+Dla przykładu listing \ref{selektor_id}.
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do elementu HTML o atrybucie \lstinline{id="para1"}},
+label={selektor_id}
+  ]
+  #para1 {
+    color: red;
+  }\end{lstlisting}
+
+
+\subsection{Selektor klasy}
+Selektor klasy wybiera elementy HTML na podstawie atrybutu \lstinline{class} elementu.
+Dla przykładu listing \ref{selektor_klas}.
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do elementów HTML o atrybucie \lstinline{class="text-red"}}
+    ,label={selektor_klas}
+  ]
+  .text-red {
+    color: red;
+  }\end{lstlisting}
+
+
+
+Selektor klasy może być używany w połączeniu z selektorem elementu.
+Dla przykładu listing \ref{selektor_elementu_i_klas}.
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do paragrafów o atrybucie \lstinline{class="text-red"}}
+    ,label={selektor_elementu_i_klas}
+  ]
+  p.text-red {
+    color: red;
+  }\end{lstlisting}
+
+
+Elementy HTML mogą posiadać wiele klas.
+Dla przykładu listing \ref{wiele_klas}.
+
+
+
+\begin{lstlisting}[language=HTML,caption={Element będzie stylizowany przez reguły \lstinline{.center} i \lstinline{.large}},
+    label={wiele_klas}]
+  <p class="center large"></p>\end{lstlisting}
+
+
+\subsection{Selektor grupujący}
+Selektor grupujący pozwala na połączenie wielu takich samych reguł.
+Dla przykładu niepogrupowane reguły na rysunku \ref{selektor_grupujacy_niepogrupowane}, można zastąpić równoważną regułą tak jak na rysunku \ref{selektor_grupujacy_pogrupowane}.
+
+
+
+\begin{lstlisting}[
+    caption={Niepogrupowane reguły},
+  label={selektor_grupujacy_niepogrupowane}
+  ]
+  h1 {
+    color: red;
+  }
+  h2 {
+    color: red;
+  }
+  p {
+    color: red;
+  }\end{lstlisting}
+
+
+
+
+\begin{lstlisting}[
+    caption={Pogrupowane reguły}
+ ,label={selektor_grupujacy_pogrupowane}
+  ]
+  h1, h2, p {
+    color: red;
+  }\end{lstlisting}
+
+
+
+
+\subsection{Selektor potomków}
+Selektor potomków dopasowuje wszystkie elementy będące potomkami określonego elementu. Dla przykładu listing \ref{selektor_potomny}.
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do paragrafów, które są potomkami sekcji}
+,label={selektor_potomny}
+  ]
+  section p {
+    color: blue;
+  }\end{lstlisting}
+
+
+
+\subsection{Selektor dziecka}
+Selektor dziecka wybiera wszystkie elementy będące dziećmi określonego elementu. Dla przykładu listing \ref{selektor_dziecka}.
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do paragrafów, które są dziećmi sekcji},
+label={selektor_dziecka}
+  ]
+  section > p {
+    color: blue;
+  }\end{lstlisting}
+
+
+
+
+\section{Selektor rodzeństwa}
+Selektor rodzeństwa wybiera wszystkie elementy będące rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_rodzenstwa}.
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do paragrafów, umieszczonych za innym paragrafem}
+,label={selektor_rodzenstwa}
+  ]
+    p ~ p {
+      color: blue;
+    }\end{lstlisting}
+
+
+
+
+
+
+
+
+\section{Selektor sąsiedniego rodzeństwa}
+Selektor sąsiedniego rodzeństwa wybiera element będącym sąsiadującym rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_sasiedniego_rodzenstwa}.
+
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do paragrafów, umieszczonych bezpośrednio za innym paragrafem}
+, label={selektor_sasiedniego_rodzenstwa}
+  ]
+    p + p {
+      color: blue;
+    }\end{lstlisting}
+
+
+
+
+
+
+
+
 \section{Pseudo-klasy}
+
+Pseudo-klasy opisują stany elementów.
+Na przykład, mogą być użyte do:
+\begin{itemize}
+  \item Stylizacji elementu, gdy użytkownik najedzie na niego myszką (listing \ref{pseudo_klasy_hover})
+  \item Stylizacji odwiedzonych i nieodwiedzonych linków w różny sposób (listing \ref{pseudo_klasy_visited})
+  \item Stylizacji elementu, gdy otrzymuje skupienie (listing \ref{pseudo_klasy_focus})
+\end{itemize}
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do paragrafu, na który użytkownik najedzie myszką}
+,label={pseudo_klasy_hover}
+  ]
+    p:hover {
+      color: blue;
+    }\end{lstlisting}
+
+
+
+
+
+\begin{lstlisting}[
+    caption={Reguły zmieniają kolor linku zależnie od jego stanu}
+    ,label={pseudo_klasy_visited}
+  ]
+    a:link {
+      color: red;
+    }
+    a:visited {
+      color: blue;
+    }\end{lstlisting}
+
+
+
+
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zmienia kolor przycisku, gdy otrzymuje skupienie, np. poprzez wciśnięcie klawisza \textbf{Tab}},
+label={pseudo_klasy_focus}
+  ]
+    button:focus {
+      color: red;
+    }\end{lstlisting}
+
+
+\subsection{Funkcyjne pseudo-klasy}
+Funkcyjne pseudo-klasy to klasy, które akceptują listę selektorów jako parametry. Dla przykładu listing \ref{pseudo_klasy_functional}.
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do elementów, które nie są divami i nie są elementami o atrybucie \lstinline{class="fancy"}}
+,label={pseudo_klasy_functional}
+  ]
+    :not(div):not(.fancy) {
+      color: blue;
+    }\end{lstlisting}
+
+
+
+
+% \begin{figure}[h]
+%   \begin{lstlisting}
+%     p:nth-child(2) {
+%       color: blue;
+%     }\end{lstlisting}
+%   \caption{Reguła zostanie zastosowana do paragrafów, które są pod elementem}
+%   \label{pseudo_klasy_functional}
+% \end{figure}
+
 \section{Pseudo-elementy}
+
+Pseudo-elementy służą do stylizacji określonych części elementów.
+
+Na przykład, mogą być używane do:
+
+\begin{itemize}
+  \item Stylizacji pierwszej litery lub linii elementu (listing \ref{pseudo_elementy_first_letter})
+  \item Wstawienia treści przed lub po treści elementu (listing \ref{pseudo_elementy_before_after})
+\end{itemize}
+
+
+
+\begin{lstlisting}[
+    caption={Reguła zostanie zastosowana do pierwszej litery każdego paragrafu}
+,label={pseudo_elementy_first_letter}
+  ]
+    p::first-letter {
+      color: red;
+    }\end{lstlisting}
+
+
+
+\begin{lstlisting}[caption={Reguła doda napis "Hello" do każdego paragrafu},
+    label={pseudo_elementy_before_after}]
+    p::before {
+      content: "Hello";
+    }\end{lstlisting}
+
+
 \section{Nadpisywanie stylów}
+Jeśli istnieją dwie lub więcej reguł CSS wskazujących na ten sam element, selektor o najwyższej specyficzności "wygra", i jego deklaracja stylu zostanie zastosowana do tego elementu HTML.
+Dla przykładu listing \ref{nadpisywanie_stylow}.
+
+
+\begin{lstlisting}[language=HTML, label={nadpisywanie_stylow}, caption={Tekst paragrafu będzie zielony, ponieważ reguła \lstinline{.test} ma najwyższą specyficzność}]
+  <html>
+  <head>
+    <style>
+      .test {color: green;}
+      p {color: red;}
+    </style>
+  </head>
+  <body>
+  <p class="test">Hello World!</p>
+  </body>
+  </html>\end{lstlisting}
+
+
+Każdy selektor CSS ma swoje miejsce w hierarchii specyficzności.
+
+Istnieją cztery kategorie, które określają poziom specyficzności selektora:
+\begin{itemize}
+  \item Style liniowe - Na przykład: \lstinline{<h1 style="color: pink;">}
+  \item Identyfikatory - Na przykład: \lstinline{#navbar}
+  \item Klasy, pseudo-klasy, selektory atrybutów - Na przykład: \lstinline{.test}, \lstinline{:hover}, \lstinline{[href]}
+  \item Elementy i pseudo-elementy - Na przykład: \lstinline{h1}, \lstinline{::before}
+\end{itemize}
+
+Tabela \ref{tabela_specyficznosci} pokazuje przykłady obliczenia specyficzności.
+
+\begin{table}[h!]
+  \caption{Przykłady obliczenia specyficzności}
+  \begin{tabular}{ l | P{0.35\linewidth} | P{0.35\linewidth}}
+    Selektor                             & Specyficzność & Kalkulacja \\
+    \hline
+    \lstinline|*|                        & 0             & 0          \\
+    \lstinline|a|                        & 1             & 1          \\
+    \lstinline|.btn|                     & 10            & 10         \\
+    \lstinline|#demo|                    & 100           & 100        \\
+    \lstinline|<p style="color: pink;">| & 1000          & 1000       \\
+    \lstinline|a.link|                   & 11            & 1 + 10     \\
+    \lstinline|a.btn.blue|               & 21            & 1 + 10+10  \\
+    \lstinline|section#demo|             & 101           & 1 + 100
+  \end{tabular}
+
+  \label{tabela_specyficznosci}
+\end{table}
+
+
+
+
+
+
+
+
 \section{Dziedziczenie stylów}
 \section{Style warunkowe (ang. \emph{media query})}
 \section{Style dynamiczne}
@@ -140,7 +595,7 @@
 \chapter{Problemy języka CSS}
 \section{Rosnące rozmiary plików}
 \section{Kolizje pomiędzy stylami}
-\section{Rozmieszczanie klas pomiędzy plikami css}
+\section{Rozmieszczanie klas pomiędzy plikami CSS}
 
 \chapter{Narzędzia}
 \section{Język JavaScript}
@@ -164,20 +619,19 @@
 
 \begin{table}[h!]
   \begin{tabular}{ l | P{0.35\linewidth} | P{0.35\linewidth}}
-     & An empirical study on the use of CSS preprocessors \cite{Mazinanian__Tsantalis__2016} & Discovering RefactoringOpportunities in Cascading Style Sheets \cite{Mazinanian__Tsantalis__2}\\ 
-     \hline
-     Zmienne &X&\\
-     
-      Zagnieżdżanie&X&  \\
-     
-      Domieszki  &X&\\
-     
-      Prefiksy   &X&\\
-     
-     Deduplikacja  &&X\\
-     
-     Kolejność  &&X 
-     
+                  & An empirical study on the use of CSS preprocessors \cite{Mazinanian__Tsantalis__2016} & Discovering RefactoringOpportunities in Cascading Style Sheets \cite{Mazinanian__Tsantalis__2} \\
+    \hline
+    Zmienne       & X                                                                                     &                                                                                                \\
+
+    Zagnieżdżanie & X                                                                                     &                                                                                                \\
+
+    Domieszki     & X                                                                                     &                                                                                                \\
+
+    Prefiksy      & X                                                                                     &                                                                                                \\
+
+    Deduplikacja  &                                                                                       & X                                                                                              \\
+
+    Kolejność     &                                                                                       & X
   \end{tabular}
   \caption{Kryteria}
 \end{table}

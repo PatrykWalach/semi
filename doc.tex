@@ -96,6 +96,7 @@ title=\lstname, % show the filename of files included with \lstinputlisting; als
     Informatyki}                                                                                   \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                              \\
                    & {\sf Kierunek: \textbf{informatyka} }                                         \\
+                   & {\sf Specjalność: \textbf{deweloper} }                                         \\
     %& {\sf Specjalność: \textbf{informatyczna}} \\ % wpisujemy tylko jeśli jest!!!
                    &                                                                               \\\\\\
                    & {\sf \large \bfseries Patryk Wałach}                                          \\
@@ -112,7 +113,7 @@ title=\lstname, % show the filename of files included with \lstinputlisting; als
                    &                                                                               \\
                    & {\sf Praca magisterska}                                                       \\
                    & \vspace{-7mm}                                                                 \\
-                   & {\sf napisana w Katedrze Oprogramowania Systemów Informatycznych}             \\
+                   & {\sf napisana w Katedrze Cyberbezpieczeństwa i Lingwistyki Komputerowej}             \\
                    & {\sf Instytutu Informatyki UMCS}                                              \\
                    & \vspace{-7mm}                                                                 \\
                    & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}                       \\
@@ -153,14 +154,14 @@ title=\lstname, % show the filename of files included with \lstinputlisting; als
 
 \chapter{Ogólne wprowadzenie}
 \section{Kaskadowe arkusze stylów}
-Kaskadowe arkusze stylów (ang. \emph{Cascading Style Sheets}, w skrócie CSS) jest to deklaratywny język programowania służący do kontrolowania prezentacji dokumentów HTML, XML, SVG itp.
+Kaskadowe arkusze stylów (ang. \emph{Cascading Style Sheets}, w skrócie CSS) jest to deklaratywny język służący do kontrolowania prezentacji dokumentów HTML, XML, SVG itp.
 
-Historia CSS sięga lat 90. XX wieku, kiedy to został stworzony jako odpowiedź na potrzebę oddzielenia struktury dokumentu od jego stylizacji. Wcześniej, wszystkie style były zdefiniowane bezpośrednio w kodzie HTML, co sprawiało, że utrzymanie i zarządzanie stronami internetowymi było trudne i niewydajne.
+Historia CSS sięga lat 90. XX wieku, kiedy to został stworzony jako odpowiedź na potrzebę oddzielenia struktury dokumentu od jego stylizacji. Wcześniej wszystkie style były zdefiniowane bezpośrednio w kodzie HTML, co sprawiało, że utrzymanie i zarządzanie stronami internetowymi było trudne i niewydajne.
 
 Za pomocą CSS można kontrolować różne aspekty prezentacji, takie jak kolory, czcionki, marginesy, odstępy między elementami, rozmiar i położenie elementów na stronie, animacje itp.
 
 
-Dla przykładu, poniższy kod zmienia kolor paragrafu na czerwony:
+Dla przykładu, poniższy kod zmienia kolor akapitu na czerwony:
 \begin{lstlisting}
 p {
   color: red;
@@ -179,9 +180,9 @@ Zgodnie z metodologia BEM nazwa każdej z klas CSS musi składać się z trzech 
 \begin{itemize}
   \item Blok (ang. \emph{Block}) - niezależny komponent, który stanowi podstawową część struktury interfejsu. Blok może zawierać inne bloki lub elementy. Każdy blok ma unikalną nazwę, która jest używana w klasach CSS do identyfikacji jego stylów, np. \lstinline{.header}, \lstinline{.container}, \lstinline{.menu}, \lstinline{.checkbox}, \lstinline{.input}.
 
-  \item Element (ang. \emph{Element}) - część składowa bloku, która ma znaczenie tylko w kontekście tego bloku. Elementy są zależne od bloku, w którym się znajdują, i nie mogą istnieć samodzielnie poza nim. Nazwy elementów są prefiksowane nazwą bloku, do którego należą, i oddzielone dwiema podłogami, np. \lstinline{.menu__item}, \lstinline{.list__item}, \lstinline{.checkbox__caption}, \lstinline{.header__title}.
+  \item Element (ang. \emph{Element}) - część składowa bloku, która ma znaczenie tylko w kontekście tego bloku. Elementy są zależne od bloku, w którym się znajdują, i nie mogą istnieć samodzielnie poza nim. Nazwy elementów są prefiksowane nazwą bloku, do którego należą, i oddzielone dwoma podkreślnikami, np. \lstinline{.menu__item}, \lstinline{.list__item}, \lstinline{.checkbox__caption}, \lstinline{.header__title}.
 
-  \item Modyfikator (ang. \emph{Modifier}) - odpowiada za zmianę wyglądu lub zachowania bloku lub elementu. Dzięki modyfikatorom możliwe jest dostosowywanie wyglądu i funkcjonalności istniejących bloków i elementów bez konieczności tworzenia nowych. Nazwy modyfikatorów są prefiksowane nazwą bloku lub elementu, do którego się odnoszą, i oddzielone dwoma myślnikami, np. \lstinline{.btn--disabled}, \lstinline{.link--highlighted}, \lstinline{.checkbox--checked}, \lstinline{.nav--fixed}, \lstinline{.nav__link--size-big}, \lstinline{.nav__link--color-yellow}.
+  \item Modyfikator (ang. \emph{Modifier}) - odpowiada za zmianę wyglądu lub zachowania bloku lub elementu. Dzięki modyfikatorom możliwe jest dostosowywanie wyglądu i funkcjonalności istniejących bloków i elementów bez konieczności tworzenia nowych. Nazwy modyfikatorów są prefiksowane nazwą bloku lub elementu, do którego się odnoszą, i oddzielone dwoma minusami, np. \lstinline{.btn--disabled}, \lstinline{.link--highlighted}, \lstinline{.checkbox--checked}, \lstinline{.nav--fixed}, \lstinline{.nav__link--size-big}, \lstinline{.nav__link--color-yellow}.
 \end{itemize}
 
 
@@ -189,7 +190,7 @@ Zgodnie z metodologia BEM nazwa każdej z klas CSS musi składać się z trzech 
 
 
 \section{Semantyczny CSS}
-Semantyczny CSS jest to metodologia, której jednym z największych priorytetów jest "separacja obowiązków" \cite{Wathan2017}.
+Semantyczny CSS jest to metodologia, której jednym z największych priorytetów jest \textit{separacja obowiązków} \cite{Wathan2017}.
 
 Idea ta zakłada, że HTML powinien zawierać tylko informacje dotyczące treści, a wszystkie decyzje dotyczące stylizacji powinny być podejmowane w kodzie CSS.
 
@@ -200,7 +201,7 @@ Dla przykładu:
   </p>
 \end{lstlisting}
 
-Kod zawiera jedną klasę \lstinline{.text-center}. Centrowanie tekstu to decyzja stylistyczna, więc ten kod łamie zasadę "separacji obowiązków", ponieważ pozwoliliśmy, aby informacje dotyczące stylizacji przeniknęły do naszego HTML-a.
+Kod zawiera jedną klasę \lstinline{.text-center}. Centrowanie tekstu to decyzja stylistyczna, więc ten kod łamie zasadę \textit{separacji obowiązków}, ponieważ pozwoliliśmy, aby informacje dotyczące stylizacji przeniknęły do naszego HTML-a.
 
 Zamiast tego, zalecane podejście polega na nadawaniu elementom nazw klas na podstawie ich zawartości i wykorzystaniu tych klas jako punktów zaczepienia w kodzie CSS do stylizacji kodu:
 \begin{lstlisting}[language=HTML]
@@ -216,7 +217,7 @@ Zamiast tego, zalecane podejście polega na nadawaniu elementom nazw klas na pod
 \end{lstlisting}
 
 \section{Wszechstronny CSS}
-Wszechstronny CSS (ang. \emph{utility-first CSS}) to podejście odwrotne do Semantycznego CSS. Skupia się na tworzeniu małych, pojedynczych klas CSS, z których każda odpowiada za jedną, konkretną właściwość stylu. Zamiast tworzyć specjalne klasy dla konkretnych elementów interfejsu użytkownika, jak nagłówki, przyciski itp. Używa się klas, które definiują pojedyncze właściwości CSS, takie jak kolor, margines czy wypełnienie.
+Wszechstronny CSS (ang. \emph{utility-first CSS}) to podejście odwrotne do Semantycznego CSS. Skupia się na tworzeniu małych, pojedynczych klas CSS, z których każda odpowiada za jedną, konkretną właściwość stylu. Zamiast tworzyć specjalne klasy dla konkretnych elementów interfejsu użytkownika, jak nagłówki, przyciski itp. używa się klas, które definiują pojedyncze właściwości CSS, takie jak kolor, margines czy wypełnienie.
 
 \section{Statyczny CSS}
 Statyczny CSS to metodologia w której kod CSS nie zmienia się w trakcie działania aplikacji. Kod CSS jest pisany bez żadnych dodatkowych narzędzi lub generowany na etapie kompilacji po przeanalizowaniu kodu. Pisząc kod w ten sposób, możemy skorzystać z wachlarza narzędzi, analizujących i modyfikujących kod CSS w celu znalezienia błędów, zminimalizowania lub polyfillowania kodu (zastąpienia kodu niewspieranego przez niektóre przeglądarki równoważnym działającym kodem) \cite{Lawson2011-fr}.
@@ -231,7 +232,7 @@ Cała struktura na rysunku \ref{rysunek} nazywana jest zestawem reguł. (Termin 
 
 \begin{figure}[h]
   \includegraphics[width=1\linewidth]{rysunek.png}
-  \caption{Przykład reguły CSS, zmieniający kolor paragrafu na czerwony}
+  \caption{Przykład reguły CSS, zmieniający kolor akapitu na czerwony}
   \label{rysunek}
 \end{figure}
 
@@ -245,7 +246,7 @@ Dla przykładu listing \ref{selektor_elementu}.
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do wszystkich paragrafów na stronie}
+    caption={Reguła zostanie zastosowana do wszystkich akapitów na stronie}
     ,label={selektor_elementu}
   ]
   p {
@@ -304,7 +305,7 @@ Dla przykładu listing \ref{selektor_elementu_i_klas}.
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do paragrafów o atrybucie \lstinline{class="text-red"}}
+    caption={Reguła zostanie zastosowana do akapitów o atrybucie \lstinline{class="text-red"}}
     ,label={selektor_elementu_i_klas}
   ]
   p.text-red {
@@ -362,7 +363,7 @@ Selektor potomków dopasowuje wszystkie elementy będące potomkami określonego
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do paragrafów, które są potomkami sekcji}
+    caption={Reguła zostanie zastosowana do akapitów, które są potomkami sekcji}
 ,label={selektor_potomny}
   ]
   section p {
@@ -376,7 +377,7 @@ Selektor dziecka wybiera wszystkie elementy będące dziećmi określonego eleme
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do paragrafów, które są dziećmi sekcji},
+    caption={Reguła zostanie zastosowana do akapitów, które są dziećmi sekcji},
 label={selektor_dziecka}
   ]
   section > p {
@@ -392,7 +393,7 @@ Selektor rodzeństwa wybiera wszystkie elementy będące rodzeństwem określone
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do paragrafów, umieszczonych za innym paragrafem}
+    caption={Reguła zostanie zastosowana do akapitów, umieszczonych za innym akapitem}
 ,label={selektor_rodzenstwa}
   ]
     p ~ p {
@@ -413,7 +414,7 @@ Selektor sąsiedniego rodzeństwa wybiera element będącym sąsiadującym rodze
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do paragrafów, umieszczonych bezpośrednio za innym paragrafem}
+    caption={Reguła zostanie zastosowana do akapitów, umieszczonych bezpośrednio za innym akapitem}
 , label={selektor_sasiedniego_rodzenstwa}
   ]
     p + p {
@@ -440,7 +441,7 @@ Na przykład, mogą być użyte do:
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do paragrafu, na który użytkownik najedzie myszką}
+    caption={Reguła zostanie zastosowana do akapitu, na który użytkownik najedzie myszką}
 ,label={pseudo_klasy_hover}
   ]
     p:hover {
@@ -498,7 +499,7 @@ Funkcyjne pseudo-klasy to klasy, które akceptują listę selektorów jako param
 %     p:nth-child(2) {
 %       color: blue;
 %     }\end{lstlisting}
-%   \caption{Reguła zostanie zastosowana do paragrafów, które są pod elementem}
+%   \caption{Reguła zostanie zastosowana do akapitów, które są pod elementem}
 %   \label{pseudo_klasy_functional}
 % \end{figure}
 
@@ -516,7 +517,7 @@ Na przykład, mogą być używane do:
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do pierwszej litery każdego paragrafu}
+    caption={Reguła zostanie zastosowana do pierwszej litery każdego akapitu}
 ,label={pseudo_elementy_first_letter}
   ]
     p::first-letter {
@@ -525,7 +526,7 @@ Na przykład, mogą być używane do:
 
 
 
-\begin{lstlisting}[caption={Reguła doda napis "Hello" do każdego paragrafu},
+\begin{lstlisting}[caption={Reguła doda napis "Hello" do każdego akapitu},
     label={pseudo_elementy_before_after}]
     p::before {
       content: "Hello";
@@ -537,7 +538,7 @@ Jeśli istnieją dwie lub więcej reguł CSS wskazujących na ten sam element, s
 Dla przykładu listing \ref{nadpisywanie_stylow}.
 
 
-\begin{lstlisting}[language=HTML, label={nadpisywanie_stylow}, caption={Tekst paragrafu będzie zielony, ponieważ reguła \lstinline{.test} ma najwyższą specyficzność}]
+\begin{lstlisting}[language=HTML, label={nadpisywanie_stylow}, caption={Tekst akapitu będzie zielony, ponieważ reguła \lstinline{.test} ma najwyższą specyficzność}]
   <html>
   <head>
     <style>

@@ -96,7 +96,7 @@ title=\lstname, % show the filename of files included with \lstinputlisting; als
     Informatyki}                                                                                   \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                              \\
                    & {\sf Kierunek: \textbf{informatyka} }                                         \\
-                   & {\sf Specjalność: \textbf{deweloper} }                                         \\
+                   & {\sf Specjalność: \textbf{deweloper} }                                        \\
     %& {\sf Specjalność: \textbf{informatyczna}} \\ % wpisujemy tylko jeśli jest!!!
                    &                                                                               \\\\\\
                    & {\sf \large \bfseries Patryk Wałach}                                          \\
@@ -113,7 +113,7 @@ title=\lstname, % show the filename of files included with \lstinputlisting; als
                    &                                                                               \\
                    & {\sf Praca magisterska}                                                       \\
                    & \vspace{-7mm}                                                                 \\
-                   & {\sf napisana w Katedrze Cyberbezpieczeństwa i Lingwistyki Komputerowej}             \\
+                   & {\sf napisana w Katedrze Cyberbezpieczeństwa i Lingwistyki Komputerowej}      \\
                    & {\sf Instytutu Informatyki UMCS}                                              \\
                    & \vspace{-7mm}                                                                 \\
                    & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}                       \\
@@ -220,18 +220,36 @@ Zamiast tego, zalecane podejście polega na nadawaniu elementom nazw klas na pod
 Wszechstronny CSS (ang. \emph{utility-first CSS}) to podejście odwrotne do Semantycznego CSS. Skupia się na tworzeniu małych, pojedynczych klas CSS, z których każda odpowiada za jedną, konkretną właściwość stylu. Zamiast tworzyć specjalne klasy dla konkretnych elementów interfejsu użytkownika, jak nagłówki, przyciski itp. używa się klas, które definiują pojedyncze właściwości CSS, takie jak kolor, margines czy wypełnienie.
 
 \section{Statyczny CSS}
-Statyczny CSS to metodologia w której kod CSS nie zmienia się w trakcie działania aplikacji. Kod CSS jest pisany bez żadnych dodatkowych narzędzi lub generowany na etapie kompilacji po przeanalizowaniu kodu. Pisząc kod w ten sposób, możemy skorzystać z wachlarza narzędzi, analizujących i modyfikujących kod CSS w celu znalezienia błędów, zminimalizowania lub polyfillowania kodu (zastąpienia kodu niewspieranego przez niektóre przeglądarki równoważnym działającym kodem) \cite{Lawson2011-fr}.
+Statyczny CSS to metodologia, w której kod CSS nie zmienia się w trakcie działania aplikacji. Kod CSS jest pisany wprost lub generowany na etapie kompilacji po przeanalizowaniu kodu. Tworząc kod w ten sposób, możemy skorzystać z wachlarza narzędzi, analizujących i modyfikujących kod CSS w celu znalezienia błędów, zminimalizowania lub polyfillowania kodu\footnote{polyfillowania kodu -- zastąpienia kodu niewspieranego przez niektóre przeglądarki równoważnym działającym kodem \cite{Lawson2011-fr}}.
 \section{Programowy CSS}
-Programowy CSS to z kolei metodologia w której style CSS są tworzone w trakcie działania aplikacji. Przewagą tego rozwiązania nad statycznym CSS przez wiele lat była możliwość generowania stylów dynamicznych. Zastosowanie tej metodologii nie wymaga szerokiej znajomości języka CSS, style zwykle definiowane są przy użyciu bibliotek, które zapewniają wysoko poziomowy interfejs. Wykorzystując tego typu biblioteki, w językach z silnym typowaniem, możemy automatycznie korzystać z autouzupełniania kodu i raportowania błędów w edytorze bez dodatkowych narzędzi, wymaganych do zrozumienia składni języka CSS.
+Programowy CSS to z kolei metodologia, w której style CSS są tworzone w trakcie działania aplikacji. Przewagą tego rozwiązania nad statycznym CSS przez wiele lat była możliwość generowania stylów dynamicznych. Zastosowanie tej metodologii nie wymaga szerokiej znajomości języka CSS -- style zwykle definiowane są przy użyciu bibliotek, które zapewniają wysoko poziomowy interfejs. Wykorzystując tego typu biblioteki w językach z silnym typowaniem, możemy automatycznie korzystać z auto uzupełniania kodu i raportowania błędów w edytorze bez dodatkowych narzędzi, wymaganych do zrozumienia składni języka CSS.
 
 
 \chapter{Najczęściej wykorzystywane funkcjonalności języka CSS}
-Podstawowa składnia języka CSS składa się z reguł, których składnie, możemy zaobserwować na rysunku \ref{rysunek};
+Składnia arkusza stylów CSS przedstawiona jest na listingu \ref{stylesheet_syntax}. Jednym z głównych elementów tej składni są zestawy reguł\footnote{zestaw reguł - Termin zestaw reguł jest często nazywany po prostu regułą}, których składnia przedstawiona jest na listingu \ref{ruleset_syntax}. Na rysunku \ref{rysunek} widzimy przykład takiej reguły, składającej się z selektora elementu \lstinline|p| oznaczonego niebieskim kolorem, oraz zbioru deklaracji, znajdującego się pomiędzy nawiasami. W zbiorze deklaracji na tym rysunku widzimy tylko jedną deklarację \lstinline|color: red;| składającą się z atrybutu oznaczonego kolorem czerwonym, dwukropka, wartości atrybutu i średnika. Każda reguła musi składać się z co najmniej jednej deklaracji.
 
-Cała struktura na rysunku \ref{rysunek} nazywana jest zestawem reguł. (Termin zestaw reguł jest często nazywany po prostu regułą).
+
+\begin{lstlisting}[caption={Składnia arkusza stylów CSS \cite{GrammarofCSS}},label={stylesheet_syntax}]
+stylesheet
+  : [ CHARSET_SYM STRING ';' ]?
+    [S|CDO|CDC]* [ import [ CDO S* | CDC S* ]* ]*
+    [ [ ruleset | media | page ] [ CDO S* | CDC S* ]* ]*
+  ;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Składnia reguły CSS \cite{GrammarofCSS}},label={ruleset_syntax}]
+  ruleset
+    : selector [ ',' S* selector ]*
+      '{' S* declaration? [ ';' S* declaration? ]* '}' S*
+    ;
+  
+  declaration
+    : property ':' S* expr prio?
+    ;
+\end{lstlisting}
 
 \begin{figure}[h]
-  \includegraphics[width=1\linewidth]{rysunek.png}
+  \includegraphics[width=.5\linewidth]{rysunek.png}
   \caption{Przykład reguły CSS, zmieniający kolor akapitu na czerwony}
   \label{rysunek}
 \end{figure}
@@ -239,7 +257,27 @@ Cała struktura na rysunku \ref{rysunek} nazywana jest zestawem reguł. (Termin 
 
 
 \section{Selektory}
+
+\begin{lstlisting}[caption={Składnia selektora CSS \cite{GrammarofCSS}}]
+selector
+  : simple_selector [ combinator selector | S+ [ combinator? selector ]? ]?
+  ;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Składnia prostego selektora CSS \cite{GrammarofCSS}}]
+simple_selector
+  : element_name [ HASH | class | attrib | pseudo ]*
+  | [ HASH | class | attrib | pseudo ]+
+  ;
+\end{lstlisting}
+
+
 \subsection{Selektor elementów}
+\begin{lstlisting}[caption={Składnia selektora elementów CSS \cite{GrammarofCSS}}]
+element_name
+  : IDENT | '*'
+  ;
+\end{lstlisting}
 Selektor elementów wybiera elementy HTML na podstawie nazwy elementu.
 Dla przykładu listing \ref{selektor_elementu}.
 
@@ -269,6 +307,9 @@ Dla przykładu listing \ref{selektor_uniwersalny}.
 
 
 \subsection{Selektor id}
+\begin{lstlisting}[caption={Składnia tokenu \lstinline|HASH| zwracanego przez lekser CSS \cite{GrammarofCSS}}]
+  "#"{name}
+\end{lstlisting}
 Selektor id wybiera elementy HTML na podstawie atrybutu \lstinline{id} elementu.
 Id elementu jest unikalne na stronie, dlatego selektor id służy do wyboru jednego unikalnego elementu.
 Dla przykładu listing \ref{selektor_id}.
@@ -284,6 +325,11 @@ label={selektor_id}
 
 
 \subsection{Selektor klasy}
+\begin{lstlisting}[caption={Składnia selektora klasy CSS \cite{GrammarofCSS}}]
+class
+  : '.' IDENT
+  ;
+\end{lstlisting}
 Selektor klasy wybiera elementy HTML na podstawie atrybutu \lstinline{class} elementu.
 Dla przykładu listing \ref{selektor_klas}.
 
@@ -325,7 +371,7 @@ Dla przykładu listing \ref{wiele_klas}.
 
 \subsection{Selektor grupujący}
 Selektor grupujący pozwala na połączenie wielu takich samych reguł.
-Dla przykładu niepogrupowane reguły na rysunku \ref{selektor_grupujacy_niepogrupowane}, można zastąpić równoważną regułą tak jak na rysunku \ref{selektor_grupujacy_pogrupowane}.
+Dla przykładu niepogrupowane reguły na rysunku \ref{selektor_grupujacy_niepogrupowane} można zastąpić równoważną regułą tak jak na rysunku \ref{selektor_grupujacy_pogrupowane}.
 
 
 
@@ -373,6 +419,7 @@ Selektor potomków dopasowuje wszystkie elementy będące potomkami określonego
 
 
 \subsection{Selektor dziecka}
+
 Selektor dziecka wybiera wszystkie elementy będące dziećmi określonego elementu. Dla przykładu listing \ref{selektor_dziecka}.
 
 
@@ -387,16 +434,16 @@ label={selektor_dziecka}
 
 
 
-\section{Selektor rodzeństwa}
-Selektor rodzeństwa wybiera wszystkie elementy będące rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_rodzenstwa}.
+\section{Selektor młodszego rodzeństwa}
+Selektor młodszego rodzeństwa wybiera wszystkie elementy będące młodszym rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_rodzenstwa}.
 
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do akapitów, umieszczonych za innym akapitem}
+    caption={Reguła zostanie zastosowana do wszystkich akapitów, umieszczonych za sekcją}
 ,label={selektor_rodzenstwa}
   ]
-    p ~ p {
+    section ~ p {
       color: blue;
     }\end{lstlisting}
 
@@ -414,10 +461,10 @@ Selektor sąsiedniego rodzeństwa wybiera element będącym sąsiadującym rodze
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do akapitów, umieszczonych bezpośrednio za innym akapitem}
+    caption={Reguła zostanie zastosowana do akapitów, bezpośrednio poprzedzonych sekcją}
 , label={selektor_sasiedniego_rodzenstwa}
   ]
-    p + p {
+    section + p {
       color: blue;
     }\end{lstlisting}
 
@@ -429,13 +476,17 @@ Selektor sąsiedniego rodzeństwa wybiera element będącym sąsiadującym rodze
 
 
 \section{Pseudo-klasy}
-
+\begin{lstlisting}[caption={Składnia pseudo-klasy CSS \cite{GrammarofCSS}}]
+pseudo
+  : ':' [ IDENT | FUNCTION S* [IDENT S*]? ')' ]
+  ;
+\end{lstlisting}
 Pseudo-klasy opisują stany elementów.
 Na przykład, mogą być użyte do:
 \begin{itemize}
   \item Stylizacji elementu, gdy użytkownik najedzie na niego myszką (listing \ref{pseudo_klasy_hover})
   \item Stylizacji odwiedzonych i nieodwiedzonych linków w różny sposób (listing \ref{pseudo_klasy_visited})
-  \item Stylizacji elementu, gdy otrzymuje skupienie (listing \ref{pseudo_klasy_focus})
+  \item Stylizacji elementu, gdy otrzymuje skupienie \footnote{element otrzymujący skupienie to element który będzie jako pierwszy informowany o zdarzeniach, np. o wciśnięciu klawiatury} (listing \ref{pseudo_klasy_focus})
 \end{itemize}
 
 
@@ -479,12 +530,15 @@ label={pseudo_klasy_focus}
 
 
 \subsection{Funkcyjne pseudo-klasy}
+\begin{lstlisting}[caption={Składnia tokena \lstinline|FUNCTION| zwracanego przez lekser CSS \cite{GrammarofCSS}}]
+  {ident}"("
+\end{lstlisting}
 Funkcyjne pseudo-klasy to klasy, które akceptują listę selektorów jako parametry. Dla przykładu listing \ref{pseudo_klasy_functional}.
 
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do elementów, które nie są divami i nie są elementami o atrybucie \lstinline{class="fancy"}}
+    caption={Reguła zostanie zastosowana do elementów, które nie są elementami \lstinline|div| i nie są elementami o atrybucie \lstinline{class="fancy"}}
 ,label={pseudo_klasy_functional}
   ]
     :not(div):not(.fancy) {
@@ -556,11 +610,12 @@ Każdy selektor CSS ma swoje miejsce w hierarchii specyficzności.
 
 Istnieją cztery kategorie, które określają poziom specyficzności selektora:
 \begin{itemize}
-  \item Style liniowe - Na przykład: \lstinline{<h1 style="color: pink;">}
-  \item Identyfikatory - Na przykład: \lstinline{#navbar}
-  \item Klasy, pseudo-klasy, selektory atrybutów - Na przykład: \lstinline{.test}, \lstinline{:hover}, \lstinline{[href]}
-  \item Elementy i pseudo-elementy - Na przykład: \lstinline{h1}, \lstinline{::before}
+  \item style liniowe -- specyficzność 1000, na przykład: \lstinline{<h1 style="color: pink;">};
+  \item identyfikatory -- specyficzność 100, na przykład: \lstinline{#navbar};
+  \item klasy, pseudo-klasy, selektory atrybutów -- specyficzność 10, na przykład: \lstinline{.test}, \lstinline{:hover}, \lstinline{[href]};
+  \item elementy i pseudo-elementy -- specyficzność 1, na przykład: \lstinline{h1}, \lstinline{::before}.
 \end{itemize}
+Dodatkowo, selektor uniwersalny posiada specyficzność 0.
 
 Tabela \ref{tabela_specyficznosci} pokazuje przykłady obliczenia specyficzności.
 

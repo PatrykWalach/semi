@@ -792,12 +792,42 @@ Jeśli style są umieszczone bezpośrednio w plikach HTML, trudno jest je ponown
 W dużych projektach stylizacje mogą być rozproszone po wielu plikach. Na przykład, style dla przycisków mogą znajdować się w jednym pliku, dla formularzy w innym, a dla nagłówków jeszcze w innym. Odszukanie i modyfikacja stylów staje się czasochłonne, zwłaszcza gdy trzeba dokonać globalnych zmian.
 \chapter{Narzędzia}
 \section{Język JavaScript}
-
+Najczęściej wykorzystywanym językiem do tworzenia aplikacji internetowych jest język JavaScript. W języku JavaScript można tworzyć aplikacje internetowe w sposób bardziej skomplikowany niż w języku HTML. Wykorzystamy go w celu stworzenia serwera http, użycia bibliotek CSS in JS, oraz implementacji interfejsu użytkownika.
 \subsection{Środowisko Node.js}
+Node.js to darmowe, wieloplatformowe środowisko uruchomieniowe JavaScript o otwartym kodzie źródłowym, które pozwala programistom tworzyć serwery, aplikacje internetowe, narzędzia wiersza poleceń oraz skrypty. W naszym przypadku będziemy używać Node.js do uruchomienia naszej aplikacji internetowej.
+
 \section{React}
+To biblioteka dla aplikacji internetowych i natywnych. React pozwala budować interfejsy użytkownika z indywidualnych elementów zwanych komponentami. Pozwala na stworzenia własnych komponentów, takich jak \lstinline|Thumbnail|, \lstinline|LikeButton| oraz \lstalias{Video} widocznych na listingu \ref{React}. Następnie połączenie ich w całe widoki, strony i aplikacje.
+
+\begin{lstlisting}[caption={Kod React przedstawiający komponent \lstinline|Video|}, label={React}]
+function Video({ video }) {
+  return (
+    <div>
+      <Thumbnail video={video} />
+      <a href={video.url}>
+        <h3>{video.title}</h3>
+        <p>{video.description}</p>
+      </a>
+      <LikeButton video={video} />
+    </div>
+  );
+}
+\end{lstlisting}
 \subsection{Nextjs}
+Next.js to framework React do budowania aplikacji internetowych typu full-stack. Używając komponentów React do budowania interfejsów użytkownika, Next.js oferuje dodatkowe funkcje i optymalizacje.
+
+Pod maską, Next.js również abstrahuje i automatycznie konfiguruje narzędzia potrzebne do React, takie jak server http, minimalizacja, kompilacja i wiele więcej. Pozwala to skupić się na budowaniu aplikacji, zamiast tracić czas na konfigurację.
+
 \section{Storybook}
+Storybook to warsztat do budowania komponentów interfejsu użytkownika i stron w izolacji. Tysiące zespołów używa go do rozwoju interfejsu użytkownika, testowania i dokumentowania. Jest to darmowy projekt o otwartym kodzie źródłowym.
+
 \subsection{Chromatic}
+Chromatic to narzędzie do wizualnego testowania i recenzowania, które przeszukuje każdy możliwy stan interfejsu użytkownika we wszystkich przeglądarkach, aby wyłapać błędy wizualne i funkcjonalne. Wykorzystamy je do upewnienia nas, że interfejs użytkownika jest wygląda w pełni poprawnie i nie zawiera żadnych regresji.
+
+
+
+
+
 
 \chapter{Funkcjonalności bibliotek TailwindCSS i StyleX}
 \section{Selektory}

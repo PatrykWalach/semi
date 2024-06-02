@@ -225,6 +225,53 @@ Statyczny CSS to metodologia, w której kod CSS nie zmienia się w trakcie dzia�
 Programowy CSS to z kolei metodologia, w której style CSS są tworzone w trakcie działania aplikacji. Przewagą tego rozwiązania nad statycznym CSS przez wiele lat była możliwość generowania stylów dynamicznych. Zastosowanie tej metodologii nie wymaga szerokiej znajomości języka CSS -- style zwykle definiowane są przy użyciu bibliotek, które zapewniają wysoko poziomowy interfejs. Wykorzystując tego typu biblioteki w językach z silnym typowaniem, możemy automatycznie korzystać z auto uzupełniania kodu i raportowania błędów w edytorze bez dodatkowych narzędzi, wymaganych do zrozumienia składni języka CSS.
 
 
+\chapter{Struktura HTML}
+Struktura HTML może być reprezentowana jako drzewo, co jest przydatne do wizualizacji hierarchii elementów oraz do manipulacji dokumentem w języku JavaScript. To drzewo nazywane jest drzewem DOM (ang. \emph{Document Object Model}). Na listingu \ref{dom} widzimy przykład kodu HTML. Kod ten można przedstawić jako drzewo.
+
+\begin{lstlisting}[language=HTML,caption={Przykładowy kod HTML},label={dom}]
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Struktura HTML</title>
+  </head>
+  <body>
+      <h1>Witamy!</h1>
+      <p>To jest akapit.</p>
+      <div>
+          <span>Kolejny akapit w elemencie div.</span>
+      </div>
+  </body>
+  </html>
+\end{lstlisting}
+
+\section{Korzeń drzewa}
+Korzeń drzewa, to węzeł, który jest na szczycie hierarchii drzewa i od którego wszystkie inne węzły (elementy) są bezpośrednio lub pośrednio zależne. Korzeń jest jedynym węzłem w drzewie, który nie ma rodzica. Wszystkie inne węzły w drzewie są jego potomkami. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<html>| jest korzeniem drzewa.
+
+\section{Dziecko i Rodzic}
+Dziecko (ang. \emph{child}) jest węzłem, który jest bezpośrednio podłączony do innego węzła, zwanego jego rodzicem (ang. \emph{parent}). Węzeł rodzic może mieć wiele dzieci, ale każde dziecko ma tylko jednego rodzica. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<title>| jest dzieckiem elementu \lstinline|<head>|.
+
+
+\section{Potomek i Przodek}
+Potomek (ang. \emph{descendant}) jest węzłem, który znajduje się w hierarchii drzewa poniżej innego węzła, zwanego przodkiem (ang. \emph{ancestor}). W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<span>| jest potomkiem elementu \lstinline|<body>|.
+
+
+
+\section{Liść}
+Liść (ang. \emph{leaf}) jest węzłem, który nie ma żadnych dzieci. Są to elementy najniżej położone w hierarchii drzewa. W listingu \ref{dom} widzimy przykład drzewa, w którym tekst "Witamy!" jest liściem.
+
+\section{Rodzeństwo}
+Rodzeństwo (ang. \emph{sibling}) odnosi się do węzłów, które mają tego samego rodzica. Rodzeństwo to elementy znajdujące się na tym samym poziomie hierarchii drzewa, bezpośrednio obok siebie. W listingu \ref{dom} widzimy przykład drzewa, w którym elementy \lstinline|<p>|, \lstinline|<div>|, \lstinline|<h1>| są rodzeństwem.
+
+\section{Sąsiadujące rodzeństwo}
+Sąsiadujące rodzeństwo (ang. \emph{adjacent siblings}) odnosi się do dwóch węzłów w strukturze drzewa, które mają tego samego rodzica i sąsiadują ze sobą bezpośrednio na tym samym poziomie hierarchii, nie mając żadnego innego węzła pomiędzy nimi na tym samym poziomie hierarchii. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<h1>| ma tylko jedno sąsiadujące rodzeństwo element \lstinline|<p>|.
+
+\section{Młodsze rodzeństwo}
+Młodsze rodzeństwo (ang. \emph{younger sibling}) jest węzłem, który znajduje się na tym samym poziomie hierarchii co inny węzeł, ale jest umieszczony po nim. W praktyce oznacza to, że oba węzły mają tego samego rodzica, ale młodsze rodzeństwo występuje później w kolejności. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<p>| i \lstinline|<div>| są młodszym rodzeństwem elementu \lstinline|<h1>|.
+
+
+
+
+
 \chapter{Najczęściej wykorzystywane funkcjonalności języka CSS}
 Składnia arkusza stylów CSS przedstawiona jest na listingu \ref{stylesheet_syntax}. Jednym z głównych elementów tej składni są zestawy reguł\footnote{zestaw reguł - Termin zestaw reguł jest często nazywany po prostu regułą}, których składnia przedstawiona jest na listingu \ref{ruleset_syntax}. Na rysunku \ref{rysunek} widzimy przykład takiej reguły, składającej się z selektora elementu \lstinline|p| oznaczonego niebieskim kolorem, oraz zbioru deklaracji, znajdującego się pomiędzy nawiasami. W zbiorze deklaracji na tym rysunku widzimy tylko jedną deklarację \lstinline|color: red;| składającą się z atrybutu oznaczonego kolorem czerwonym, dwukropka, wartości atrybutu i średnika. Każda reguła musi składać się z co najmniej jednej deklaracji.
 
@@ -454,8 +501,8 @@ Selektor młodszego rodzeństwa wybiera wszystkie elementy będące młodszym ro
 
 
 
-\section{Selektor sąsiedniego rodzeństwa}
-Selektor sąsiedniego rodzeństwa wybiera element będącym sąsiadującym rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_sasiedniego_rodzenstwa}.
+\section{Selektor sąsiadującego młodszego rodzeństwa}
+Selektor sąsiadującego młodszego rodzeństwa wybiera element będącym sąsiadującym młodszym rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_sasiedniego_rodzenstwa}.
 
 
 
@@ -617,6 +664,8 @@ Istnieją cztery kategorie, które określają poziom specyficzności selektora:
 \end{itemize}
 Dodatkowo, selektor uniwersalny posiada specyficzność 0.
 
+Znaczenie też ma kolejność reguł. Reguły definiowane później w arkuszu CSS mają potencjalnie możliwość nadpisania wcześniejszych reguł, pod warunkiem, że mają równą lub wyższą specyfikę.
+
 Tabela \ref{tabela_specyficznosci} pokazuje przykłady obliczenia specyficzności.
 
 \begin{table}[h!]
@@ -644,17 +693,106 @@ Tabela \ref{tabela_specyficznosci} pokazuje przykłady obliczenia specyficznośc
 
 
 
-\section{Dziedziczenie stylów}
+
 \section{Style warunkowe (ang. \emph{media query})}
-\section{Style dynamiczne}
+Style warunkowe, są kluczowe dla responsywnego projektowania interfejsów. Pozwalają one dostosować wygląd stron internetowych do różnych urządzeń i warunków przeglądania. Składnia styli warunkowych w kodzie CSS jest opisana na listingach \ref{stylesheet_media} i \ref{media_list}.
+
+
+\begin{lstlisting}[caption={Składnia styli warunkowych \cite{GrammarofCSS}}, label={stylesheet_media}]
+media
+  : MEDIA_SYM S* media_list '{' S* ruleset* '}' S*
+  ;
+media_list
+  : medium [ COMMA S* medium]*
+  ;
+medium
+  : IDENT S*
+  ;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Składnia tokena \lstinline|MEDIA_SYM| zwracanego przez lekser CSS \cite{GrammarofCSS}}, label={media_list}]
+  @{M}{E}{D}{I}{A}
+\end{lstlisting}
+
+Przykładami wykorzystania stylów warunkowych są:
+\begin{itemize}
+  \item zmiana stylów zależnie od szerokości ekranu -- listing \ref{media_width},
+  \item ograniczenie animacji zgodnie z preferencją użytkownika -- listing \ref{media_prefer}.
+\end{itemize}
+
+\begin{lstlisting}[caption={Kod CSS zmieniający szerokość elementu zależnie od szerokości ekranu}, label={media_width}]
+  .container {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      width: 75%;
+    }
+  }
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Kod CSS ograniczający animacje zgodnie z preferencją użytkownika}, label={media_prefer}]
+  @media (prefers-reduced-motion: no-preference) {
+    .spin {
+      animation: spin 1s linear infinite;
+    }
+  }
+\end{lstlisting}
+
+
+\section{Zmienne CSS}
+Zmienne mogą przechowywać dowolne wartości, takie jak kolory, rozmiary czcionek, marginesy itp. zmienne dostępne są dla wszystkich potomków elementu, dla którego zostały utworzone.
+
+Przykładem użycia zmiennych jest listing \ref{variables}, gdzie zdefiniowano kilka podstawowych kolorów, które będą używane w różnych miejscach na stronie. Tego typu kod pozwala na łatwą zmianę kolorów całej strony lub tylko jej części.
+
+
+\begin{lstlisting}[caption={Zmienne CSS}, label={variables}]
+:root {
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+}
+
+.alert {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+\end{lstlisting}
 
 \chapter{Problemy języka CSS}
 \section{Rosnące rozmiary plików}
-\section{Kolizje pomiędzy stylami}
-\section{Rozmieszczanie klas pomiędzy plikami CSS}
+Im większy plik CSS, tym dłużej zajmie mu załadowanie się na stronie internetowej. Duży rozmiar plików może powodować spowolnienie czasu ładowania strony, co z kolei może prowadzić do niższej oceny strony w wynikach wyszukiwania i gorszego doświadczenia użytkownika.
 
+W sytuacji, kiedy wielu programistów równolegle ręcznie tworzy kod CSS, dochodzi do powtórzeń kodu. Tego typu praca wymaga regularnej optymalizacji i refaktoryzacji kodu w celu zmniejszenia jego rozmiaru. Proces ten wraz z czasem staje się coraz dłuższy i droższy ze względu na rosnący rozmiar kodu.
+
+Na rosnący rozmiar kodu wpływ ma też niewykorzystywany kod CSS. Wraz ze zmianą struktury HTML, część stylów staje się nieużywana. Style te często nie są łatwe do znalezienia, ze względu na złożoność zastosowanych selektorów i trudność analizy kodu HTML, np. struktura HTML zmienia się pod wpływem kodu JavaScript.
+\section{Kolizje pomiędzy stylami}
+\subsection{Zmiana reguł bazowych}
+
+Deweloperzy muszą używać elementów HTML do pisania HTML, a liczba elementów, które można wybrać, jest ograniczona. Dlatego może to być kuszące, aby zdefiniować wiele podstawowych stylów za pomocą selektorów elementów, aby uniknąć dodawania klas do wszystkich elementów, to takie podejście tworzy niezadeklarowaną zależność między tymi regułami a wszystkimi innymi komponentami.
+
+
+Kiedy zaczynamy budować stronę internetową, zazwyczaj nie wydaje się to dużym problemem, wręcz przeciwnie, wydaje się to naturalne i zgodne z zasadą DRY (Don't Repeat Yourself). Tworzymy bazowe, podstawowe style (marginesy, rozmiary czcionek, kolory itp.), a następnie budujemy komponenty na ich podstawie, dzięki czemu nie musimy ponownie definiować tych samych reguł \cite{SideEffects}.
+
+Problem polega na tym, że oszczędzamy czas tylko pod warunkiem, że nigdy nie zmienimy swoich bazowych reguł. W praktyce projekty stron internetowych się zmieniają. Możemy zdecydować się na zwiększenie rozmiaru czcionki nagłówków, zastosowanie innych domyślnych marginesów dla akapitów, lub że wolimy obramowania zamiast podkreśleń dla linków. Jeśli komponenty takie jak \lstinline|.article-title|, \lstinline|.alert-content| i \lstinline|.footer-link| zależą od tych bazowych reguł, szybko zauważymy, jak kruche i powiązane są nasze style.
+
+Jeśli komponenty zależą od bazowych stylów, zmiany w tych bazowych stylach będą wymagały sprawdzenia całej strony, aby upewnić się, że wszystko wciąż wygląda poprawnie \cite{SideEffects}.
+
+\subsection{Kolizje nazw klas}
+
+
+CSS nie ostrzega, jeśli używa się selektora klasy, który już istnieje w arkuszu stylów. Możliwość nadpisywania reguł jest jedną z cech tego języka. W rezultacie, bez wprowadzenia konwencji unikającej takich przypadków lub bez sprawdzania tego podczas budowania projektu, nie ma dobrego sposobu, aby upewnić się, że wybrana klasa, nie została już użyta przez kogoś innego.
+
+Gdy wielu deweloperów pracuje nad tym samym kodem, szansa, że dwie osoby wybiorą tę samą nazwę klasy i nie będą o tym wiedziały, jest bardzo wysoka. Dotyczy to szczególnie powszechnych nazw, takich jak \lstinline|button|, \lstinline|content| czy \lstinline|title|.
+
+Nie jest to problem tylko z nazwami klas na najwyższym poziomie. Wybranie tej samej nazwy w poddrzewie może być równie niebezpieczne  \cite{SideEffects}.
+\section{Rozmieszczanie klas pomiędzy plikami CSS}
+Jeśli style są umieszczone bezpośrednio w plikach HTML, trudno jest je ponownie wykorzystać w innych częściach strony lub w innych projektach. Tego typu kolokacja stylów prowadzi do braku wyraźnej separacji między treścią, a jej prezentacją, co utrudnia zrozumienie struktury strony.
+
+W dużych projektach stylizacje mogą być rozproszone po wielu plikach. Na przykład, style dla przycisków mogą znajdować się w jednym pliku, dla formularzy w innym, a dla nagłówków jeszcze w innym. Odszukanie i modyfikacja stylów staje się czasochłonne, zwłaszcza gdy trzeba dokonać globalnych zmian.
 \chapter{Narzędzia}
 \section{Język JavaScript}
+
 \subsection{Środowisko Node.js}
 \section{React}
 \subsection{Nextjs}

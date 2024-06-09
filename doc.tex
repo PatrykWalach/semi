@@ -829,14 +829,100 @@ Chromatic to narzędzie do wizualnego testowania i recenzowania, które przeszuk
 
 
 
-\chapter{Funkcjonalności bibliotek TailwindCSS i StyleX}
+\chapter{Funkcjonalności bibliotek Tailwind CSS}
+Tailwind CSS to framework pełen klas takich jak \lstinline|flex| \lstinline|pt-4| \lstinline|text-center|, które można komponować bezpośrednio w kodzie HTML.
+
+
+
+\section{Warianty}
+Każda klasa może być prefiksowane dowolną ilością wariantów. Warianty sprawiają, że reguła jest nakładana tylko w odpowiednich warunkach, np. \lstinline|hover:bg-red-500|, \lstinline|sm:hover:bg-red-500|.
+
+\section{Konfigurowalność}
+Tailwind CSS posiada zestaw wbudowanych klas i wartości, które są w pełni konfigurowalne. Możemy tworzyć nowe klasy, warianty, zmieniać domyślne wartości istniejących klas.
+
+\section{Dowolne wartości}
+W przypadku gdy nie skonfigurowaliśmy jakiejś klasy, wariantu lub nie planujemy ich więcej używać, Tailwind CSS pozwala na użycie dowolnych wartości bez takiej potrzeby, np. \lstinline|bg-[#764]|, \lstinline|m-[1px]|, \lstinline|[appearance:textfield]|, \lstinline|group-has-[.suffix]:text-right|, \lstinline|[&::-webkit-inner-spin-button]:hidden|
+\section{Selektory}
+\subsection{Selektor elementów, uniwersalny, id, klasy, grupujący}
+Tailwind CSS nie posiada wbudowanych selektorów elementów, selektora uniwersalnego, selektora id, selektora klasy i selektorów grupujących. W tych przypadkach możemy zdefiniować reguły w pliku CSS. Możemy też stworzyć klasę wykorzystującą dowolny selektor np. selektor elementów tak jak na listingu \ref{tailwind_element_selector} i \ref{tailwind_child_element_selector}. Tworząc klasę w ten sposób musimy wykorzystać znak \lstinline|&| odnoszący się do elementu, na którym znajduje się klasa, więc nie ma możliwości stworzenia klasy odnoszącej się do wszystkich elementów na stronie chyba, że umieścimy klasę na elemencie \lstinline|html| będącym korzeniem drzewa HTML.
+
+
+\begin{lstlisting}[language=HTML, caption={Klasa zmieniająca padding dla elementu będącego elementem \lstinline|a|}, label={tailwind_element_selector}]
+<!--
+  a.\[a\&\]\:p-2 {
+    padding: 0.5rem/* 8px */;
+  }
+-->
+<div class="[a&]:p-2"></div>
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTML, caption={Klasa zmieniająca padding dla przodków będących elementem \lstinline|a|}, label={tailwind_child_element_selector}]
+<!--
+  .\[\&_a\]\:p-2 a {
+    padding: 0.5rem/* 8px */;
+  }
+-->
+<div class="[&_a]:p-2"></div>
+\end{lstlisting}
+\subsection{Selektor potomków}
+Tailwind CSS posiada zestaw wbudowanych wariantów \lstinline|group|, które pozwalają na stylizację potomka zależnie od stanu przodka. Dla przykładu na listingu \ref{tailwind_s_selektor} widzimy, klasę \lstinline|group-hover:bg-red-500| która zmieni kolor tła akapitu na czerwony, gdy użytkownik najedzie na sekcję myszką. Klasa \lstinline|group| sama w sobie nie nakłada żadnych styli, jest nakładana tylko w celu odniesienia się potomka do elementu. Istnieje też możliwość nadania grupom nazw, co może być używane w celu zagnieżdżania grup, np. \lstinline|group/item|, \lstinline|group-hover/item:bg-red-500|.
+
+\begin{lstlisting}[language=HTML, caption={Przykład wykorzystanie klasy \lstinline|group|}, label={tailwind_s_selektor}]
+  <section class="group">
+    <div>
+      <p class="group-hover:bg-red-500">Hello world!</p>
+    </div>
+  </section>
+\end{lstlisting}
+
+\subsection{Selektor dziecka}
+Tailwind CSS posiada wbudowany wariant \lstinline|*|, który pozwala na stylizację dziecka. Dla przykładu na listingu \ref{tailwind_c_selektor} widzimy, klasę \lstinline|*:bg-red-500| która zmieni kolor tła elementu div na czerwony.
+
+\begin{lstlisting}[language=HTML, caption={Przykład wykorzystania selektora dziecka}, label={tailwind_c_selektor}]
+  <section class="*:bg-red-500">
+    <div>
+      <p>Hello world!</p>
+    </div>
+  </section>
+\end{lstlisting}
+
+\section{Selektor młodszego rodzeństwa}
+Tailwind CSS posiada zestaw wbudowanych wariantów \lstinline|peer|, które pozwalają na stylizację młodszego rodzeństwa zależnie od stanu starszego rodzeństwa. Dla przykładu na listingu \ref{tailwind_s_selektor} widzimy, klasę \lstinline|peer-hover:bg-red-500| która zmieni kolor tła akapitu na czerwony, gdy użytkownik najedzie na sekcję myszką. Klasa \lstinline|peer| sama w sobie nie nakłada żadnych styli, jest nakładana tylko w celu odniesienia się młodszego rodzeństwa do elementu. Istnieje też możliwość nadania nazw, co może być używane w celu odniesienia do wielu elementów, np. \lstinline|peer/item|, \lstinline|peer-hover/item:bg-red-500|.
+
+\begin{lstlisting}[language=HTML, caption={Przykład wykorzystanie klasy \lstinline|peer|}, label={tailwind_s_selektor}]
+  <section class="peer"></section>
+  <div></div>
+  <p class="peer-hover:bg-red-500">Hello world!</p>
+\end{lstlisting}
+
+\section{Selektor sąsiadującego młodszego rodzeństwa}
+Tailwind CSS nie posiada wbudowanego selektora sąsiadującego młodszego rodzeństwa. Jeżeli istnieje potrzeba jego użycia to można posłużyć się konfiguracją w celu stworzenia wariantów analogicznie jak w przypadku selektora młodszego rodzeństwa (klasa \lstinline|peer|). Lub można użyć dowolnych wartości jak w przypadku innych niewbudowanych selektorów. 
+
+\section{Pseudo-klasy i pseudo-elementy}
+Tailwind CSS posiada wbudowane warianty dla większości pseudo-klas i pseudo-elementów, np. \lstinline|hover:bg-red|, \lstinline|first:bg-red|, \lstinline|first:focus:bg-red|. Możemy też posłużyć się konfiguracją w celu stworzenia nowych wariantów, np. \lstinline|addVariant('hocus', ['&:hover', '&:focus'])|.
+\subsection{Funkcyjne pseudo-klasy}
+Tailwind CSS posiada kilka wbudowanych pseudo-klas, ich użycie wymaga podania dowolnej wartości, np. na listingu \ref{tailwind_fn} styl elementu div zmieni się tylko wtedy, gdy element posiada zaznaczone pole wyboru.
+
+\begin{lstlisting}[label={tailwind_fn}, language=HTML]
+<!--
+.has-\[input\:checked\]\:p-2:has(input:checked) {
+  padding: 0.5rem/* 8px */;
+}
+-->
+<div class="has-[input:checked]:p-2">...</div>
+\end{lstlisting}
+
+\section{Style warunkowe (ang. \emph{media query})}
+
+\section{Zmienne CSS}
+
+\chapter{Funkcjonalności bibliotek StyleX}
 \section{Selektory}
 \section{Pseudo-klasy}
 \section{Pseudo-elementy}
 \section{Nadpisywanie stylów}
-\section{Dziedziczenie stylów}
 \section{Style warunkowe (ang. \emph{media query})}
-\section{Style dynamiczne}
+\section{Zmienne CSS}
 
 \chapter{Wnioski}
 

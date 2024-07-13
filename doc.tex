@@ -1,6 +1,6 @@
 % !TeX root = doc.tex
 \documentclass[a4paper,12pt]{book} % nie: report!
-\usepackage{url}
+
 \usepackage[T1,plmath]{polski}\usepackage{polski} % lepiej to zamiast babel!
 \usepackage[utf8]{inputenc} % w razie kłopotów spróbować: \usepackage[utf8x]{inputenc}
 \usepackage{fancyhdr} % nagłówki i stopki
@@ -8,24 +8,45 @@
 \usepackage[pdftex]{graphicx} % to do wstawiania rysunków
 \usepackage{amsfonts}
 \usepackage{amsmath} % to do dodatkowych symboli, przydatne
+\usepackage{amssymb} % to też do dodatkowych symboli, też przydatne
 \usepackage[pdftex,
             left=1in,right=1in,
             top=1in,bottom=1in]{geometry} % marginesy
-\usepackage{amssymb} % to też do dodatkowych symboli, też przydatne
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage[font=small,labelfont=bf]{caption}
 % jeśli potrzeb, można oczywiście wstawić inne pakiety i swoje definicje...
 
 
-\usepackage{amsmath}
-\usepackage{array}
+
+
+
+\usepackage[colorlinks=true]{hyperref} % odnośniki interaktywne w PDFie
+\hypersetup{allcolors=blue}
+
 \usepackage{listings}
-\usepackage{color} 
+\lstset{
+    basicstyle=\footnotesize\tt,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=tb,
+    tabsize=4,
+    columns=fixed,
+    showstringspaces=false,
+    showtabs=false,
+    keepspaces,
+    commentstyle=\color{red},
+    keywordstyle=\color{blue}
+}
+\newfloat{lstfloat}{htbp}{lolst}[chapter]
+\floatname{lstfloat}{Listing}
+\def\lstfloatautorefname{Listing}
 
+% jesli potrzeb, można oczywiście wstawić inne pakiety i swoje definicje...
+
+\usepackage{array}
+\usepackage{url}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-
-
 
 
 
@@ -45,38 +66,6 @@
 % interlinia
 \linespread{1.25}
 
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
- 
-%Customize a bit the look
-\lstset{ %
-backgroundcolor=\color{white}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
-basicstyle=\ttfamily\footnotesize, % the size of the fonts that are used for the code
-breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
-breaklines=true, % sets automatic line breaking
-captionpos=b, % sets the caption-position to bottom
-commentstyle=\color{mygreen}, % comment style
-extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-frame=single, % adds a frame around the code
-keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-keywordstyle=\color{blue}, % keyword style
-% language=Octave, % the language of the code
-morekeywords={*,...}, % if you want to add more keywords to the set
-numbers=left, % where to put the line-numbers; possible values are (none, left, right)
-numbersep=5pt, % how far the line-numbers are from the code
-numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
-rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-showstringspaces=false, % underline spaces within strings only
-showtabs=false, % show tabs within strings adding particular underscores
-stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
-stringstyle=\color{mymauve}, % string literal style
-tabsize=2, % sets default tabsize to 2 spaces,
-title=\lstname, % show the filename of files included with \lstinputlisting; also try caption instead of title
-}
-
-
 
 
 \begin{document}
@@ -84,40 +73,40 @@ title=\lstname, % show the filename of files included with \lstinputlisting; als
   ~
 
   \begin{tabular}{c@{\hspace{21mm}}|@{\hspace{5mm}}l}
-    \vspace{-20mm} &                                                                               \\
-    \multicolumn{2}{l}{\hspace{-12.5mm} \includegraphics[width=8cm]{UMCS_podstaw_12G_PL_P431.jpg}} \\
-    \multicolumn{2}{@{\hspace{20mm}}l}{\vspace{-4mm}}                                              \\
+    \vspace{-20mm} &                                                                          \\
+    \multicolumn{2}{l}{\hspace{-12.5mm} \includegraphics[width=8cm]{LogoUMCS.jpg}}            \\
+    \multicolumn{2}{@{\hspace{20mm}}l}{\vspace{-4mm}}                                         \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf UNIWERSYTET MARII
-    CURIE-SKŁODOWSKIEJ}                                                                            \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                              \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf W LUBLINIE}                                      \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                              \\
+    CURIE-SKŁODOWSKIEJ}                                                                       \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                         \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf W LUBLINIE}                                 \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                         \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf Wydział Matematyki, Fizyki i
-    Informatyki}                                                                                   \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                              \\
-                   & {\sf Kierunek: \textbf{informatyka} }                                         \\
-                   & {\sf Specjalność: \textbf{deweloper} }                                        \\
+    Informatyki}                                                                              \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                         \\
+                   & {\sf Kierunek: \textbf{informatyka} }                                    \\
+                   & {\sf Specjalność: \textbf{deweloper} }                                   \\
     %& {\sf Specjalność: \textbf{informatyczna}} \\ % wpisujemy tylko jeśli jest!!!
-                   &                                                                               \\\\\\
-                   & {\sf \large \bfseries Patryk Wałach}                                          \\
-                   & {\sf nr albumu: 296597}                                                       \\
-                   &                                                                               \\\\\\
-                   & \Large \sf \bfseries Porównanie praktyk projektowania CSS:                    \\
-                   & \Large \sf \bfseries tradycyjne podejście z czystym CSS                       \\
-                   & \Large \sf \bfseries a nowoczesne narzędzia generujące CSS                    \\\\[-10pt]
-                   & {\large \sf Comparative study of CSS design practices:}                       \\
-                   & {\large \sf traditional approach with pure CSS}                               \\
-                   & {\large \sf versus modern CSS generating tools}                               \\
-                   &                                                                               \\
-                   &                                                                               \\
-                   &                                                                               \\
-                   & {\sf Praca magisterska}                                                       \\
-                   & \vspace{-7mm}                                                                 \\
-                   & {\sf napisana w Katedrze Cyberbezpieczeństwa i Lingwistyki Komputerowej}      \\
-                   & {\sf Instytutu Informatyki UMCS}                                              \\
-                   & \vspace{-7mm}                                                                 \\
-                   & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}                       \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{15mm}}                                              \\
+                   &                                                                          \\\\\\
+                   & {\sf \large \bfseries Patryk Wałach}                                     \\
+                   & {\sf nr albumu: 296597}                                                  \\
+                   &                                                                          \\\\\\
+                   & \Large \sf \bfseries Porównanie praktyk projektowania CSS:               \\
+                   & \Large \sf \bfseries tradycyjne podejście z czystym CSS                  \\
+                   & \Large \sf \bfseries a nowoczesne narzędzia generujące CSS               \\\\[-10pt]
+                   & {\large \sf Comparative study of CSS design practices:}                  \\
+                   & {\large \sf traditional approach with pure CSS}                          \\
+                   & {\large \sf versus modern CSS generating tools}                          \\
+                   &                                                                          \\
+                   &                                                                          \\
+                   &                                                                          \\
+                   & {\sf Praca magisterska}                                                  \\
+                   & \vspace{-7mm}                                                            \\
+                   & {\sf napisana w Katedrze Cyberbezpieczeństwa i Lingwistyki Komputerowej} \\
+                   & {\sf Instytutu Informatyki UMCS}                                         \\
+                   & \vspace{-7mm}                                                            \\
+                   & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}                  \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{15mm}}                                         \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\textbf{\textsf{Lublin 2024}}}
   \end{tabular}
 \end{titlepage}
@@ -148,13 +137,15 @@ title=\lstname, % show the filename of files included with \lstinputlisting; als
 
 
 
-\chapter*{Wstęp}
+\chapter*{Wstęp} % z gwiazdką, więc bez numerka...
+\addcontentsline{toc}{chapter}{Wstęp} % ...ale w spisie treści ma być...
+\chaptermark{Wstęp} % ...i w paginie górnej
+
 Język CSS jest nierozłączną częścią stron internetowych. Wraz z nieustannym rozwojem internetu i rosnącym rozmiarem stron internetowych nasuwają się pytania, w jaki sposób tworzyć łatwy w utrzymaniu, czytelny i optymalny kod CSS. Dlatego w niniejszej pracy sprawdzimy jak z tymi problemami radzi sobie tradycyjne podejście z czystym CSS i nowoczesne narzędzia generujące CSS.
 
 W pierwszym rozdziale przedstawimy podstawowe pojęcia związane z CSS. Następnie przedstawimy podstawy struktury HTML. W kolejnym spoglądamy na najczęściej wykorzystywane funkcje CSS. W czwartym rozdziale opisujemy problemy języka CSS. W rozdziale piątym przedstawimy narzędzia, których użyliśmy w celu zbudowania strony internetowej. Następnie prezentujemy jak wyglądają podstawowe funkcje bibliotek Tailwind CSS i StyleX. W ostatnim rozdziale przedstawiamy wnioski z napisanego przez nas kodu.
 
-\addcontentsline{toc}{chapter}{Wstęp} % ...ale w spisie treści ma być
-% napisać na sam koniec
+
 
 \chapter{Ogólne wprowadzenie}
 \section{Kaskadowe arkusze stylów}
@@ -1061,8 +1052,266 @@ const styles = stylex.create({
 <div {...stylex.props(styles.base, styles.highlighted)} />;
 \end{lstlisting}
 \chapter{Co zostało zrobione?}
-  
 
+\section{Projekt strony}
+
+\subsection{Wpisy}
+Stworzyliśmy stronę internetową typu blog. Jak widać na listingu \ref{nav}, stworzyliśmy pasek nawigacji, znajdujący się na każdej stronie. Ten pasek zawiera hiperłącza do strony głównej, strony wyszukiwania treści, strony logowania i strony rejestracji.
+
+
+\begin{lstlisting}[caption={Pasek nawigacji},label={nav},]
+import { Header } from "@/components/Header";
+import Navigation from "@/components/Navigation";
+import NavigationLink from "@/components/NavigationLink";
+import { Inter } from "next/font/google";
+import { PropsWithChildren } from "react";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export default function Root(props: PropsWithChildren<{}>) {
+  return (
+    <div className={`bg-surface min-h-screen
+    text-on-surface ${inter.className}`}>
+      <div className={`mx-auto max-w-3xl px-4
+      sm:px-6 xl:max-w-5xl xl:px-0`}>
+        <Header>
+          <Navigation>
+            <NavigationLink href="/">Home</NavigationLink>
+            <NavigationLink href="/search">Search</NavigationLink>
+            <NavigationLink href="/login">Login</NavigationLink>
+            <NavigationLink href="/register">Register</NavigationLink>
+          </Navigation>
+        </Header>
+        {props.children}
+      </div>
+    </div>
+  );
+}
+\end{lstlisting}
+
+
+
+
+
+Na listingu \ref{main_page} widzimy, że stronie głównej znajdują się dwie sekcje z polecanymi wpisami.
+
+
+\begin{lstlisting}[caption={Strona główna}, label={main_page}]
+import { ArticleData } from "@/components/Article";
+import { Articles } from "@/components/Articles";
+
+export default function HomePage({
+  articles,
+}: {
+  articles: readonly ArticleData[];
+}) {
+  return (
+    <main className="divide-y">
+      <Articles articles={articles.slice(0, 4)}></Articles>
+      <Articles articles={articles.slice(4)}></Articles>
+    </main>
+  );
+}
+\end{lstlisting}
+
+Na listingu \ref{article} widać, że wpisy pokazują zdjęcie, kategorię, tytuł, skrócony opis, nazwę autora, datę utworzenia i długość wpisu. Wpisy zawierają również hiperłącza do listy wpisów z tej samej kategorii, profilu autora i treści wpisu.
+
+
+\begin{lstlisting}[language=HTML, label={article}, caption={Wpis}]
+export function Article({ article }: { article: ArticleData }) {
+  return (
+    <article className="text-on-surface flex flex-col
+    items-start col-span-12 gap-y-3 sm:col-span-6 xl:col-span-4">
+      <Image
+        width={500}
+        height={500}
+        alt=""
+        src={article.img}
+        className="object-cover w-full mb-2
+        overflow-hidden rounded-lg shadow-sm max-h-56"
+      />
+      {article.category && (
+        <Link href={`/search?tag=${article.category}`}>
+          <Chip>{article.category}</Chip>
+        </Link>
+      )}
+      <Link
+        className="text-lg font-bold sm:text-xl md:text-2xl"
+        href={`/article/${article.id}`}
+      >
+        {article.title}
+      </Link>
+      <p className="text-sm">{article.description}</p>
+      <div className="pt-2 pe-0 pb-0 ps-0">
+        <Link
+          className="inline text-xs font-medium
+          mt-0 me-1 mb-0 ms-0 underline"
+          href={`/user/${article.author.id}`}
+        >
+          {article.author.name}
+        </Link>
+        <p className="inline text-xs font-medium mt-0 me-1 mb-0 ms-1">
+          &middot;{" "}
+          {new Intl.DateTimeFormat("en", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          }).format(article.releasedAt)}{" "}
+          &middot;
+        </p>
+        <p className="inline text-xs font-medium
+        text-on-surface/[.38] mt-0 me-1 mb-0 ms-1">
+          {article.length}. read
+        </p>
+      </div>
+    </article>
+  );
+}
+\end{lstlisting}
+
+
+
+Na listingu \ref{article_page} widać stronę pokazującą cały wpis. Warto zauważyć, że zmienna \lstinline|article| przechowuje dane pochodzące z serwera. Z tego powodu jej atrybut \lstinline|content| to ciąg znaków przechowujący zawartość wpisu zapisanego w języku HTML. Korzystamy więc z atrybutu \lstinline|dangerouslySetInnerHTML| w bibliotece React, aby umieścić zawartość wpisu w drzewie HTML. Nie mamy tutaj możliwości dodania klas, stylów do zawartości wpisu. Korzystamy więc z selektora potomków, aby nałożyć style CSS na zawartość. W przypadku biblioteki Tailwind CSS używamy klasy \lstinline|prose| stworzonej przy pomocy pluginu. Biblioteka StyleX nie posiada selektora potomków, więc musieliśmy dodać kod w języku CSS.
+
+\begin{lstlisting}[caption={Strona wpisu},label={article_page}]
+import { ArticleData } from "@/components/Article";
+import { BigArticle } from "@/components/BigArticle";
+
+export default function ArticlePage({ article }: { article: ArticleData }) {
+  return (
+    <main className="bg-surface text-on-surface">
+      <div className="container mx-auto py-4 grid gap-8">
+        <header>
+          <BigArticle article={article}></BigArticle>
+        </header>
+        <section
+          dangerouslySetInnerHTML={{
+            __html: article.content,
+          }}
+          className="prose py-4 lg:prose-2xl dark:prose-invert"
+        ></section>
+      </div>
+    </main>
+  );
+}
+\end{lstlisting}
+
+
+\subsection{Formularze}
+Formularze HTML pojawiają się praktycznie na każdej stronie internetowej. Dlatego dodaliśmy formularz logowania i rejestracji do naszej aplikacji internetowej.
+Na listing \ref{form_input} widzimy przykład pola jednego z formularzy. Pola często wymagają nałożenia stylu zależnie od jednego z wielu stanów, w jakim się znajdują. Pola mogą być skupione, zawierać błędy, być puste, być automatycznie uzupełnione, być wyłączone itp. na przykładzie widać, że wykorzystano Tailwind CSS. Ze względy na ilość stanów, w jakim może znaleźć się pole formularza ilość klas i ich długość jest bardzo duża, co zmniejsza czytelność kodu. W tym przypadku lepiej byłoby oddzielić style od kodu HTML.
+
+
+\begin{lstlisting}[language=HTML, caption={Pole formularza}, label={form_input}]
+<div className="relative">
+  <input
+    required
+    aria-invalid={props.errors?.username ? "true" : "false"}
+    name="username"
+    defaultValue={props.fields.username}
+    placeholder="John"
+    type="text"
+    className="border peer
+    disabled:border-on-surface/40
+    aria-[invalid=true]:disabled:border-on-surface/40
+    disabled:text-on-surface/40
+    disabled:placeholder-on-surface/40
+    placeholder-on-surface focus:outline-none
+    aria-[invalid=true]:border-error
+    focus:border-on-surface-variant w-full
+    pt-4 pe-4 pb-4 ps-4 mt-2 me-0 mb-0 ms-0
+    text-base block bg-surface
+    border-on-surface rounded-md"
+  />
+  <p
+    className="bg-surface pt-0
+    peer-aria-[invalid=true]:text-error
+    pe-2 pb-0 ps-2 top-0 -mt-3 me-0 mb-0
+    ms-2 font-medium peer-disabled:text-on-surface/40
+    peer-aria-[invalid=true]:peer-disabled:text-on-surface/40
+    text-on-surface
+    absolute"
+  >
+    Username
+  </p>
+</div>
+{!props.disabled && (
+  <span className="text-error text-sm">
+    {props.errors?.username}
+  </span>
+)}
+\end{lstlisting}
+\section{Implementacja strony}
+Stronę internetową tworzyliśmy w sposób iteracyjny. Zaczęliśmy od stworzenia nawigacji. Następnie stworzyliśmy historyjki, wykorzystując bibliotekę Storybook. Na przykład na listingu \ref{header} widać historyjkę dla komponentu \lstinline|Header|. Historyjka ta służy do interaktywnego debugowania, abyśmy mogli testować zmiany w kodzie na bieżąco.
+
+
+\begin{lstlisting}[caption={Historyjka dla komponentu \lstinline|Header|},label={header}]
+export const Default: Story = {
+  args: {
+    children: (
+      <Navigation>
+        <NavigationLink href="/">Home</NavigationLink>
+        <NavigationLink href="/about">About</NavigationLink>
+      </Navigation>
+    ),
+  },
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: "/",
+      },
+    },
+  },
+};
+\end{lstlisting}
+
+Stworzyliśmy również historyjki widoczne na listingu \ref{dark_rtl} przedstawiające komponent z wykorzystanie ciemnego motywu i języka czytanego od prawej do lewej. Naszym celem przy tworzeniu aplikacji było, aby cała strona wspierała różne motywy i kierunek czytania od prawej do lewej. Dzięki wykorzystaniu zmiennych CSS, implementacja motywów była bardzo prosta, niezależnie od wykorzystanych bibliotek. Zapewnienie aby strona wspierała kierunek czytania od prawej do lewej wymagało wykorzystania specyficznych atrybutów CSS, co również nie stwarzało żadnego problemu dla wykorzystanych przez nas bibliotek.
+
+\begin{lstlisting}[caption={\lstinline|Header| z wykorzystaniem ciemnego motywu i języka czytanego od prawej do lewej},label={dark_rtl}]
+export const Dark: Story = {
+  ...Default,
+  parameters: {
+    theme: "dark",
+  },
+};
+  
+export const Rtl: Story = {
+  ...Default,
+  parameters: {
+    dir: "rtl",
+  },
+};
+\end{lstlisting}
+
+
+Na listingu \ref{nav_open} widzimy, że stworzyliśmy również historyjkę z testem, który sprawdza, interakcję z nawigacją wyświetlaną na urządzeniu o małej szerokości ekranu. Na takim urządzeniu, hiperłącza są umieszczane w menu, które otwiera się lub zamyka po wciśnięciu przycisku.
+
+\begin{lstlisting}[caption={\lstinline|Header| z wykorzystaniem przełącznika nawigacji},label={nav_open}]
+export const Open: Story = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: "sm",
+    },
+  },
+  play: withinGrid(async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(
+      canvas.getByRole("button", {
+        name: "Open main menu",
+      })
+    );
+  }),
+};
+\end{lstlisting}
+
+W ten sam sposób tworzyliśmy następne komponenty potrzebne to zaimplementowania kolejnych stron naszej aplikacji internetowej.
+
+\section{Refaktoryzacja strony}
+Refaktoryzując stronę internetową wykorzystywaliśmy podejście iteracyjne. Tworzyliśmy nową gałęź repozytorium git, przepisywaliśmy jeden komponent, po czym wypychaliśmy zmiany na gałąź. Każda taka zmiana uruchamia naszą aplikację Storybook na platformie Chromatic i przeprowadza testy wizualne dzięki wcześniej napisanym historyjkom. Jeżeli podczas tych testów nie wystąpiły błędy, to nasz kod jest zgodny z naszymi oczekiwaniami i przenosimy zmiany z danej gałęzi na naszą główną gałąź. W przypadku wystąpienia błędu, korzystaliśmy z możliwości debugowania na platformie Chromatic, w celu poprawienia kodu i ponownego wypchnięcia zmian.
+
+W ten sam sposób refaktoryzowaliśmy kolejne komponenty potrzebne przez kolejne strony naszej aplikacji internetowej. Gdy wszystkie komponenty zostały zaimplementowane, mogliśmy odinstalować inne biblioteki, które nie były potrzebne w naszym projekcie.
 
 \chapter{Wnioski}
 W celu wyciągnięcia wniosków z napisanego przez nas kodu porównamy najczęściej wykorzystywane funkcje przy pisaniu stylów CSS według wybranej przez nas literatury: An empirical study on the use of CSS preprocessors \cite{Mazinanian__Tsantalis__2016} i Discovering RefactoringOpportunities in Cascading Style Sheets \cite{Mazinanian__Tsantalis__2}.
@@ -1295,17 +1544,17 @@ StyleX pozwala na deterministyczne nadpisywanie stylów, ostatni nałożony styl
 \subsection{Porównanie kryteriów}
 \begin{table}[h!]
   \begin{tabular}{ l | P{0.20\linewidth} | P{0.20\linewidth} | P{0.20\linewidth}}
-                        & tradycyjny CSS & Tailwind CSS & StyleX     \\
+                        & tradycyjny CSS & Tailwind CSS & StyleX \\
     \hline
-    Zmienne             & +              & +            & +          \\
+    Zmienne             & +              & +            & +      \\
 
-    Kolokacja kodu      & -              & +            & +          \\
+    Kolokacja kodu      & -              & +            & +      \\
 
 
 
-    Prefiksy            & +              & +            & +          \\
+    Prefiksy            & +              & +            & +      \\
 
-    De duplikacja kodu   & -              & +            & +          \\
+    De duplikacja kodu  & -              & +            & +      \\
 
     Nadpisywanie stylów & -              & -            & +
   \end{tabular}
@@ -1315,10 +1564,12 @@ StyleX pozwala na deterministyczne nadpisywanie stylów, ostatni nałożony styl
 Warto zaznaczyć, że biblioteka StyleX nie pozwala na używanie pewnych selektorów języka CSS, ze względu na ich specyficzność, Tailwind CSS w pełni pozwala na użycie wszystkich selektorów.
 
 
-\chapter*{Podsumowanie}
+\chapter*{Podsumowanie} % jak we wstępie
+\addcontentsline{toc}{chapter}{Podsumowanie}
+\chaptermark{Podsumowanie}
 Stworzyliśmy stronę internetową, wykorzystując tradycyjne podejście z czystym CSS, bibliotekę Tailwind CSS i bibliotekę StyleX. Zbadaliśmy najczęściej występujące problemy z kodem napisanym w języku CSS. Dokonaliśmy porównania funkcjonalności wybranych na podstawie literatury.
 
-\addcontentsline{toc}{chapter}{Podsumowanie}
+
 
 % napisać na sam koniec
 

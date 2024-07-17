@@ -3,7 +3,7 @@
 
 \usepackage[T1,plmath]{polski}\usepackage{polski} % lepiej to zamiast babel!
 \usepackage[utf8]{inputenc} % w razie kłopotów spróbować: \usepackage[utf8x]{inputenc}
-\usepackage{fancyhdr} % nagłówki i stopki
+\usepackage{fancyhdr} % nagłówki i\,stopki
 \usepackage{indentfirst} % WAŻNE, MA BYĆ!
 \usepackage[pdftex]{graphicx} % to do wstawiania rysunków
 \usepackage{amsfonts}
@@ -15,7 +15,7 @@
 \usepackage{amsthm}
 \usepackage{float}
 \usepackage[font=small,labelfont=bf]{caption}
-% jeśli potrzeb, można oczywiście wstawić inne pakiety i swoje definicje...
+% jeśli potrzeb, można oczywiście wstawić inne pakiety i\,swoje definicje...
 
 
 
@@ -42,7 +42,7 @@
 \floatname{lstfloat}{Listing}
 \def\lstfloatautorefname{Listing}
 
-% jesli potrzeb, można oczywiście wstawić inne pakiety i swoje definicje...
+% jesli potrzeb, można oczywiście wstawić inne pakiety i\,swoje definicje...
 
 \usepackage{array}
 \usepackage{url}
@@ -50,7 +50,7 @@
 
 
 
-% definicje nagłówków i stopek
+% definicje nagłówków i\,stopek
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
@@ -70,43 +70,41 @@
 
 \begin{document}
 \begin{titlepage}
-  ~
-
   \begin{tabular}{c@{\hspace{21mm}}|@{\hspace{5mm}}l}
-    \vspace{-20mm} &                                                                          \\
-    \multicolumn{2}{l}{\hspace{-12.5mm} \includegraphics[width=8cm]{LogoUMCS.jpg}}            \\
-    \multicolumn{2}{@{\hspace{20mm}}l}{\vspace{-4mm}}                                         \\
+    \vspace{-20mm} &                                                                           \\
+    \multicolumn{2}{l}{\hspace{-12.5mm} \includegraphics[width=8cm]{LogoUMCS.jpg}}             \\
+    \multicolumn{2}{@{\hspace{20mm}}l}{\vspace{-4mm}}                                          \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf UNIWERSYTET MARII
-    CURIE-SKŁODOWSKIEJ}                                                                       \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                         \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf W LUBLINIE}                                 \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                         \\
+    CURIE-SKŁODOWSKIEJ}                                                                        \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                          \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf W LUBLINIE}                                  \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{-4mm}}                                          \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\Large \sf Wydział Matematyki, Fizyki i
-    Informatyki}                                                                              \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                         \\
-                   & {\sf Kierunek: \textbf{informatyka} }                                    \\
-                   & {\sf Specjalność: \textbf{deweloper} }                                   \\
+    Informatyki}                                                                               \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{21mm}}                                          \\
+                   & {\sf Kierunek: \textbf{informatyka} }                                     \\
+                   & {\sf Specjalność: \textbf{deweloper} }                                    \\
     %& {\sf Specjalność: \textbf{informatyczna}} \\ % wpisujemy tylko jeśli jest!!!
-                   &                                                                          \\\\\\
-                   & {\sf \large \bfseries Patryk Wałach}                                     \\
-                   & {\sf nr albumu: 296597}                                                  \\
-                   &                                                                          \\\\\\
-                   & \Large \sf \bfseries Porównanie praktyk projektowania CSS:               \\
-                   & \Large \sf \bfseries tradycyjne podejście z czystym CSS                  \\
-                   & \Large \sf \bfseries a nowoczesne narzędzia generujące CSS               \\\\[-10pt]
-                   & {\large \sf Comparative study of CSS design practices:}                  \\
-                   & {\large \sf traditional approach with pure CSS}                          \\
-                   & {\large \sf versus modern CSS generating tools}                          \\
-                   &                                                                          \\
-                   &                                                                          \\
-                   &                                                                          \\
-                   & {\sf Praca magisterska}                                                  \\
-                   & \vspace{-7mm}                                                            \\
-                   & {\sf napisana w Katedrze Cyberbezpieczeństwa i Lingwistyki Komputerowej} \\
-                   & {\sf Instytutu Informatyki UMCS}                                         \\
-                   & \vspace{-7mm}                                                            \\
-                   & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}                  \\
-    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{15mm}}                                         \\
+                   &                                                                           \\\\\\
+                   & {\sf \large \bfseries Patryk Wałach}                                      \\
+                   & {\sf nr albumu: 296597}                                                   \\
+                   &                                                                           \\\\\\
+                   & \Large \sf \bfseries Porównanie praktyk projektowania CSS:                \\
+                   & \Large \sf \bfseries tradycyjne podejście z czystym CSS                   \\
+                   & \Large \sf \bfseries a\,nowoczesne narzędzia generujące CSS               \\\\[-10pt]
+                   & {\large \sf Comparative study of CSS design practices:}                   \\
+                   & {\large \sf traditional approach with pure CSS}                           \\
+                   & {\large \sf versus modern CSS generating tools}                           \\
+                   &                                                                           \\
+                   &                                                                           \\
+                   &                                                                           \\
+                   & {\sf Praca magisterska}                                                   \\
+                   & \vspace{-7mm}                                                             \\
+                   & {\sf napisana w Katedrze Cyberbezpieczeństwa i\,Lingwistyki Komputerowej} \\
+                   & {\sf Instytutu Informatyki UMCS}                                          \\
+                   & \vspace{-7mm}                                                             \\
+                   & {\sf pod kierunkiem \bfseries dr hab. Jarosława Byliny}                   \\
+    \multicolumn{2}{@{\hspace{28mm}}l}{\vspace{15mm}}                                          \\
     \multicolumn{2}{@{\hspace{28mm}}l}{\textbf{\textsf{Lublin 2024}}}
   \end{tabular}
 \end{titlepage}
@@ -141,9 +139,9 @@
 \addcontentsline{toc}{chapter}{Wstęp} % ...ale w spisie treści ma być...
 \chaptermark{Wstęp} % ...i w paginie górnej
 
-Język CSS jest nierozłączną częścią stron internetowych. Wraz z nieustannym rozwojem internetu i rosnącym rozmiarem stron internetowych nasuwają się pytania, w jaki sposób tworzyć łatwy w utrzymaniu, czytelny i optymalny kod CSS. Dlatego w niniejszej pracy sprawdzimy jak z tymi problemami radzi sobie tradycyjne podejście z czystym CSS i nowoczesne narzędzia generujące CSS.
+Język CSS jest nierozłączną częścią stron internetowych. Wraz z nieustannym rozwojem internetu i\,rosnącym rozmiarem stron internetowych nasuwają się pytania, w jaki sposób tworzyć łatwy w utrzymaniu, czytelny i\,optymalny kod CSS. Dlatego w niniejszej pracy sprawdzimy jak z tymi problemami radzi sobie tradycyjne podejście z czystym CSS i\,nowoczesne narzędzia generujące CSS.
 
-W pierwszym rozdziale przedstawimy podstawowe pojęcia związane z CSS. Następnie przedstawimy podstawy struktury HTML. W kolejnym spoglądamy na najczęściej wykorzystywane funkcje CSS. W czwartym rozdziale opisujemy problemy języka CSS. W rozdziale piątym przedstawimy narzędzia, których użyliśmy w celu zbudowania strony internetowej. Następnie prezentujemy jak wyglądają podstawowe funkcje bibliotek Tailwind CSS i StyleX. W ostatnim rozdziale przedstawiamy wnioski z napisanego przez nas kodu.
+W pierwszym rozdziale przedstawimy podstawowe pojęcia związane z CSS. Następnie przedstawimy podstawy struktury HTML. W kolejnym spoglądamy na najczęściej wykorzystywane funkcje CSS. W czwartym rozdziale opisujemy problemy języka CSS. W rozdziale piątym przedstawimy narzędzia, których użyliśmy w celu zbudowania strony internetowej. Następnie prezentujemy jak wyglądają podstawowe funkcje bibliotek Tailwind CSS i\,StyleX. W ostatnim rozdziale przedstawiamy wnioski z napisanego przez nas kodu.
 
 
 
@@ -151,9 +149,9 @@ W pierwszym rozdziale przedstawimy podstawowe pojęcia związane z CSS. Następn
 \section{Kaskadowe arkusze stylów}
 Kaskadowe arkusze stylów (ang. \emph{Cascading Style Sheets}, w skrócie CSS) jest to deklaratywny język służący do kontrolowania prezentacji dokumentów HTML, XML, SVG itp.
 
-Historia CSS sięga lat 90. XX wieku, kiedy to został stworzony jako odpowiedź na potrzebę oddzielenia struktury dokumentu od jego stylizacji. Wcześniej wszystkie style były zdefiniowane bezpośrednio w kodzie HTML, co sprawiało, że utrzymanie i zarządzanie stronami internetowymi było trudne i niewydajne.
+Historia CSS sięga lat 90. XX wieku, kiedy to został stworzony jako odpowiedź na potrzebę oddzielenia struktury dokumentu od jego stylizacji. Wcześniej wszystkie style były zdefiniowane bezpośrednio w kodzie HTML, co sprawiało, że utrzymanie i\,zarządzanie stronami internetowymi było trudne i\,niewydajne.
 
-Za pomocą CSS można kontrolować różne aspekty prezentacji, takie jak kolory, czcionki, marginesy, odstępy między elementami, rozmiar i położenie elementów na stronie, animacje itp.
+Za pomocą CSS można kontrolować różne aspekty prezentacji, takie jak kolory, czcionki, marginesy, odstępy między elementami, rozmiar i\,położenie elementów na stronie, animacje itp.
 
 
 Dla przykładu poniższy kod zmienia kolor akapitu na czerwony:
@@ -163,21 +161,21 @@ p {
 }
 \end{lstlisting}
 
-Język CSS jest stale rozwijany, co oznacza, że pojawiają się nowe funkcje i możliwości, które pozwalają projektantom jeszcze lepiej kontrolować wygląd swoich stron internetowych. Istnieją również różne wersje CSS, z których najnowsza, CSS3, wprowadza wiele nowych funkcji, takich jak efekty przejścia, animacje, gradienty czy elastyczne rozkładanie elementów.
+Język CSS jest stale rozwijany, co oznacza, że pojawiają się nowe funkcje i\,możliwości, które pozwalają projektantom jeszcze lepiej kontrolować wygląd swoich stron internetowych. Istnieją również różne wersje CSS, z których najnowsza, CSS3, wprowadza wiele nowych funkcji, takich jak efekty przejścia, animacje, gradienty czy elastyczne rozkładanie elementów.
 
 \section{Metodologia \emph{Blok Element Modyfikator}}
 \emph{Blok Element Modyfikator} (w skrócie BEM) jest to metodologia ułatwiająca tworzenie komponentów wielokrotnego użytku.
 
-Historia BEM sięga 2009 roku, kiedy została wprowadzona przez zespół deweloperów w Mail.Ru, jednej z największych rosyjskich firm internetowych. Jej celem było rozwiązanie problemów związanych z rosnącą złożonością stron internetowych i aplikacji oraz utrzymaniem spójności i czytelności kodu CSS.
+Historia BEM sięga 2009 roku, kiedy została wprowadzona przez zespół deweloperów w Mail.Ru, jednej z największych rosyjskich firm internetowych. Jej celem było rozwiązanie problemów związanych z rosnącą złożonością stron internetowych i\,aplikacji oraz utrzymaniem spójności i\,czytelności kodu CSS.
 
 
 Zgodnie z metodologią BEM nazwa każdej z klas CSS musi składać się z trzech elementów:
 \begin{itemize}
   \item Blok (ang. \emph{Block}) - niezależny komponent, który stanowi podstawową część struktury interfejsu. Blok może zawierać inne bloki lub elementy. Każdy blok ma unikalną nazwę, która jest używana w klasach CSS do identyfikacji jego stylów, np. \lstinline{.header}, \lstinline{.container}, \lstinline{.menu}, \lstinline{.checkbox}, \lstinline{.input}.
 
-  \item Element (ang. \emph{Element}) - część składowa bloku, która ma znaczenie tylko w kontekście tego bloku. Elementy są zależne od bloku, w którym się znajdują, i nie mogą istnieć samodzielnie poza nim. Nazwy elementów są prefiksowane nazwą bloku, do którego należą, i oddzielone dwoma podkreślnikami, np. \lstinline{.menu__item}, \lstinline{.list__item}, \lstinline{.checkbox__caption}, \lstinline{.header__title}.
+  \item Element (ang. \emph{Element}) - część składowa bloku, która ma znaczenie tylko w kontekście tego bloku. Elementy są zależne od bloku, w którym się znajdują, i\,nie mogą istnieć samodzielnie poza nim. Nazwy elementów są prefiksowane nazwą bloku, do którego należą, i\,oddzielone dwoma podkreślnikami, np. \lstinline{.menu__item}, \lstinline{.list__item}, \lstinline{.checkbox__caption}, \lstinline{.header__title}.
 
-  \item Modyfikator (ang. \emph{Modifier}) - odpowiada za zmianę wyglądu lub zachowania bloku lub elementu. Dzięki modyfikatorom możliwe jest dostosowywanie wyglądu i funkcjonalności istniejących bloków i elementów bez konieczności tworzenia nowych. Nazwy modyfikatorów są prefiksowane nazwą bloku lub elementu, do którego się odnoszą, i oddzielone dwoma minusami, np. \lstinline{.btn--disabled}, \lstinline{.link--highlighted}, \lstinline{.checkbox--checked}, \lstinline{.nav--fixed}, \lstinline{.nav__link--size-big}, \lstinline{.nav__link--color-yellow}.
+  \item Modyfikator (ang. \emph{Modifier}) - odpowiada za zmianę wyglądu lub zachowania bloku lub elementu. Dzięki modyfikatorom możliwe jest dostosowywanie wyglądu i\,funkcjonalności istniejących bloków i\,elementów bez konieczności tworzenia nowych. Nazwy modyfikatorów są prefiksowane nazwą bloku lub elementu, do którego się odnoszą, i\,oddzielone dwoma minusami, np. \lstinline{.btn--disabled}, \lstinline{.link--highlighted}, \lstinline{.checkbox--checked}, \lstinline{.nav--fixed}, \lstinline{.nav__link--size-big}, \lstinline{.nav__link--color-yellow}.
 \end{itemize}
 
 
@@ -187,7 +185,7 @@ Zgodnie z metodologią BEM nazwa każdej z klas CSS musi składać się z trzech
 \section{Semantyczny CSS}
 Semantyczny CSS jest to metodologia, której jednym z największych priorytetów jest \textit{separacja obowiązków} \cite{Wathan2017}.
 
-Idea ta zakłada, że HTML powinien zawierać tylko informacje dotyczące treści, a wszystkie decyzje dotyczące stylizacji powinny być podejmowane w kodzie CSS.
+Idea ta zakłada, że HTML powinien zawierać tylko informacje dotyczące treści, a\,wszystkie decyzje dotyczące stylizacji powinny być podejmowane w kodzie CSS.
 
 Dla przykładu:
 \begin{lstlisting}[language=HTML]
@@ -198,7 +196,7 @@ Dla przykładu:
 
 Kod zawiera jedną klasę \lstinline{.text-center}. Centrowanie tekstu to decyzja stylistyczna, więc ten kod łamie zasadę \textit{separacji obowiązków}, ponieważ pozwoliliśmy, aby informacje dotyczące stylizacji przeniknęły do naszego kodu HTML.
 
-Zamiast tego, zalecane podejście polega na nadawaniu elementom nazw klas na podstawie ich zawartości i wykorzystaniu tych klas jako punktów zaczepienia w kodzie CSS do stylizacji kodu:
+Zamiast tego, zalecane podejście polega na nadawaniu elementom nazw klas na podstawie ich zawartości i\,wykorzystaniu tych klas jako punktów zaczepienia w kodzie CSS do stylizacji kodu:
 \begin{lstlisting}[language=HTML]
   <style>
   .greeting {
@@ -215,9 +213,9 @@ Zamiast tego, zalecane podejście polega na nadawaniu elementom nazw klas na pod
 Wszechstronny CSS (ang. \emph{utility-first CSS}) to podejście odwrotne do Semantycznego CSS. Skupia się na tworzeniu małych, pojedynczych klas CSS, z których każda odpowiada za jedną, konkretną właściwość stylu. Zamiast tworzyć specjalne klasy dla konkretnych elementów interfejsu użytkownika, jak nagłówki, przyciski itp. używa się klas, które definiują pojedyncze właściwości CSS, takie jak kolor, margines czy wypełnienie.
 
 \section{Statyczny CSS}
-Statyczny CSS to metodologia, w której kod CSS nie zmienia się w trakcie działania aplikacji. Kod CSS jest pisany wprost lub generowany na etapie kompilacji po przeanalizowaniu kodu. Tworząc kod w ten sposób, możemy skorzystać z wachlarza narzędzi, analizujących i modyfikujących kod CSS w celu znalezienia błędów, zminimalizowania lub polyfillowania kodu\footnote{polyfillowania kodu -- zastąpienia kodu niewspieranego przez niektóre przeglądarki równoważnym działającym kodem \cite{Lawson2011-fr}}.
+Statyczny CSS to metodologia, w której kod CSS nie zmienia się w trakcie działania aplikacji. Kod CSS jest pisany wprost lub generowany na etapie kompilacji po przeanalizowaniu kodu. Tworząc kod w ten sposób, możemy skorzystać z wachlarza narzędzi, analizujących i\,modyfikujących kod CSS w celu znalezienia błędów, zminimalizowania lub polyfillowania kodu\footnote{Polyfillowanie kodu --- zastąpienia kodu niewspieranego przez niektóre przeglądarki równoważnym działającym kodem \cite{Lawson2011-fr}.}.
 \section{Programowy CSS}
-Programowy CSS to z kolei metodologia, w której style CSS są tworzone w trakcie działania aplikacji. Przewagą tego rozwiązania nad statycznym CSS przez wiele lat była możliwość generowania stylów dynamicznych. Zastosowanie tej metodologii nie wymaga szerokiej znajomości języka CSS -- style zwykle definiowane są przy użyciu bibliotek, które zapewniają wysoko poziomowy interfejs. Wykorzystując tego typu biblioteki w językach z silnym typowaniem, możemy automatycznie korzystać z auto uzupełniania kodu i raportowania błędów w edytorze bez dodatkowych narzędzi, wymaganych do zrozumienia składni języka CSS.
+Programowy CSS to z kolei metodologia, w której style CSS są tworzone w trakcie działania aplikacji. Przewagą tego rozwiązania nad statycznym CSS przez wiele lat była możliwość generowania stylów dynamicznych. Zastosowanie tej metodologii nie wymaga szerokiej znajomości języka CSS --- style zwykle definiowane są przy użyciu bibliotek, które zapewniają wysoko poziomowy interfejs. Wykorzystując tego typu biblioteki w językach z silnym typowaniem, możemy automatycznie korzystać z autouzupełniania kodu i\,raportowania błędów w edytorze bez dodatkowych narzędzi, wymaganych do zrozumienia składni języka CSS.
 
 
 \chapter{Struktura HTML}
@@ -240,7 +238,7 @@ Struktura HTML może być reprezentowana jako drzewo, co jest przydatne do wizua
 \end{lstlisting}
 
 \section{Korzeń drzewa}
-Korzeń drzewa, to węzeł, który jest na szczycie hierarchii drzewa i od którego wszystkie inne węzły (elementy) są bezpośrednio lub pośrednio zależne. Korzeń jest jedynym węzłem w drzewie, który nie ma rodzica. Wszystkie inne węzły w drzewie są jego potomkami. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<html>| jest korzeniem drzewa.
+Korzeń drzewa, to węzeł, który jest na szczycie hierarchii drzewa i\,od którego wszystkie inne węzły (elementy) są bezpośrednio lub pośrednio zależne. Korzeń jest jedynym węzłem w drzewie, który nie ma rodzica. Wszystkie inne węzły w drzewie są jego potomkami. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<html>| jest korzeniem drzewa.
 
 \section{Dziecko i Rodzic}
 Dziecko (ang. \emph{child}) jest węzłem, który jest bezpośrednio podłączony do innego węzła, zwanego jego rodzicem (ang. \emph{parent}). Węzeł rodzic może mieć wiele dzieci, ale każde dziecko ma tylko jednego rodzica. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<title>| jest dzieckiem elementu \lstinline|<head>|.
@@ -252,23 +250,23 @@ Potomek (ang. \emph{descendant}) jest węzłem, który znajduje się w hierarchi
 
 
 \section{Liść}
-Liść (ang. \emph{leaf}) jest węzłem, który nie ma żadnych dzieci. Są to elementy najniżej położone w hierarchii drzewa. W listingu \ref{dom} widzimy przykład drzewa, w którym tekst "Witamy!" jest liściem.
+Liść (ang. \emph{leaf}) jest węzłem, który nie ma żadnych dzieci. Są to elementy najniżej położone w hierarchii drzewa. W listingu \ref{dom} widzimy przykład drzewa, w którym tekst \lstinline|Witamy!| jest liściem.
 
 \section{Rodzeństwo}
 Rodzeństwo (ang. \emph{sibling}) odnosi się do węzłów, które mają tego samego rodzica. Rodzeństwo to elementy znajdujące się na tym samym poziomie hierarchii drzewa, bezpośrednio obok siebie. W listingu \ref{dom} widzimy przykład drzewa, w którym elementy \lstinline|<p>|, \lstinline|<div>|, \lstinline|<h1>| są rodzeństwem.
 
 \section{Sąsiadujące rodzeństwo}
-Sąsiadujące rodzeństwo (ang. \emph{adjacent siblings}) odnosi się do dwóch węzłów w strukturze drzewa, które mają tego samego rodzica i sąsiadują ze sobą bezpośrednio na tym samym poziomie hierarchii, nie mając żadnego innego węzła pomiędzy nimi na tym samym poziomie hierarchii. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<h1>| ma tylko jedno sąsiadujące rodzeństwo element \lstinline|<p>|.
+Sąsiadujące rodzeństwo (ang. \emph{adjacent siblings}) odnosi się do dwóch węzłów w strukturze drzewa, które mają tego samego rodzica i\,sąsiadują ze sobą bezpośrednio na tym samym poziomie hierarchii, nie mając żadnego innego węzła pomiędzy nimi na tym samym poziomie hierarchii. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<h1>| ma tylko jedno sąsiadujące rodzeństwo element \lstinline|<p>|.
 
 \section{Młodsze rodzeństwo}
-Młodsze rodzeństwo (ang. \emph{younger sibling}) jest węzłem, który znajduje się na tym samym poziomie hierarchii co inny węzeł, ale jest umieszczony po nim. W praktyce oznacza to, że oba węzły mają tego samego rodzica, ale młodsze rodzeństwo występuje później w kolejności. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<p>| i \lstinline|<div>| są młodszym rodzeństwem elementu \lstinline|<h1>|.
+Młodsze rodzeństwo (ang. \emph{younger sibling}) jest węzłem, który znajduje się na tym samym poziomie hierarchii co inny węzeł, ale jest umieszczony po nim. W praktyce oznacza to, że oba węzły mają tego samego rodzica, ale młodsze rodzeństwo występuje później w kolejności. W listingu \ref{dom} widzimy przykład drzewa, w którym element \lstinline|<p>| i\,\lstinline|<div>| są młodszym rodzeństwem elementu \lstinline|<h1>|.
 
 
 
 
 
 \chapter{Najczęściej wykorzystywane funkcjonalności języka CSS}
-Składnia arkusza stylów CSS przedstawiona jest na listingu \ref{stylesheet_syntax}. Jednym z głównych elementów tej składni są zestawy reguł\footnote{zestaw reguł -- Termin zestaw reguł jest często nazywany po prostu regułą}, których składnia przedstawiona jest na listingu \ref{ruleset_syntax}. Na rysunku \ref{rysunek} widzimy przykład takiej reguły, składającej się z selektora elementu \lstinline|p| oznaczonego niebieskim kolorem, oraz zbioru deklaracji, znajdującego się pomiędzy nawiasami. W zbiorze deklaracji na tym rysunku widzimy tylko jedną deklarację \lstinline|color: red;| składającą się z atrybutu oznaczonego kolorem czerwonym, dwukropka, wartości atrybutu i średnika. Każda reguła musi składać się z co najmniej jednej deklaracji.
+Składnia arkusza stylów CSS przedstawiona jest na listingu \ref{stylesheet_syntax}. Jednym z głównych elementów tej składni są zestawy reguł\footnote{Zestaw reguł --- termin zestaw reguł jest często nazywany po prostu regułą.}, których składnia przedstawiona jest na listingu \ref{ruleset_syntax}. Na rysunku \ref{rysunek} widzimy przykład takiej reguły, składającej się z selektora elementu \lstinline|p| oznaczonego niebieskim kolorem, oraz zbioru deklaracji, znajdującego się pomiędzy nawiasami. W zbiorze deklaracji na tym rysunku widzimy tylko jedną deklarację \lstinline|color: red;| składającą się z atrybutu oznaczonego kolorem czerwonym, dwukropka, wartości atrybutu i\,średnika. Każda reguła musi składać się z co najmniej jednej deklaracji.
 
 
 \begin{lstlisting}[caption={Składnia arkusza stylów CSS \cite{GrammarofCSS}},label={stylesheet_syntax}]
@@ -292,36 +290,46 @@ stylesheet
 
 \begin{figure}[h]
   \includegraphics[width=.5\linewidth]{rysunek.png}
-  \caption{Przykład reguły CSS, zmieniający kolor akapitu na czerwony}
+  \caption{Przykład reguły CSS zmieniającej kolor akapitu na czerwony}
   \label{rysunek}
 \end{figure}
 
 
 
 \section{Selektory}
+Na listingu \ref{selector_thing} przedstawiono składnię selektora. Widać, że selektor składa się z jednego prostego selektora, który może być połączony z innymi selektorami przy pomocy kombinatorów lub znaków białych. Zastosowanie takich znaków tworzy selektor dziecka. Na listingu \ref{combinator_css} widać składnie kombinatora. Widać, że kombinator może być znakiem \lstinline|>| --- tworzącym selektor dziecka, lub znakiem \lstinline|+| tworzącym selektor sąsiadującego młodszego rodzeństwa. Na listingu \ref{simple_selector_css} przedstawiono składnię prostego selektora. Widać, że składa się on z selektora elementów połączonego z dowolną ilością selektorów id, klasy, atrybutów, pseudo-klasy; albo z jednego lub więcej połączonych ze sobą selektorów id, klasy, atrybutów, pseudo-klasy.
 
-\begin{lstlisting}[caption={Składnia selektora CSS \cite{GrammarofCSS}}]
+\begin{lstlisting}[label={selector_thing},caption={Składnia selektora CSS \cite{GrammarofCSS}}]
 selector
-  : simple_selector [ combinator selector | S+ [ combinator? selector ]? ]?
+  : simple_selector [combinator selector | S+ [combinator? selector]?]?
   ;
 \end{lstlisting}
 
-\begin{lstlisting}[caption={Składnia prostego selektora CSS \cite{GrammarofCSS}}]
+\begin{lstlisting}[label={simple_selector_css},caption={Składnia prostego selektora CSS \cite{GrammarofCSS}}]
 simple_selector
   : element_name [ HASH | class | attrib | pseudo ]*
   | [ HASH | class | attrib | pseudo ]+
   ;
 \end{lstlisting}
 
+\begin{lstlisting}[label={combinator_css},caption={Składnia kombinatora CSS \cite{GrammarofCSS}}]
+combinator
+  : '+' S*
+  | '>' S*
+  ;
+\end{lstlisting}
+
 
 \subsection{Selektor elementów}
-\begin{lstlisting}[caption={Składnia selektora elementów CSS \cite{GrammarofCSS}}]
+
+\begin{lstlisting}[label={element_name},caption={Składnia selektora elementów CSS \cite{GrammarofCSS}}]
 element_name
   : IDENT | '*'
   ;
 \end{lstlisting}
-Selektor elementów wybiera elementy HTML na podstawie nazwy elementu.
-Dla przykładu listing \ref{selektor_elementu}.
+Selektor elementów wybiera elementy HTML na podstawie nazwy elementu. Na listingu \ref{element_name} przedstawiono składnię selektora elementów. Widać, że selektor elementu składa się z nazwy elementu, lub znaku \lstinline|*|, który oznacza wszystkie elementy.
+
+Dla przykładu na listingu \ref{selektor_elementu} widać regułę CSS, która zmienia kolor akapitu na czerwony.
 
 
 
@@ -334,8 +342,8 @@ Dla przykładu listing \ref{selektor_elementu}.
   }\end{lstlisting}
 
 \subsection{Selektor uniwersalny}
-Selektor uniwersalny wybiera wszystkie elementy HTML na stronie.
-Dla przykładu listing \ref{selektor_uniwersalny}.
+Selektor uniwersalny to specjalny przypadek selktora elementów, który wybiera wszystkie elementy HTML na stronie.
+Dla przykładu na listingu \ref{selektor_uniwersalny} widać regułę CSS, która zmienia kolor wszystkich elementów na stronie na czerwony.
 
 
 
@@ -349,16 +357,26 @@ Dla przykładu listing \ref{selektor_uniwersalny}.
 
 
 \subsection{Selektor id}
-\begin{lstlisting}[caption={Składnia tokenu \lstinline|HASH| zwracanego przez lekser CSS \cite{GrammarofCSS}}]
-  "#"{name}
-\end{lstlisting}
-Selektor id wybiera elementy HTML na podstawie atrybutu \lstinline{id} elementu.
-Id elementu jest unikalne na stronie, dlatego selektor id służy do wyboru jednego unikalnego elementu.
-Dla przykładu listing \ref{selektor_id}.
 
+\begin{lstlisting}[label={hash},caption={Składnia tokena \lstinline|HASH| zwracanego przez lekser CSS \cite{GrammarofCSS}}]
+  "#"{name}   {return HASH;}
+  name        {nmchar}+
+  nmchar      [_a-z0-9-]|{nonascii}|{escape}
+  nonascii    [\240-\377]
+  escape      {unicode}|\\[^\r\n\f0-9a-f]
+  unicode     \\{h}{1,6}(\r\n|[ \t\r\n\f])?
+\end{lstlisting}
+
+
+Selektor id wybiera elementy HTML na podstawie atrybutu \lstinline{id} elementu.
+Atrybut \lstinline|id| elementu jest unikalny na każdej stronie internetowej, dlatego selektor id służy do wyboru jednego elementu.
+
+Na listingu \ref{hash} widać składnię tokena \lstinline|HASH| tworzącego selektor id. Widać, że token składa się ze znaku \lstinline|#| i\,tokena \lstinline|name| zawierającego wartość atrybutu \lstinline|id|. Tokena ten składa się z jednego lub więcej znaków alfanumerycznych, oraz innych znaków poprzedzonych znakiem ucieczki.
+
+Dla przykładu listing \ref{selektor_id} widać regułę CSS, która zastosowana do elementu HTML o\,atrybucie \lstinline{id="para1"}.
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do elementu HTML o atrybucie \lstinline{id="para1"}},
+    caption={Reguła zostanie zastosowana do elementu HTML o\,atrybucie \lstinline{id="para1"}},
 label={selektor_id}
   ]
   #para1 {
@@ -367,18 +385,32 @@ label={selektor_id}
 
 
 \subsection{Selektor klasy}
-\begin{lstlisting}[caption={Składnia selektora klasy CSS \cite{GrammarofCSS}}]
+\begin{lstlisting}[label={class},caption={Składnia selektora klasy CSS \cite{GrammarofCSS}}]
 class
   : '.' IDENT
   ;
 \end{lstlisting}
+
+\begin{lstlisting}[label={ident},caption={Składnia tokena \lstinline|IDENT| zwracanego przez lekser CSS \cite{GrammarofCSS}}]
+  {ident}			{return IDENT;}
+  ident		-?{nmstart}{nmchar}*
+  nmstart		[_a-z]|{nonascii}|{escape}
+  nmchar		[_a-z0-9-]|{nonascii}|{escape}
+  nonascii    [\240-\377]
+  escape      {unicode}|\\[^\r\n\f0-9a-f]
+  unicode     \\{h}{1,6}(\r\n|[ \t\r\n\f])?
+\end{lstlisting}
+
 Selektor klasy wybiera elementy HTML na podstawie atrybutu \lstinline{class} elementu.
-Dla przykładu listing \ref{selektor_klas}.
+
+Na listingu \ref{class} widać składnię selektora klasy. Widać, że selektor składa się ze znaku \lstinline|.| i\,tokena \lstinline|IDENT| będącego ciągiem znaków, zawierającym wartość atrybutu \lstinline|class| elementu. Token ten skłąda się z ciągu znaków alfanumerycznych, oraz znaków poprzedzonych znakiem ucieczki, ale nie może zwierać cyfry jako pierwszy element ciągu. Dodatkowo cały ciąg może być poprzedzony znakiem \lstinline|-|.
+
+Dla przykładu na listingu \ref{selektor_klas} widać regułę CSS, która zastosowana do elementów HTML o\,atrybucie \lstinline{class="text-red"}.
 
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do elementów HTML o atrybucie \lstinline{class="text-red"}}
+    caption={Reguła zostanie zastosowana do elementów HTML o\,atrybucie \lstinline{class="text-red"}}
     ,label={selektor_klas}
   ]
   .text-red {
@@ -387,13 +419,13 @@ Dla przykładu listing \ref{selektor_klas}.
 
 
 
-Selektor klasy może być używany w połączeniu z selektorem elementu.
-Dla przykładu listing \ref{selektor_elementu_i_klas}.
+
+Na listingu \ref{selektor_elementu_i_klas} widać przykład reguły, w której selektor klasy połączony jest z selektorem elementu. Reguła zostanie zastosowana do akapitów o\,atrybucie \lstinline{class="text-red"}.
 
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do akapitów o atrybucie \lstinline{class="text-red"}}
+    caption={Reguła zostanie zastosowana do akapitów o\,atrybucie \lstinline{class="text-red"}}
     ,label={selektor_elementu_i_klas}
   ]
   p.text-red {
@@ -402,18 +434,16 @@ Dla przykładu listing \ref{selektor_elementu_i_klas}.
 
 
 Elementy HTML mogą posiadać wiele klas.
-Dla przykładu listing \ref{wiele_klas}.
+Dla przykładu na listingu \ref{wiele_klas} widać, że element \lstinline|<p>| będzie stylizowany przez reguły \lstinline|.center| i\,\lstinline|.large|.
 
 
 
-\begin{lstlisting}[language=HTML,caption={Element będzie stylizowany przez reguły \lstinline{.center} i \lstinline{.large}},
+\begin{lstlisting}[language=HTML,caption={Element będzie stylizowany przez reguły \lstinline{.center} i\,\lstinline{.large}},
     label={wiele_klas}]
   <p class="center large"></p>\end{lstlisting}
-
-
 \subsection{Selektor grupujący}
-Selektor grupujący pozwala na połączenie wielu takich samych reguł.
-Dla przykładu niepogrupowane reguły na rysunku \ref{selektor_grupujacy_niepogrupowane} można zastąpić równoważną regułą tak jak na rysunku \ref{selektor_grupujacy_pogrupowane}.
+Selektor grupujący pozwala na zastąpienie wielu takich samych reguł jedną regułą. Selektor grupujący składa się z\,wielu selektorów oddzielonych znakami \lstinline|,|.
+Dla przykładu niepogrupowane reguły na listingu \ref{selektor_grupujacy_niepogrupowane} można zastąpić równoważną regułą tak jak na rysunku \ref{selektor_grupujacy_pogrupowane}.
 
 
 
@@ -446,7 +476,7 @@ Dla przykładu niepogrupowane reguły na rysunku \ref{selektor_grupujacy_niepogr
 
 
 \subsection{Selektor potomków}
-Selektor potomków dopasowuje wszystkie elementy będące potomkami określonego elementu. Dla przykładu listing \ref{selektor_potomny}.
+Selektor potomków dopasowuje wszystkie elementy będące potomkami określonego elementu. Dla przykładu na listingu \ref{selektor_potomny} widać regułę CSS, która zmieni kolor akapitów, które są potomkami sekcji na niebieski.
 
 
 
@@ -462,7 +492,7 @@ Selektor potomków dopasowuje wszystkie elementy będące potomkami określonego
 
 \subsection{Selektor dziecka}
 
-Selektor dziecka wybiera wszystkie elementy będące dziećmi określonego elementu. Dla przykładu listing \ref{selektor_dziecka}.
+Selektor dziecka wybiera wszystkie elementy będące dziećmi określonego elementu. Dla przykładu na listingu \ref{selektor_dziecka} widać regułę CSS, która zmieni kolor akapitów, które są dziećmi sekcji na niebieski.
 
 
 \begin{lstlisting}[
@@ -477,7 +507,7 @@ label={selektor_dziecka}
 
 
 \section{Selektor młodszego rodzeństwa}
-Selektor młodszego rodzeństwa wybiera wszystkie elementy będące młodszym rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_rodzenstwa}.
+Selektor młodszego rodzeństwa wybiera wszystkie elementy będące młodszym rodzeństwem określonego elementu. Dla przykładu na listingu \ref{selektor_rodzenstwa} widać regułę CSS, która zmieni kolor akapitów, które są młodszym rodzeństwem sekcji na niebieski.
 
 
 
@@ -497,7 +527,7 @@ Selektor młodszego rodzeństwa wybiera wszystkie elementy będące młodszym ro
 
 
 \section{Selektor sąsiadującego młodszego rodzeństwa}
-Selektor sąsiadującego młodszego rodzeństwa wybiera element będącym sąsiadującym młodszym rodzeństwem określonego elementu. Dla przykładu listing \ref{selektor_sasiedniego_rodzenstwa}.
+Selektor sąsiadującego młodszego rodzeństwa wybiera element będącym sąsiadującym młodszym rodzeństwem określonego elementu. Dla przykładu na listingu \ref{selektor_sasiedniego_rodzenstwa} widać regułę CSS, która zmieni kolor akapitów, które są sąsiadującym młodszym rodzeństwem sekcji na niebieski.
 
 
 
@@ -517,18 +547,23 @@ Selektor sąsiadującego młodszego rodzeństwa wybiera element będącym sąsia
 
 
 
-\section{pseudoklasy}
-\begin{lstlisting}[caption={Składnia pseudoklasy CSS \cite{GrammarofCSS}}]
+\section{Pseudo-klasy}
+\begin{lstlisting}[label={pseudo_css},caption={Składnia pseudo-klasy CSS \cite{GrammarofCSS}}]
 pseudo
   : ':' [ IDENT | FUNCTION S* [IDENT S*]? ')' ]
   ;
 \end{lstlisting}
-pseudoklasy opisują stany elementów.
-Na przykład, mogą być użyte do:
+Pseudo-klasy opisują stany elementów.
+
+Na listingu \ref{pseudo_css} widać składnię pseudo-klasy. Pseudo-klasa składa się ze znaku \lstinline|:| i tokena \lstinline|IDENT| lub tokena \lstinline|FUNCTION|, opcjonalnego tokena \lstinline|IDENT| i token \lstinline|)|. Jest to składnia dla języka CSS 2, w którym jedyna funkcyjna pseudo-klasa to \lstinline|:lang()|. Ta pseudo-klasa przyjmuje tylko jeden argument, identyfikator języka, np. \lstinline|:lang(fr-be)|.
+
+Wraz z pojawianiem się nowych selektorów, składania argumentów zmienia się. W wersji CSS 3 pojawiła się pseudo-klasa funkcyjna \lstinline|:not()|, przyjmująca prosty selektor jako argument, oraz pseudo-klasa \lstinline{:nth-child()} akceptujący liczby. W wersji CSS 4 pojawiły się pseudo-klasy \lstinline|:is()|, \lstinline|:where()| i \lstinline|:has()| akceptujące listę selektorów jako argumenty. Zmodyfikowano więc specyfikację pseudo-klasy \lstinline|:not()|, aby również przyjmowała listę selektorów.
+
+Na przykład pseudo-klasy mogą być użyte do:
 \begin{itemize}
   \item Stylizacji elementu, gdy użytkownik najedzie na niego myszką (listing \ref{pseudo_klasy_hover})
-  \item Stylizacji odwiedzonych i nieodwiedzonych linków w różny sposób (listing \ref{pseudo_klasy_visited})
-  \item Stylizacji elementu, gdy otrzymuje skupienie \footnote{element otrzymujący skupienie to element który, będzie jako pierwszy informowany o zdarzeniach, np. o wciśnięciu klawiatury} (listing \ref{pseudo_klasy_focus})
+  \item Stylizacji odwiedzonych i\,nieodwiedzonych linków w różny sposób (listing \ref{pseudo_klasy_visited})
+  \item Stylizacji elementu, gdy otrzymuje skupienie \footnote{Element otrzymujący skupienie to element który, będzie jako pierwszy informowany o\,zdarzeniach, np. o\,wciśnięciu klawiatury. Domyślnie elementowi otrzymującemu skupienie na stronach internetowych towarzyszy charakterystyczna niebieska obwódka.} (listing \ref{pseudo_klasy_focus})
 \end{itemize}
 
 
@@ -571,16 +606,19 @@ label={pseudo_klasy_focus}
     }\end{lstlisting}
 
 
-\subsection{Funkcyjne pseudoklasy}
-\begin{lstlisting}[caption={Składnia tokena \lstinline|FUNCTION| zwracanego przez lekser CSS \cite{GrammarofCSS}}]
-  {ident}"("
+\subsection{Funkcyjne pseudo-klasy}
+\begin{lstlisting}[label={function_css},caption={Składnia tokena \lstinline|FUNCTION| zwracanego przez lekser CSS \cite{GrammarofCSS}}]
+  {ident}"("		{return FUNCTION;}
 \end{lstlisting}
-Funkcyjne pseudoklasy to klasy, które akceptują listę selektorów jako parametry. Dla przykładu listing \ref{pseudo_klasy_functional}.
+
+Na listing \ref{function_css} widać składnię tokena \lstinline|FUNCTION| zwracanaego przez lekser CSS. Token ten jest częścią składni selektora pseudo-klasy.
+
+Funkcyjne pseudo-klasy to pseudo-klasy, które akceptują listę argumentów. Dla przykładu na listingu \ref{pseudo_klasy_functional} widać regułę CSS, która zostani zastosowana do elementów, które nie są elementami \lstinline|div| i\,nie są elementami o\,atrybucie \lstinline{class="fancy"}.
 
 
 
 \begin{lstlisting}[
-    caption={Reguła zostanie zastosowana do elementów, które nie są elementami \lstinline|div| i nie są elementami o atrybucie \lstinline{class="fancy"}}
+    caption={Reguła zostanie zastosowana do elementów, które nie są elementami \lstinline|div| i\,nie są elementami o\,atrybucie \lstinline{class="fancy"}}
 ,label={pseudo_klasy_functional}
   ]
     :not(div):not(.fancy) {
@@ -599,9 +637,9 @@ Funkcyjne pseudoklasy to klasy, które akceptują listę selektorów jako parame
 %   \label{pseudo_klasy_functional}
 % \end{figure}
 
-\section{pseudoelementy}
+\section{Pseudo-elementy}
 
-pseudoelementy służą do stylizacji określonych części elementów.
+Pseudo-elementy służą do stylizacji określonych części elementów.
 
 Na przykład, mogą być używane do:
 
@@ -630,7 +668,7 @@ Na przykład, mogą być używane do:
 
 
 \section{Nadpisywanie stylów}
-Jeśli istnieją dwie lub więcej reguł CSS wskazujących na ten sam element, selektor o najwyższej specyficzności "wygra", i jego deklaracja stylu zostanie zastosowana do tego elementu HTML.
+Jeśli istnieją dwie lub więcej reguł CSS wskazujących na ten sam element, selektor o\,najwyższej specyficzności `wygra', i\,jego deklaracja stylu zostanie zastosowana do tego elementu HTML.
 Dla przykładu listing \ref{nadpisywanie_stylow}.
 
 
@@ -653,10 +691,10 @@ Każdy selektor CSS ma swoje miejsce w hierarchii specyficzności.
 
 Istnieją cztery kategorie, które określają poziom specyficzności selektora:
 \begin{itemize}
-  \item style liniowe -- specyficzność 1000, na przykład: \lstinline{<h1 style="color: pink;">};
-  \item identyfikatory -- specyficzność 100, na przykład: \lstinline{#navbar};
-  \item klasy, pseudoklasy, selektory atrybutów -- specyficzność 10, na przykład: \lstinline{.test}, \lstinline{:hover}, \lstinline{[href]};
-  \item elementy i pseudoelementy -- specyficzność 1, na przykład: \lstinline{h1}, \lstinline{::before}.
+  \item style liniowe --- specyficzność 1000, na przykład: \lstinline{<h1 style="color: pink;">};
+  \item identyfikatory --- specyficzność 100, na przykład: \lstinline{#navbar};
+  \item klasy, pseudo-klasy, selektory atrybutów --- specyficzność 10, na przykład: \lstinline{.test}, \lstinline{:hover}, \lstinline{[href]};
+  \item elementy i\,pseudo-elementy --- specyficzność 1, na przykład: \lstinline{h1}, \lstinline{::before}.
 \end{itemize}
 Dodatkowo, selektor uniwersalny posiada specyficzność 0.
 
@@ -707,10 +745,10 @@ Dodatkowo deklaracja \lstinline|!important| może być użyta, by nadpisać regu
 \end{lstlisting}
 
 \section{Style warunkowe (ang. \emph{media query})}
-Style warunkowe, są kluczowe dla responsywnego projektowania interfejsów. Pozwalają one dostosować wygląd stron internetowych do różnych urządzeń i warunków przeglądania. Składnia styli warunkowych w kodzie CSS jest opisana na listingach \ref{stylesheet_media} i \ref{media_list}.
+Style warunkowe, są kluczowe dla responsywnego projektowania interfejsów. Pozwalają one dostosować wygląd stron internetowych do różnych urządzeń i\,warunków przeglądania. Składnia stylów warunkowych w kodzie CSS jest opisana na listingach \ref{stylesheet_media} i\,\ref{media_list}.
 
 
-\begin{lstlisting}[caption={Składnia styli warunkowych \cite{GrammarofCSS}}, label={stylesheet_media}]
+\begin{lstlisting}[caption={Składnia stylów warunkowych \cite{GrammarofCSS}}, label={stylesheet_media}]
 media
   : MEDIA_SYM S* media_list '{' S* ruleset* '}' S*
   ;
@@ -728,8 +766,8 @@ medium
 
 Przykładami wykorzystania stylów warunkowych są:
 \begin{itemize}
-  \item zmiana stylów zależnie od szerokości ekranu -- listing \ref{media_width},
-  \item ograniczenie animacji zgodnie z preferencją użytkownika -- listing \ref{media_prefer}.
+  \item zmiana stylów zależnie od szerokości ekranu --- listing \ref{media_width},
+  \item ograniczenie animacji zgodnie z preferencją użytkownika --- listing \ref{media_prefer}.
 \end{itemize}
 
 \begin{lstlisting}[caption={Kod CSS zmieniający szerokość elementu zależnie od szerokości ekranu}, label={media_width}]
@@ -773,20 +811,20 @@ Przykładem użycia zmiennych jest listing \ref{variables_css}, gdzie zdefiniowa
 
 \chapter{Problemy języka CSS}
 \section{Rosnące rozmiary plików}
-Im większy plik CSS, tym dłużej zajmie mu załadowanie się na stronie internetowej. Duży rozmiar plików może powodować spowolnienie czasu ładowania strony, co z kolei może prowadzić do niższej oceny strony w wynikach wyszukiwania i gorszego doświadczenia użytkownika.
+Im większy plik CSS, tym dłużej zajmie mu załadowanie się na stronie internetowej. Duży rozmiar plików może powodować spowolnienie czasu ładowania strony, co z kolei może prowadzić do niższej oceny strony w wynikach wyszukiwania i\,gorszego doświadczenia użytkownika.
 
-W sytuacji, kiedy wielu programistów równolegle ręcznie tworzy kod CSS, dochodzi do powtórzeń kodu. Tego typu praca wymaga regularnej optymalizacji i refaktoryzacji kodu w celu zmniejszenia jego rozmiaru. Proces ten wraz z czasem staje się coraz dłuższy i droższy ze względu na rosnący rozmiar kodu.
+W sytuacji, kiedy wielu programistów równolegle ręcznie tworzy kod CSS, dochodzi do powtórzeń kodu. Tego typu praca wymaga regularnej optymalizacji i\,refaktoryzacji kodu w celu zmniejszenia jego rozmiaru. Proces ten wraz z czasem staje się coraz dłuższy i\,droższy ze względu na rosnący rozmiar kodu.
 
-Na rosnący rozmiar kodu wpływ ma też niewykorzystywany kod CSS. Wraz ze zmianą struktury HTML, część stylów staje się nieużywana. Style te często nie są łatwe do znalezienia, ze względu na złożoność zastosowanych selektorów i trudność analizy kodu HTML, np. struktura HTML zmienia się pod wpływem kodu JavaScript.
+Na rosnący rozmiar kodu wpływ ma też niewykorzystywany kod CSS. Wraz ze zmianą struktury HTML, część stylów staje się nieużywana. Style te często nie są łatwe do znalezienia, ze względu na złożoność zastosowanych selektorów i\,trudność analizy kodu HTML, np. struktura HTML zmienia się pod wpływem kodu JavaScript.
 \section{Kolizje pomiędzy stylami}
 \subsection{Zmiana reguł bazowych}
 
-Deweloperzy muszą używać elementów HTML do pisania HTML, a liczba elementów, które można wybrać, jest ograniczona. Dlatego może to być kuszące, aby zdefiniować wiele podstawowych stylów za pomocą selektorów elementów, aby uniknąć dodawania klas do wszystkich elementów, to takie podejście tworzy niezadeklarowaną zależność między tymi regułami a wszystkimi innymi komponentami.
+Deweloperzy muszą używać elementów HTML do pisania HTML, a\,liczba elementów, które można wybrać, jest ograniczona. Dlatego może to być kuszące, aby zdefiniować wiele podstawowych stylów za pomocą selektorów elementów, aby uniknąć dodawania klas do wszystkich elementów, to takie podejście tworzy niezadeklarowaną zależność między tymi regułami a\,wszystkimi innymi komponentami.
 
 
-Kiedy zaczynamy budować stronę internetową, zazwyczaj nie wydaje się to dużym problemem, wręcz przeciwnie, wydaje się to naturalne i zgodne z zasadą DRY (Don't Repeat Yourself). Tworzymy bazowe, podstawowe style (marginesy, rozmiary czcionek, kolory itp.), a następnie budujemy komponenty na ich podstawie, dzięki czemu nie musimy ponownie definiować tych samych reguł \cite{SideEffects}.
+Kiedy zaczynamy budować stronę internetową, zazwyczaj nie wydaje się to dużym problemem, wręcz przeciwnie, wydaje się to naturalne i\,zgodne z zasadą DRY (ang. \emph{Don't Repeat Yourself}). Tworzymy bazowe, podstawowe style (marginesy, rozmiary czcionek, kolory itp.), a\,następnie budujemy komponenty na ich podstawie, dzięki czemu nie musimy ponownie definiować tych samych reguł \cite{SideEffects}.
 
-Problem polega na tym, że oszczędzamy czas tylko pod warunkiem, że nigdy nie zmienimy swoich bazowych reguł. W praktyce projekty stron internetowych się zmieniają. Możemy zdecydować się na zwiększenie rozmiaru czcionki nagłówków, zastosowanie innych domyślnych marginesów dla akapitów, lub że wolimy obramowania zamiast podkreśleń dla linków. Jeśli komponenty takie jak \lstinline|.article-title|, \lstinline|.alert-content| i \lstinline|.footer-link| zależą od tych bazowych reguł, szybko zauważymy, jak kruche i powiązane są nasze style.
+Problem polega na tym, że oszczędzamy czas tylko pod warunkiem, że nigdy nie zmienimy swoich bazowych reguł. W praktyce projekty stron internetowych się zmieniają. Możemy zdecydować się na zwiększenie rozmiaru czcionki nagłówków, zastosowanie innych domyślnych marginesów dla akapitów, lub że wolimy obramowania zamiast podkreśleń dla linków. Jeśli komponenty takie jak \lstinline|.article-title|, \lstinline|.alert-content| i\,\lstinline|.footer-link| zależą od tych bazowych reguł, szybko zauważymy, jak kruche i\,powiązane są nasze style.
 
 Jeśli komponenty zależą od bazowych stylów, zmiany w tych bazowych stylach będą wymagały sprawdzenia całej strony, aby upewnić się, że wszystko wciąż wygląda poprawnie \cite{SideEffects}.
 
@@ -795,22 +833,22 @@ Jeśli komponenty zależą od bazowych stylów, zmiany w tych bazowych stylach b
 
 CSS nie ostrzega, jeśli używa się selektora klasy, który już istnieje w arkuszu stylów. Możliwość nadpisywania reguł jest jedną z cech tego języka. W rezultacie, bez wprowadzenia konwencji unikającej takich przypadków lub bez sprawdzania tego podczas budowania projektu, nie ma dobrego sposobu, aby upewnić się, że wybrana klasa, nie została już użyta przez kogoś innego.
 
-Gdy wielu deweloperów pracuje nad tym samym kodem, szansa, że dwie osoby wybiorą tę samą nazwę klasy i nie będą o tym wiedziały, jest bardzo wysoka. Dotyczy to szczególnie powszechnych nazw, takich jak \lstinline|button|, \lstinline|content| czy \lstinline|title|.
+Gdy wielu deweloperów pracuje nad tym samym kodem, szansa, że dwie osoby wybiorą tę samą nazwę klasy i\,nie będą o\,tym wiedziały, jest bardzo wysoka. Dotyczy to szczególnie powszechnych nazw, takich jak \lstinline|button|, \lstinline|content| czy \lstinline|title|.
 
 Nie jest to problem tylko z nazwami klas na najwyższym poziomie. Wybranie tej samej nazwy w poddrzewie może być równie niebezpieczne  \cite{SideEffects}.
 \section{Rozmieszczanie klas pomiędzy plikami CSS}
-Jeśli style są umieszczone bezpośrednio w plikach HTML, trudno jest je ponownie wykorzystać w innych częściach strony lub w innych projektach. Tego typu kolokacja stylów prowadzi do braku wyraźnej separacji między treścią, a jej prezentacją, co utrudnia zrozumienie struktury strony.
+Jeśli style są umieszczone bezpośrednio w plikach HTML, trudno jest je ponownie wykorzystać w innych częściach strony lub w innych projektach. Tego typu kolokacja stylów prowadzi do braku wyraźnej separacji między treścią, a\,jej prezentacją, co utrudnia zrozumienie struktury strony.
 
-W dużych projektach stylizacje mogą być rozproszone po wielu plikach. Na przykład, style dla przycisków mogą znajdować się w jednym pliku, dla formularzy w innym, a dla nagłówków jeszcze w innym. Odszukanie i modyfikacja stylów staje się czasochłonne, zwłaszcza gdy trzeba dokonać globalnych zmian.
+W dużych projektach stylizacje mogą być rozproszone po wielu plikach. Na przykład, style dla przycisków mogą znajdować się w jednym pliku, dla formularzy w innym, a\,dla nagłówków jeszcze w innym. Odszukanie i\,modyfikacja stylów staje się czasochłonne, zwłaszcza gdy trzeba dokonać globalnych zmian.
 \chapter{Narzędzia}
-W celu porównania praktyk projektowania CSS stworzymy aplikację internetową korzystając, z tradycyjnego podejścia z czystym CSS, po czym zrefaktotryzujemy ją przy użyciu biblioteki Tailwind CSS i biblioteki StyleX. W tym rozdziale przedstawiamy różne narzędzia, które wykorzystaliśmy do stworzenia tej aplikacji.
+W celu porównania praktyk projektowania CSS stworzymy aplikację internetową korzystając, z tradycyjnego podejścia z czystym CSS, po czym zrefaktotryzujemy ją przy użyciu biblioteki Tailwind CSS i\,biblioteki StyleX. W tym rozdziale przedstawiamy różne narzędzia, które wykorzystaliśmy do stworzenia tej aplikacji.
 \section{Język JavaScript}
 Najczęściej wykorzystywanym językiem do tworzenia aplikacji internetowych jest język JavaScript. W języku JavaScript można tworzyć aplikacje internetowe w sposób bardziej skomplikowany niż w języku HTML. Wykorzystamy go w celu stworzenia serwera http, użycia bibliotek CSS in JS, oraz implementacji interfejsu użytkownika.
 \subsection{Środowisko Node.js}
-Node.js to darmowe, wieloplatformowe środowisko uruchomieniowe JavaScript o otwartym kodzie źródłowym, które pozwala programistom tworzyć serwery, aplikacje internetowe, narzędzia wiersza poleceń oraz skrypty. W naszym przypadku będziemy używać Node.js do uruchomienia naszej aplikacji internetowej.
+Node.js to darmowe, wieloplatformowe środowisko uruchomieniowe JavaScript o\,otwartym kodzie źródłowym, które pozwala programistom tworzyć serwery, aplikacje internetowe, narzędzia wiersza poleceń oraz skrypty. W naszym przypadku będziemy używać Node.js do uruchomienia naszej aplikacji internetowej.
 
 \section{React}
-To biblioteka dla aplikacji internetowych i natywnych. React pozwala budować interfejsy użytkownika z indywidualnych elementów zwanych komponentami. Pozwala na stworzenia własnych komponentów, takich jak \lstinline|Thumbnail|, \lstinline|LikeButton| oraz \lstalias{Video} widocznych na listingu \ref{React}. Następnie połączenie ich w całe widoki, strony i aplikacje.
+To biblioteka dla aplikacji internetowych i\,natywnych. React pozwala budować interfejsy użytkownika z indywidualnych elementów zwanych komponentami. Pozwala na stworzenia własnych komponentów, takich jak \lstinline|Thumbnail|, \lstinline|LikeButton| oraz \lstalias{Video} widocznych na listingu \ref{React}. Następnie połączenie ich w całe widoki, strony i\,aplikacje.
 
 \begin{lstlisting}[caption={Kod React przedstawiający komponent \lstinline|Video|}, label={React}]
 function Video({ video }) {
@@ -827,15 +865,15 @@ function Video({ video }) {
 }
 \end{lstlisting}
 \subsection{Nextjs}
-Next.js to framework React do budowania aplikacji internetowych typu full-stack. Używając komponentów React do budowania interfejsów użytkownika, Next.js oferuje dodatkowe funkcje i optymalizacje.
+Next.js to framework React do budowania aplikacji internetowych typu full-stack. Używając komponentów React do budowania interfejsów użytkownika, Next.js oferuje dodatkowe funkcje i\,optymalizacje.
 
-Pod maską, Next.js również abstrahuje i automatycznie konfiguruje narzędzia potrzebne do React, takie jak server http, minimalizacja, kompilacja i wiele więcej. Pozwala to skupić się na budowaniu aplikacji, zamiast tracić czas na konfigurację.
+Pod maską, Next.js również abstrahuje i\,automatycznie konfiguruje narzędzia potrzebne do React, takie jak server http, minimalizacja, kompilacja i\,wiele więcej. Pozwala to skupić się na budowaniu aplikacji, zamiast tracić czas na konfigurację.
 
 \section{Storybook}
-Storybook to warsztat do budowania komponentów interfejsu użytkownika i stron w izolacji. Tysiące zespołów używa go do rozwoju interfejsu użytkownika, testowania i dokumentowania. Jest to darmowy projekt o otwartym kodzie źródłowym.
+Storybook to warsztat do budowania komponentów interfejsu użytkownika i\,stron w izolacji. Tysiące zespołów używa go do rozwoju interfejsu użytkownika, testowania i\,dokumentowania. Jest to darmowy projekt o\,otwartym kodzie źródłowym.
 
 \subsection{Chromatic}
-Chromatic to narzędzie do wizualnego testowania i recenzowania, które przeszukuje każdy możliwy stan interfejsu użytkownika we wszystkich przeglądarkach, aby wyłapać błędy wizualne i funkcjonalne. Wykorzystamy je do upewnienia nas, że interfejs użytkownika wygląda w pełni poprawnie i nie zawiera żadnych regresji.
+Chromatic to narzędzie do wizualnego testowania i\,recenzowania, które przeszukuje każdy możliwy stan interfejsu użytkownika we wszystkich przeglądarkach, aby wyłapać błędy wizualne i\,funkcjonalne. Wykorzystamy je do upewnienia nas, że interfejs użytkownika wygląda w pełni poprawnie i\,nie zawiera żadnych regresji.
 
 
 
@@ -855,13 +893,13 @@ Z Tailwind CSS możemy skorzystać niezależnie od wykorzystywanego języka prog
 Każda klasa może być prefiksowane dowolną ilością wariantów. Warianty sprawiają, że reguła jest nakładana tylko w odpowiednich warunkach, np. \lstinline|hover:bg-red-500|, \lstinline|sm:hover:bg-red-500|.
 
 \section{Konfigurowalność}
-Tailwind CSS posiada zestaw wbudowanych klas i wartości, które są w pełni konfigurowalne. Możemy tworzyć nowe klasy, warianty, zmieniać domyślne wartości istniejących klas.
+Tailwind CSS posiada zestaw wbudowanych klas i\,wartości, które są w pełni konfigurowalne. Możemy tworzyć nowe klasy, warianty, zmieniać domyślne wartości istniejących klas.
 
 \section{Dowolne wartości}
 W przypadku gdy nie skonfigurowaliśmy jakiejś klasy, wariantu lub nie planujemy ich więcej używać, Tailwind CSS pozwala na użycie dowolnych wartości bez takiej potrzeby, np. \lstinline|bg-[#764]|, \lstinline|m-[1px]|, \lstinline|[appearance:textfield]|, \lstinline|group-has-[.suffix]:text-right|, \lstinline|[&::-webkit-inner-spin-button]:hidden|
 \section{Selektory}
 \subsection{Selektor elementów, uniwersalny, id, klasy, grupujący}
-Tailwind CSS nie posiada wbudowanych selektorów elementów, selektora uniwersalnego, selektora id, selektora klasy i selektorów grupujących. W tych przypadkach możemy zdefiniować reguły w pliku CSS. Możemy też stworzyć klasę wykorzystującą dowolny selektor np. selektor elementów tak jak na listingu \ref{tailwind_element_selector} i \ref{tailwind_child_element_selector}. Tworząc klasę w ten sposób, musimy wykorzystać znak \lstinline|&| odnoszący się do elementu, na którym znajduje się klasa, więc nie ma możliwości stworzenia klasy odnoszącej się do wszystkich elementów na stronie, chyba że umieścimy klasę na elemencie \lstinline|html| będącym korzeniem drzewa HTML.
+Tailwind CSS nie posiada wbudowanych selektorów elementów, selektora uniwersalnego, selektora id, selektora klasy i\,selektorów grupujących. W tych przypadkach możemy zdefiniować reguły w pliku CSS. Możemy też stworzyć klasę wykorzystującą dowolny selektor np. selektor elementów tak jak na listingu \ref{tailwind_element_selector} i\,\ref{tailwind_child_element_selector}. Tworząc klasę w ten sposób, musimy wykorzystać znak \lstinline|&| odnoszący się do elementu, na którym znajduje się klasa, więc nie ma możliwości stworzenia klasy odnoszącej się do wszystkich elementów na stronie, chyba że umieścimy klasę na elemencie \lstinline|html| będącym korzeniem drzewa HTML.
 
 
 \begin{lstlisting}[language=HTML, caption={Klasa zmieniająca padding dla elementu będącego elementem \lstinline|a|}, label={tailwind_element_selector}]
@@ -875,14 +913,14 @@ Tailwind CSS nie posiada wbudowanych selektorów elementów, selektora uniwersal
 
 \begin{lstlisting}[language=HTML, caption={Klasa zmieniająca padding dla przodków będących elementem \lstinline|a|}, label={tailwind_child_element_selector}]
 <!--
-  .\[\&_a\]\:p-2 a {
+  .\[\&_a\]\:p-2 a\,{
     padding: 0.5rem/* 8px */;
   }
 -->
 <div class="[&_a]:p-2"></div>
 \end{lstlisting}
 \subsection{Selektor potomków}
-Tailwind CSS posiada zestaw wbudowanych wariantów \lstinline|group|, które pozwalają na stylizację potomka zależnie od stanu przodka. Dla przykładu na listingu \ref{tailwind_se_selektor} widzimy, klasę \lstinline|group-hover:bg-red-500| która zmieni kolor tła akapitu na czerwony, gdy użytkownik najedzie na sekcję myszką. Klasa \lstinline|group| sama w sobie nie nakłada żadnych styli, jest nakładana tylko w celu odniesienia się potomka do elementu. Istnieje też możliwość nadania grupom nazw, co może być używane w celu zagnieżdżania się grup, np. \lstinline|group/item|, \lstinline|group-hover/item:bg-red-500|.
+Tailwind CSS posiada zestaw wbudowanych wariantów \lstinline|group|, które pozwalają na stylizację potomka zależnie od stanu przodka. Dla przykładu na listingu \ref{tailwind_se_selektor} widzimy, klasę \lstinline|group-hover:bg-red-500| która zmieni kolor tła akapitu na czerwony, gdy użytkownik najedzie na sekcję myszką. Klasa \lstinline|group| sama w sobie nie nakłada żadnych stylów, jest nakładana tylko w celu odniesienia się potomka do elementu. Istnieje też możliwość nadania grupom nazw, co może być używane w celu zagnieżdżania się grup, np. \lstinline|group/item|, \lstinline|group-hover/item:bg-red-500|.
 
 \begin{lstlisting}[language=HTML, caption={Przykład wykorzystanie klasy \lstinline|group|}, label={tailwind_se_selektor}]
   <section class="group">
@@ -904,7 +942,7 @@ Tailwind CSS posiada wbudowany wariant \lstinline|*|, który pozwala na stylizac
 \end{lstlisting}
 
 \section{Selektor młodszego rodzeństwa}
-Tailwind CSS posiada zestaw wbudowanych wariantów \lstinline|peer|, które pozwalają na stylizację młodszego rodzeństwa zależnie od stanu starszego rodzeństwa. Dla przykładu na listingu \ref{tailwind_s_selektor} widzimy, klasę \lstinline|peer-hover:bg-red-500| która zmieni kolor tła akapitu na czerwony, gdy użytkownik najedzie na sekcję myszką. Klasa \lstinline|peer| sama w sobie nie nakłada żadnych styli, jest nakładana tylko w celu odniesienia się młodszego rodzeństwa do elementu. Istnieje też możliwość nadania nazw, co może być używane w celu odniesienia do wielu elementów, np. \lstinline|peer/item|, \lstinline|peer-hover/item:bg-red-500|.
+Tailwind CSS posiada zestaw wbudowanych wariantów \lstinline|peer|, które pozwalają na stylizację młodszego rodzeństwa zależnie od stanu starszego rodzeństwa. Dla przykładu na listingu \ref{tailwind_s_selektor} widzimy, klasę \lstinline|peer-hover:bg-red-500| która zmieni kolor tła akapitu na czerwony, gdy użytkownik najedzie na sekcję myszką. Klasa \lstinline|peer| sama w sobie nie nakłada żadnych stylów, jest nakładana tylko w celu odniesienia się młodszego rodzeństwa do elementu. Istnieje też możliwość nadania nazw, co może być używane w celu odniesienia do wielu elementów, np. \lstinline|peer/item|, \lstinline|peer-hover/item:bg-red-500|.
 
 \begin{lstlisting}[language=HTML, caption={Przykład wykorzystanie klasy \lstinline|peer|}, label={tailwind_s_selektor}]
   <section class="peer"></section>
@@ -915,10 +953,10 @@ Tailwind CSS posiada zestaw wbudowanych wariantów \lstinline|peer|, które pozw
 \section{Selektor sąsiadującego młodszego rodzeństwa}
 Tailwind CSS nie posiada wbudowanego selektora sąsiadującego młodszego rodzeństwa. Jeżeli istnieje potrzeba jego użycia, to można posłużyć się konfiguracją w celu stworzenia wariantów analogicznie jak w przypadku selektora młodszego rodzeństwa (klasa \lstinline|peer|). Lub można użyć dowolnych wartości jak w przypadku innych niewbudowanych selektorów.
 
-\section{pseudoklasy i pseudoelementy}
-Tailwind CSS posiada wbudowane warianty dla większości pseudoklas i pseudoelementów, np. \lstinline|hover:bg-red|, \lstinline|first:bg-red|, \lstinline|first:focus:bg-red|. Możemy też posłużyć się konfiguracją w celu stworzenia nowych wariantów, np. \lstinline|addVariant('hocus', ['&:hover', '&:focus'])|.
-\subsection{Funkcyjne pseudoklasy}
-Tailwind CSS posiada kilka wbudowanych pseudoklas, ich użycie wymaga podania dowolnej wartości, np. na listingu \ref{tailwind_fn} styl elementu div zmieni się tylko wtedy, gdy element posiada zaznaczone pole wyboru.
+\section{Pseudo-klasy i pseudo-elementy}
+Tailwind CSS posiada wbudowane warianty dla większości pseudo-klas i\,pseudo-elementów, np. \lstinline|hover:bg-red|, \lstinline|first:bg-red|, \lstinline|first:focus:bg-red|. Możemy też posłużyć się konfiguracją w celu stworzenia nowych wariantów, np. \lstinline|addVariant('hocus', ['&:hover', '&:focus'])|.
+\subsection{Funkcyjne pseudo-klasy}
+Tailwind CSS posiada kilka wbudowanych pseudo-klas, ich użycie wymaga podania dowolnej wartości, np. na listingu \ref{tailwind_fn} styl elementu div zmieni się tylko wtedy, gdy element posiada zaznaczone pole wyboru.
 
 \begin{lstlisting}[label={tailwind_fn}, language=HTML]
 <!--
@@ -935,7 +973,7 @@ Tailwind CSS posiada wbudowane warianty dla większości stylów warunkowych, np
 Aby użyć zmiennych, Tailwind CSS wymaga podania zmiennej jako dowolnej wartości, np. \lstinline|bg-[var(--bg-color)]|.
 
 \section{Nadpisywanie stylów}
-Tailwind CSS nie posiada możliowości nadpisywania stylów. Nakładając dwie klasy, np. \lstinline|p-2| i \lstinline|p-4| nie mamy kontroli nad tym, która będzie miała większy priorytet. W takim wypadku możemy sprefixować jedną z klas znakiem \lstinline|!|, np. \lstinline|!p-2| aby stworzyć regułę z deklaracją \lstinline|!important| w celu nadpisania stylów. Nie jest to jednak zalecane, gdyż taką operację można zastosować tylko raz i wymaga wygenerowania dodatkowego kodu CSS.
+Tailwind CSS nie posiada możliowości nadpisywania stylów. Nakładając dwie klasy, np. \lstinline|p-2| i\,\lstinline|p-4| nie mamy kontroli nad tym, która będzie miała większy priorytet. W takim wypadku możemy sprefixować jedną z klas znakiem \lstinline|!|, np. \lstinline|!p-2| aby stworzyć regułę z deklaracją \lstinline|!important| w celu nadpisania stylów. Nie jest to jednak zalecane, gdyż taką operację można zastosować tylko raz i\,wymaga wygenerowania dodatkowego kodu CSS.
 \chapter{Funkcjonalności biblioteki StyleX}
 
 \section{Przestrzenie nazw}
@@ -957,11 +995,11 @@ const styles = stylex.create({
 \end{lstlisting}
 
 \section{Selektory}
-Biblioteka StyleX pozwala na stylizację elementów jedynie poprzez klasy, nie ma możliwości użycia reszty selektorów. Jest to intencjonalnie nałożone ograniczenie w celu stworzenia szybkiego i przewidywalnego systemu stylizacji.
-\section{pseudoklasy}
-Biblioteka StyleX pozwala na używanie pseudoklas, np. na listingu \ref{style_x_pseudo_klasy} widzimy, że aby zmienić kolor przycisku zależnie od stanu pseudoklas \lstinline|:hover| oraz \lstinline|:focus|, wartość klucza \lstinline|backgroundColor| została zastąpiona obiektem pseudoklas.
+Biblioteka StyleX pozwala na stylizację elementów jedynie poprzez klasy, nie ma możliwości użycia reszty selektorów. Jest to intencjonalnie nałożone ograniczenie w celu stworzenia szybkiego i\,przewidywalnego systemu stylizacji.
+\section{pseudo-klasy}
+Biblioteka StyleX pozwala na używanie pseudo-klas, np. na listingu \ref{style_x_pseudo_klasy} widzimy, że aby zmienić kolor przycisku zależnie od stanu pseudo-klas \lstinline|:hover| oraz \lstinline|:focus|, wartość klucza \lstinline|backgroundColor| została zastąpiona obiektem pseudo-klas.
 
-\begin{lstlisting}[caption={Przykład wykorzystania pseudoklasy}, label={style_x_pseudo_klasy}]
+\begin{lstlisting}[caption={Przykład wykorzystania pseudo-klasy}, label={style_x_pseudo_klasy}]
   import * as stylex from '@stylexjs/stylex';
 
   const styles = stylex.create({
@@ -974,21 +1012,21 @@ Biblioteka StyleX pozwala na używanie pseudoklas, np. na listingu \ref{style_x_
     },
   });
 \end{lstlisting}
-\section{pseudoelementy}
-Biblioteka StyleX pozwala na stylizację pseudoelementów. Na listingu \ref{style_x_pseudo_element} widzimy, że aby zmienić kolor pseudoelementu \lstinline|::placeholder| musimy umieścić jego w przstrzeni nazw.
+\section{Pseudo-elementy}
+Biblioteka StyleX pozwala na stylizację pseudo-elementów. Na listingu \ref{style_x_pseudo_element} widzimy, że aby zmienić kolor pseudo-elementu \lstinline|::placeholder| musimy umieścić jego w przstrzeni nazw.
 
-\begin{lstlisting}[caption={Przykład stylizacji pseudoelementu}, label={style_x_pseudo_element}]
+\begin{lstlisting}[caption={Przykład stylizacji pseudo-elementu}, label={style_x_pseudo_element}]
   import * as stylex from '@stylexjs/stylex';
 
   const styles = stylex.create({
     input: {
-      // pseudoelement
+      // pseudo-element
       '::placeholder': {
         color: '#999',
       },
       color: {
         default: '#333',
-        // pseudo-class
+        // pseudo-klasa
         ':invalid': 'red',
       },
     },
@@ -996,9 +1034,9 @@ Biblioteka StyleX pozwala na stylizację pseudoelementów. Na listingu \ref{styl
 \end{lstlisting}
 
 \section{Style warunkowe (ang. \emph{media query})}
-Biblioteka StyleX pozwala na używanie styli warunkowej, w sposób analogiczny jak używanie pseudoklas, np. na listingu \ref{style_x_warun} widzimy, że aby zmienić kolor przycisku zależnie od rozdzielczości ekranu, wartość klucza \lstinline|backgroundColor| została zastąpiona obiektem styli.
+Biblioteka StyleX pozwala na używanie stylów warunkowej, w sposób analogiczny jak używanie pseudo-klas, np. na listingu \ref{style_x_warun} widzimy, że aby zmienić kolor przycisku zależnie od rozdzielczości ekranu, wartość klucza \lstinline|backgroundColor| została zastąpiona obiektem stylów.
 
-\begin{lstlisting}[caption={Przykład wykorzystania styli warunkowych}, label={style_x_warun}]
+\begin{lstlisting}[caption={Przykład wykorzystania stylów warunkowych}, label={style_x_warun}]
   import * as stylex from '@stylexjs/stylex';
 
   const styles = stylex.create({
@@ -1012,7 +1050,7 @@ Biblioteka StyleX pozwala na używanie styli warunkowej, w sposób analogiczny j
   });
 \end{lstlisting}
 \section{Zmienne CSS}
-Biblioteka StyleX pozwala na używanie zmiennych CSS, poprzez zastąpienie przestrzenie nazw funkcją przyjmującą wartości zmiennych jako argumenty i zwracającą przestrzeń nazw, wyglądającą tak jak dotychczas. Dla przykładu na listingu \ref{stylex_css} widzimy, że wartość \lstinline|height| została zastąpiona wartością dynamiczną. Używana w ten sposób funkcja nie może posiadać żadnych instrukji poza zwracaną przestrzenią nazw, nie będzie mogła być zanalizowana na etapie kompilacji.
+Biblioteka StyleX pozwala na używanie zmiennych CSS, poprzez zastąpienie przestrzenie nazw funkcją przyjmującą wartości zmiennych jako argumenty i\,zwracającą przestrzeń nazw, wyglądającą tak jak dotychczas. Dla przykładu na listingu \ref{stylex_css} widzimy, że wartość \lstinline|height| została zastąpiona wartością dynamiczną. Używana w ten sposób funkcja nie może posiadać żadnych instrukji poza zwracaną przestrzenią nazw, nie będzie mogła być zanalizowana na etapie kompilacji.
 
 \begin{lstlisting}[caption={Przykład użycia zmiennych CSS}, label={stylex_css}]
 import * as stylex from '@stylexjs/stylex';
@@ -1031,7 +1069,7 @@ function MyComponent() {
 }
 \end{lstlisting}
 \section{Nadpisywanie stylów}
-Biblioteka StyleX posiada funkcję \lstinline|stylex.props| która jako argumenty przyjmuje listę przestrzeni nazw i łączy je w deterministyczny sposób `ostatni styl zawsze wygrywa'.
+Biblioteka StyleX posiada funkcję \lstinline|stylex.props| która jako argumenty przyjmuje listę przestrzeni nazw i\,łączy je w deterministyczny sposób `ostatni styl zawsze wygrywa'.
 
 Dla przykładu na listingu \ref{stylex_props} widzimy, że element \lstinline|div| będzie miał fioletowy kolor, jeżeli kolejność argumentów była by odwrócona, element miałby kolor szary.
 
@@ -1056,7 +1094,7 @@ const styles = stylex.create({
 \section{Projekt strony}
 
 \subsection{Wpisy}
-Stworzyliśmy stronę internetową typu blog. Jak widać na listingu \ref{nav}, stworzyliśmy pasek nawigacji, znajdujący się na każdej stronie. Ten pasek zawiera hiperłącza do strony głównej, strony wyszukiwania treści, strony logowania i strony rejestracji.
+Stworzyliśmy stronę internetową typu blog. Jak widać na listingu \ref{nav}, stworzyliśmy pasek nawigacji, znajdujący się na każdej stronie. Ten pasek zawiera hiperłącza do strony głównej, strony wyszukiwania treści, strony logowania i\,strony rejestracji.
 
 
 \begin{lstlisting}[caption={Pasek nawigacji},label={nav},]
@@ -1114,7 +1152,7 @@ export default function HomePage({
 }
 \end{lstlisting}
 
-Na listingu \ref{article} widać, że wpisy pokazują zdjęcie, kategorię, tytuł, skrócony opis, nazwę autora, datę utworzenia i długość wpisu. Wpisy zawierają również hiperłącza do listy wpisów z tej samej kategorii, profilu autora i treści wpisu.
+Na listingu \ref{article} widać, że wpisy pokazują zdjęcie, kategorię, tytuł, skrócony opis, nazwę autora, datę utworzenia i\,długość wpisu. Wpisy zawierają również hiperłącza do listy wpisów z tej samej kategorii, profilu autora i\,treści wpisu.
 
 
 \begin{lstlisting}[language=HTML, label={article}, caption={Wpis}]
@@ -1173,11 +1211,12 @@ export function Article({ article }: { article: ArticleData }) {
 
 Na listingu \ref{article_page} widać stronę pokazującą cały wpis. Warto zauważyć, że zmienna \lstinline|article| przechowuje dane pochodzące z serwera. Z tego powodu jej atrybut \lstinline|content| to ciąg znaków przechowujący zawartość wpisu zapisanego w języku HTML. Korzystamy więc z atrybutu \lstinline|dangerouslySetInnerHTML| w bibliotece React, aby umieścić zawartość wpisu w drzewie HTML. Nie mamy tutaj możliwości dodania klas, stylów do zawartości wpisu. Korzystamy więc z selektora potomków, aby nałożyć style CSS na zawartość. W przypadku biblioteki Tailwind CSS używamy klasy \lstinline|prose| stworzonej przy pomocy pluginu. Biblioteka StyleX nie posiada selektora potomków, więc musieliśmy dodać kod w języku CSS.
 
-\begin{lstlisting}[caption={Strona wpisu},label={article_page}]
+\begin{lstlisting}[caption={Strona wpisu},label={article_page},language=HTML]
 import { ArticleData } from "@/components/Article";
 import { BigArticle } from "@/components/BigArticle";
 
-export default function ArticlePage({ article }: { article: ArticleData }) {
+export default function ArticlePage({ article }:
+{ article: ArticleData }) {
   return (
     <main className="bg-surface text-on-surface">
       <div className="container mx-auto py-4 grid gap-8">
@@ -1198,8 +1237,8 @@ export default function ArticlePage({ article }: { article: ArticleData }) {
 
 
 \subsection{Formularze}
-Formularze HTML pojawiają się praktycznie na każdej stronie internetowej. Dlatego dodaliśmy formularz logowania i rejestracji do naszej aplikacji internetowej.
-Na listing \ref{form_input} widzimy przykład pola jednego z formularzy. Pola często wymagają nałożenia stylu zależnie od jednego z wielu stanów, w jakim się znajdują. Pola mogą być skupione, zawierać błędy, być puste, być automatycznie uzupełnione, być wyłączone itp. na przykładzie widać, że wykorzystano Tailwind CSS. Ze względy na ilość stanów, w jakim może znaleźć się pole formularza ilość klas i ich długość jest bardzo duża, co zmniejsza czytelność kodu. W tym przypadku lepiej byłoby oddzielić style od kodu HTML.
+Formularze HTML pojawiają się praktycznie na każdej stronie internetowej. Dlatego dodaliśmy formularz logowania i\,rejestracji do naszej aplikacji internetowej.
+Na listing \ref{form_input} widzimy przykład pola jednego z formularzy. Pola często wymagają nałożenia stylu zależnie od jednego z wielu stanów, w jakim się znajdują. Pola mogą być skupione, zawierać błędy, być puste, być automatycznie uzupełnione, być wyłączone itp. na przykładzie widać, że wykorzystano Tailwind CSS. Ze względy na ilość stanów, w jakim może znaleźć się pole formularza ilość klas i\,ich długość jest bardzo duża, co zmniejsza czytelność kodu. W tym przypadku lepiej byłoby oddzielić style od kodu HTML.
 
 
 \begin{lstlisting}[language=HTML, caption={Pole formularza}, label={form_input}]
@@ -1265,9 +1304,9 @@ export const Default: Story = {
 };
 \end{lstlisting}
 
-Stworzyliśmy również historyjki widoczne na listingu \ref{dark_rtl} przedstawiające komponent z wykorzystanie ciemnego motywu i języka czytanego od prawej do lewej. Naszym celem przy tworzeniu aplikacji było, aby cała strona wspierała różne motywy i kierunek czytania od prawej do lewej. Dzięki wykorzystaniu zmiennych CSS, implementacja motywów była bardzo prosta, niezależnie od wykorzystanych bibliotek. Zapewnienie aby strona wspierała kierunek czytania od prawej do lewej wymagało wykorzystania specyficznych atrybutów CSS, co również nie stwarzało żadnego problemu dla wykorzystanych przez nas bibliotek.
+Stworzyliśmy również historyjki widoczne na listingu \ref{dark_rtl} przedstawiające komponent z wykorzystanie ciemnego motywu i\,języka czytanego od prawej do lewej. Naszym celem przy tworzeniu aplikacji było, aby cała strona wspierała różne motywy i\,kierunek czytania od prawej do lewej. Dzięki wykorzystaniu zmiennych CSS, implementacja motywów była bardzo prosta, niezależnie od wykorzystanych bibliotek. Zapewnienie aby strona wspierała kierunek czytania od prawej do lewej wymagało wykorzystania specyficznych atrybutów CSS, co również nie stwarzało żadnego problemu dla wykorzystanych przez nas bibliotek.
 
-\begin{lstlisting}[caption={\lstinline|Header| z wykorzystaniem ciemnego motywu i języka czytanego od prawej do lewej},label={dark_rtl}]
+\begin{lstlisting}[caption={\lstinline|Header| z wykorzystaniem ciemnego motywu i\,języka czytanego od prawej do lewej},label={dark_rtl}]
 export const Dark: Story = {
   ...Default,
   parameters: {
@@ -1284,7 +1323,7 @@ export const Rtl: Story = {
 \end{lstlisting}
 
 
-Na listingu \ref{nav_open} widzimy, że stworzyliśmy również historyjkę z testem, który sprawdza, interakcję z nawigacją wyświetlaną na urządzeniu o małej szerokości ekranu. Na takim urządzeniu, hiperłącza są umieszczane w menu, które otwiera się lub zamyka po wciśnięciu przycisku.
+Na listingu \ref{nav_open} widzimy, że stworzyliśmy również historyjkę z testem, który sprawdza, interakcję z nawigacją wyświetlaną na urządzeniu o\,małej szerokości ekranu. Na takim urządzeniu, hiperłącza są umieszczane w menu, które otwiera się lub zamyka po wciśnięciu przycisku.
 
 \begin{lstlisting}[caption={\lstinline|Header| z wykorzystaniem przełącznika nawigacji},label={nav_open}]
 export const Open: Story = {
@@ -1309,22 +1348,22 @@ export const Open: Story = {
 W ten sam sposób tworzyliśmy następne komponenty potrzebne to zaimplementowania kolejnych stron naszej aplikacji internetowej.
 
 \section{Refaktoryzacja strony}
-Refaktoryzując stronę internetową wykorzystywaliśmy podejście iteracyjne. Tworzyliśmy nową gałęź repozytorium git, przepisywaliśmy jeden komponent, po czym wypychaliśmy zmiany na gałąź. Każda taka zmiana uruchamia naszą aplikację Storybook na platformie Chromatic i przeprowadza testy wizualne dzięki wcześniej napisanym historyjkom. Jeżeli podczas tych testów nie wystąpiły błędy, to nasz kod jest zgodny z naszymi oczekiwaniami i przenosimy zmiany z danej gałęzi na naszą główną gałąź. W przypadku wystąpienia błędu, korzystaliśmy z możliwości debugowania na platformie Chromatic, w celu poprawienia kodu i ponownego wypchnięcia zmian.
+Refaktoryzując stronę internetową wykorzystywaliśmy podejście iteracyjne. Tworzyliśmy nową gałęź repozytorium git, przepisywaliśmy jeden komponent, po czym wypychaliśmy zmiany na gałąź. Każda taka zmiana uruchamia naszą aplikację Storybook na platformie Chromatic i\,przeprowadza testy wizualne dzięki wcześniej napisanym historyjkom. Jeżeli podczas tych testów nie wystąpiły błędy, to nasz kod jest zgodny z naszymi oczekiwaniami i\,przenosimy zmiany z danej gałęzi na naszą główną gałąź. W przypadku wystąpienia błędu, korzystaliśmy z możliwości debugowania na platformie Chromatic, w celu poprawienia kodu i\,ponownego wypchnięcia zmian.
 
 W ten sam sposób refaktoryzowaliśmy kolejne komponenty potrzebne przez kolejne strony naszej aplikacji internetowej. Gdy wszystkie komponenty zostały zaimplementowane, mogliśmy odinstalować inne biblioteki, które nie były potrzebne w naszym projekcie.
 
 \chapter{Wnioski}
-W celu wyciągnięcia wniosków z napisanego przez nas kodu porównamy najczęściej wykorzystywane funkcje przy pisaniu stylów CSS według wybranej przez nas literatury: An empirical study on the use of CSS preprocessors \cite{Mazinanian__Tsantalis__2016} i Discovering RefactoringOpportunities in Cascading Style Sheets \cite{Mazinanian__Tsantalis__2}.
+W celu wyciągnięcia wniosków z napisanego przez nas kodu porównamy najczęściej wykorzystywane funkcje przy pisaniu stylów CSS według wybranej przez nas literatury: An empirical study on the use of CSS preprocessors \cite{Mazinanian__Tsantalis__2016} i\,Discovering RefactoringOpportunities in Cascading Style Sheets \cite{Mazinanian__Tsantalis__2}.
 
 \section{Zmienne}
-Zarówno czysty CSS jak i biblioteka Tailwind CSS i biblioteka StyleX pozwalają na użycie zmiennych.
+Zarówno czysty CSS jak i\,biblioteka Tailwind CSS i\,biblioteka StyleX pozwalają na użycie zmiennych.
 
-W przypadku naszej aplikacji użyliśmy zmiennych w celu zdefiniowania wszystkich używanych kolorów. Umożliwiło nam to całkowitą zmianę wyglądu strony zależnie od zdefiniowanego przez nas motywu. Zdefiniowaliśmy motywy \lstinline|light| i \lstinline|dark|.
-
-
+W przypadku naszej aplikacji użyliśmy zmiennych w celu zdefiniowania wszystkich używanych kolorów. Umożliwiło nam to całkowitą zmianę wyglądu strony zależnie od zdefiniowanego przez nas motywu. Zdefiniowaliśmy motywy \lstinline|light| i\,\lstinline|dark|.
 
 
-Na listingu \ref{variables} widzimy, że w przypadku użycia biblioteki StyleX zmienne i motym zadeklarowaliśmy w oddzielnym pliku JavaScript. Na listingu \ref{stylex_theme} widzimy, że aby zastosować motyw musimy go ustawić jako wartość atrybutu \lstinline|style|. Na listingu \ref{stylex_vars} widzimy, że aby użyć wartości zmiennych, używamy funkcji \lstinline|stylex.create| aby stworzyć nową przestrzeń nazw, w której przekazujemy wartość zmiennej \lstinline|surface| jako wartość atrybutu \lstinline|backgroundColor|, oraz wartość zmiennej \lstinline|onSurface| jako wartość atrybutu \lstinline|color|. Następnie używamy funkcji \lstinline|stylex.props| aby nałożyć style z przestrzeni nazw na element \lstinline|div|.
+
+
+Na listingu \ref{variables} widzimy, że w przypadku użycia biblioteki StyleX zmienne i\,motym zadeklarowaliśmy w oddzielnym pliku JavaScript. Na listingu \ref{stylex_theme} widzimy, że aby zastosować motyw musimy go ustawić jako wartość atrybutu \lstinline|style|. Na listingu \ref{stylex_vars} widzimy, że aby użyć wartości zmiennych, używamy funkcji \lstinline|stylex.create| aby stworzyć nową przestrzeń nazw, w której przekazujemy wartość zmiennej \lstinline|surface| jako wartość atrybutu \lstinline|backgroundColor|, oraz wartość zmiennej \lstinline|onSurface| jako wartość atrybutu \lstinline|color|. Następnie używamy funkcji \lstinline|stylex.props| aby nałożyć style z przestrzeni nazw na element \lstinline|div|.
 
 \begin{lstlisting}[caption={StyleX definicja zmiennych CSS}, label={variables}]
 import * as stylex from "@stylexjs/stylex";
@@ -1370,7 +1409,7 @@ export default function Root(props: PropsWithChildren<{}>) {
 }
 \end{lstlisting}
 
-Na listingu \ref{tail_variables} widzimy, że w przypadku użycia biblioteki Tailwind CSS rozszerzyliśmy zestaw wbudowanych kolorów \lstinline|colors| o nowe kolory, takie jak \lstinline|primary| oraz \lstinline|primary-container|, które odnoszą się do nazwy zmiennych. Roszerzenie to pozwoliło na używanie wbudowanych klas takich jak \lstinline|bg-primary-container|, \lstinline|text-primary|. Stworzyliśmy również plugin pozwalający na użycie różnych motywów.
+Na listingu \ref{tail_variables} widzimy, że w przypadku użycia biblioteki Tailwind CSS rozszerzyliśmy zestaw wbudowanych kolorów \lstinline|colors| o\,nowe kolory, takie jak \lstinline|primary| oraz \lstinline|primary-container|, które odnoszą się do nazwy zmiennych. Roszerzenie to pozwoliło na używanie wbudowanych klas takich jak \lstinline|bg-primary-container|, \lstinline|text-primary|. Stworzyliśmy również plugin pozwalający na użycie różnych motywów.
 
 Na listingu \ref{tailwind_theme} widzimy, że aby zastosować motyw musimy jedynie nałożyć klasę \lstinline|dark|. Na listingu \ref{tailwind_vars} widzimy, że aby użyć wartości zmiennych, używamy nowo wygenerowanych klas \lstinline|bg-surface| oraz \lstinline|text-on-surface|.
 
@@ -1433,7 +1472,7 @@ export default function Root(props: PropsWithChildren<{}>) {
 
 
 \section{Kolokacja kodu}
-Zagnieżdżanie się selektorów pozwala na zwiększenie czytelności kodu CSS, poprzez grupowanie powiązanych reguł. Na przykład na listingu \ref{nesting} widzimy, że reguła \lstinline|&.btn--primary| i \lstinline|&:hover| są zagnieżdżone w regułę \lstinline|.btn|. Takie zagnieżdżenie się jest równoważne z regułami o selektorach \lstinline|.btn.btn--primary| oraz \lstinline|.btn:hover|. Zagnieżdżając, można korzystać ze wszystkich selektorów, nie można jednak zagnieżdżać styli warunkowych.
+Zagnieżdżanie się selektorów pozwala na zwiększenie czytelności kodu CSS, poprzez grupowanie powiązanych reguł. Na przykład na listingu \ref{nesting} widzimy, że reguła \lstinline|&.btn--primary| i\,\lstinline|&:hover| są zagnieżdżone w regułę \lstinline|.btn|. Takie zagnieżdżenie się jest równoważne z regułami o\,selektorach \lstinline|.btn.btn--primary| oraz \lstinline|.btn:hover|. Zagnieżdżając, można korzystać ze wszystkich selektorów, nie można jednak zagnieżdżać stylów warunkowych.
 
 \begin{lstlisting}[caption={Zagnieżdżanie się reguł w CSS}, label={nesting}]
 .btn {
@@ -1453,7 +1492,7 @@ Zagnieżdżanie się selektorów pozwala na zwiększenie czytelności kodu CSS, 
 \end{lstlisting}
 
 
-StyleX pozwala na grupowanie reguł za pomocą przestrzeni nazw, w której korzystać można z styli warunkowych, oraz zagnieżdżać pseudoklasy i pseudoelementy. StyleX natomiast nie pozwala na używanie reszty selektorów. Reguły CSS na listingu \ref{nesting} wymagają napisanie podobnej ilości kodu co równoważne reguły StyleX na listingu \ref{stylex_nesting}.
+StyleX pozwala na grupowanie reguł za pomocą przestrzeni nazw, w której korzystać można z stylów warunkowych, oraz zagnieżdżać pseudo-klasy i\,pseudo-elementy. StyleX natomiast nie pozwala na używanie reszty selektorów. Reguły CSS na listingu \ref{nesting} wymagają napisanie podobnej ilości kodu co równoważne reguły StyleX na listingu \ref{stylex_nesting}.
 
 \begin{lstlisting}[caption={Zagnieżdżanie reguł w StyleX}, label={stylex_nesting}]
 const styles = stylex.create({
@@ -1477,13 +1516,14 @@ W przypadku TailwindCSS to struktura kodu HTML odpowiada za grupowanie użytych 
 
 
 \begin{lstlisting}[language=HTML, caption={Grupowanie reguł w Tailwind CSS}, label={tailwind_nesting}]
-  <button class="hover:text-blue sm:hover:text-purple [&.primary]:text-red">
+<button class="hover:text-blue sm:hover:text-purple
+[&.primary]:text-red">
   ...
-  </button>
+</button>
 \end{lstlisting}
 
 \section{Prefiksy}
-W przypadkach, gdy przeglądarki nie wspierają nowych wartości w CSS, można zdefiniować dany atrybut wielokrotnie. Na przykład na listingu \ref{prefix} widzimy, że atrybut \lstinline|position| został zdefiniowany wielokrotnie. Jeśli przeglądarka nie wspiera wartości atrybutu \lstinline|sticky| to ją pominie i spróbuje zastosować wartość \lstinline|-webkit-sticky| itd.
+W przypadkach, gdy przeglądarki nie wspierają nowych wartości w CSS, można zdefiniować dany atrybut wielokrotnie. Na przykład na listingu \ref{prefix} widzimy, że atrybut \lstinline|position| został zdefiniowany wielokrotnie. Jeśli przeglądarka nie wspiera wartości atrybutu \lstinline|sticky| to ją pominie i\,spróbuje zastosować wartość \lstinline|-webkit-sticky| itd.
 
 \begin{lstlisting}[caption={Prefiksy w CSS}, label={prefix}]
 .header {
@@ -1497,15 +1537,19 @@ W przypadku biblioteki StyleX można użyć funkcji \lstinline|stylex.firstThatW
 \begin{lstlisting}[caption={Prefiksy w StyleX}, label={stylex_prefix}]
 const styles = stylex.create({
   header: {
-    position: stylex.firstThatWorks('sticky', '-webkit-sticky', 'fixed'),
+    position: stylex.firstThatWorks(
+      'sticky',
+      '-webkit-sticky',
+      'fixed'
+    ),
   },
 });
 \end{lstlisting}
 
-Biblioteka Tailwind CSS nie pozwala na zdefiniowanie jednego atrybutu wielokrotnie w deterministycznej kolejności. Sugerowany sposób na dodanie wsparcia dla różnych przeglądarek to zastosowanie osobnej biblioteki w celu przekształcenia wynikowych stylów, np. używając biblioteki \lstinline|PostCSS| możemy zainstalować plugin \lstinline|autoprefixer|, który automatycznie dodaje prefiksy dla różnych przeglądarek. Alternatywnie możemy użyć stylów warunkowych, np. \lstinline|fixed supports-[position:-webkit-sticky]:[position:-webkit-sticky] supports-[position:sticky]:sticky|.
+Biblioteka Tailwind CSS nie pozwala na zdefiniowanie jednego atrybutu wielokrotnie w deterministycznej kolejności. Sugerowany sposób na dodanie wsparcia dla różnych przeglądarek to zastosowanie osobnej biblioteki w celu przekształcenia wynikowych stylów, np. używając biblioteki \lstinline|PostCSS| możemy zainstalować plugin \lstinline|autoprefixer|, który automatycznie dodaje prefiksy dla różnych przeglądarek. Alternatywnie możemy użyć stylów warunkowych, np. \lstinline|fixed| \lstinline|supports-[position:-webkit-sticky]:[position:-webkit-sticky]| \lstinline|supports-[position:sticky]:sticky|.
 
-\section{De duplikacja kodu}
-De duplikacja kodu jest procesem usuwania duplikatów kodu. W przypadku biblioteki StyleX, jak i Tailwind CSS obie biblioteki analizują kod źródłowy i generują optymalny kod CSS. Na przykład na listingu \ref{deduplication} widać kod przed kompilacją, a na listingu \ref{deduplication_after} po skompilowaniu. Wartości atrybutów zastępowane są nazwami klas. Wszystkie kolejne użycie atrybutów o identycznych wartościach w innych częściach kodu zostaną zastąpione tą samą nazwą klasy, dzięki czemu rozmiar kodu CSS się nie zmieni.
+\section{Deduplikacja kodu}
+Deduplikacja kodu jest procesem usuwania duplikatów kodu. W przypadku biblioteki StyleX, jak i\,Tailwind CSS obie biblioteki analizują kod źródłowy i\,generują optymalny kod CSS. Na przykład na listingu \ref{deduplication} widać kod przed kompilacją, a\,na listingu \ref{deduplication_after} po skompilowaniu. Wartości atrybutów zastępowane są nazwami klas. Wszystkie kolejne użycie atrybutów o\,identycznych wartościach w innych częściach kodu zostaną zastąpione tą samą nazwą klasy, dzięki czemu rozmiar kodu CSS się nie zmieni.
 
 \begin{lstlisting}[caption={Kod przed kompilacją}, label={deduplication}]
 const styles = stylex.create({
@@ -1534,7 +1578,7 @@ const styles = {
 \end{lstlisting}
 
 \section{Nadpisywanie stylów}
-Język CSS ma ograniczone możliwości nadpisywania stylów. W tym celu możemy użyć selektora o większej specyficzności lub deklaracji \lstinline|!important|. Oba te sposoby mogą prowadzić do nieprzewidzianych błędów w przyszłości.
+Język CSS ma ograniczone możliwości nadpisywania stylów. W tym celu możemy użyć selektora o\,większej specyficzności lub deklaracji \lstinline|!important|. Oba te sposoby mogą prowadzić do nieprzewidzianych błędów w przyszłości.
 
 Tailwind CSS nie posiada dodatkowych możliwości nadpisywania stylów, poza tymi oferowanymi przez czysty CSS.
 
@@ -1554,7 +1598,7 @@ StyleX pozwala na deterministyczne nadpisywanie stylów, ostatni nałożony styl
 
     Prefiksy            & +              & +            & +      \\
 
-    De duplikacja kodu  & -              & +            & +      \\
+    Deduplikacja kodu   & -              & +            & +      \\
 
     Nadpisywanie stylów & -              & -            & +
   \end{tabular}
@@ -1567,9 +1611,10 @@ Warto zaznaczyć, że biblioteka StyleX nie pozwala na używanie pewnych selekto
 \chapter*{Podsumowanie} % jak we wstępie
 \addcontentsline{toc}{chapter}{Podsumowanie}
 \chaptermark{Podsumowanie}
-Stworzyliśmy stronę internetową, wykorzystując tradycyjne podejście z czystym CSS, bibliotekę Tailwind CSS i bibliotekę StyleX. Zbadaliśmy najczęściej występujące problemy z kodem napisanym w języku CSS. Dokonaliśmy porównania funkcjonalności wybranych na podstawie literatury.
+Stworzyliśmy stronę internetową, wykorzystując tradycyjne podejście z czystym CSS, bibliotekę Tailwind CSS i\,bibliotekę StyleX. Zbadaliśmy najczęściej występujące problemy z kodem napisanym w języku CSS. Dokonaliśmy porównania funkcjonalności wybranych na podstawie literatury.
 
-
+\listof{lstfloat}{Spis listingów}
+\addcontentsline{toc}{chapter}{Spis listingów}
 
 % napisać na sam koniec
 
